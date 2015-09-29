@@ -29,8 +29,8 @@
       <file leaf-file-name="TargetTest.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/storage-interface-convert/src/test/java/agilor/distributed/storage/inter/jlient/TargetTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.46585736">
-              <caret line="79" column="16" selection-start-line="79" selection-start-column="16" selection-end-line="79" selection-end-column="16" />
+            <state vertical-scroll-proportion="3.204856">
+              <caret line="108" column="0" selection-start-line="108" selection-start-column="0" selection-end-line="108" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -928,7 +928,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="0" width="1920" height="1160" extended-state="1" />
+    <frame x="0" y="0" width="1920" height="1160" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -981,12 +981,6 @@
           <line>98</line>
           <properties />
           <option name="timeStamp" value="71" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/storage-interface-convert/src/test/java/agilor/distributed/storage/inter/jlient/TargetTest.java</url>
-          <line>108</line>
-          <properties />
-          <option name="timeStamp" value="73" />
         </line-breakpoint>
       </breakpoints>
       <option name="time" value="74" />
@@ -1390,8 +1384,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/storage-interface-convert/src/test/java/agilor/distributed/storage/inter/jlient/TargetTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.46585736">
-          <caret line="79" column="16" selection-start-line="79" selection-start-column="16" selection-end-line="79" selection-end-column="16" />
+        <state vertical-scroll-proportion="3.204856">
+          <caret line="108" column="0" selection-start-line="108" selection-start-column="0" selection-end-line="108" selection-end-column="0" />
           <folding />
         </state>
       </provider>

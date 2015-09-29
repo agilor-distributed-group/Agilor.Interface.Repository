@@ -57,6 +57,18 @@
     <ClInclude Include="aci_thrift_parse.h">
       <Filter>头文件</Filter>
     </ClInclude>
+    <ClInclude Include="device.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="target.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="inter_enum_type.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="device_collection.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Agilor.cpp">
@@ -85,6 +97,12 @@
     </ClCompile>
     <ClCompile Include="test_main.hpp">
       <Filter>测试</Filter>
+    </ClCompile>
+    <ClCompile Include="device.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="device_collection.cpp">
+      <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

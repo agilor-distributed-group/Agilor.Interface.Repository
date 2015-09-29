@@ -151,11 +151,15 @@
     <ClInclude Include="aci_thrift_parse.h" />
     <ClInclude Include="Agilor.h" />
     <ClInclude Include="BaseServerEventHandler.h" />
+    <ClInclude Include="device.h" />
     <ClInclude Include="DeviceRtdbAPI.h" />
+    <ClInclude Include="device_collection.h" />
     <ClInclude Include="exception_types.h" />
     <ClInclude Include="inter_constants.h" />
+    <ClInclude Include="inter_enum_type.h" />
     <ClInclude Include="inter_types.h" />
     <ClInclude Include="AgilorHandler.h" />
+    <ClInclude Include="target.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="ACI.cpp" />
@@ -163,6 +167,8 @@
     <ClCompile Include="Agilor.cpp" />
     <ClCompile Include="Agilor_server.skeleton.cpp" />
     <ClCompile Include="BaseServerEventHandler.cpp" />
+    <ClCompile Include="device.cpp" />
+    <ClCompile Include="device_collection.cpp" />
     <ClCompile Include="inter_constants.cpp" />
     <ClCompile Include="inter_types.cpp" />
     <ClCompile Include="AgilorHandler.cpp" />
