@@ -1,0 +1,90 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="源文件">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="头文件">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="资源文件">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="头文件\ACI">
+      <UniqueIdentifier>{2bd9fa01-1459-490b-88f3-884655b413f5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="头文件\ACI.C PLUS PLUS">
+      <UniqueIdentifier>{825bddd9-d79c-4deb-9d2d-e45677b20013}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\ACI.C PLUS PLUS">
+      <UniqueIdentifier>{0cde6251-6dcf-486d-9f95-492f7f454017}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="测试">
+      <UniqueIdentifier>{6b4903d3-b516-4b57-9a6f-68302e5374df}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Agilor.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="inter_constants.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="inter_types.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="BaseServerEventHandler.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="AgilorHandler.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="ACI_H.H">
+      <Filter>头文件\ACI</Filter>
+    </ClInclude>
+    <ClInclude Include="DeviceRtdbAPI.h">
+      <Filter>头文件\ACI</Filter>
+    </ClInclude>
+    <ClInclude Include="ACI.h">
+      <Filter>头文件\ACI.C PLUS PLUS</Filter>
+    </ClInclude>
+    <ClInclude Include="exception_types.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="aci_thrift_parse.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Agilor.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Agilor_server.skeleton.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="inter_constants.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="inter_types.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="BaseServerEventHandler.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="AgilorHandler.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="ACI.cpp">
+      <Filter>源文件\ACI.C PLUS PLUS</Filter>
+    </ClCompile>
+    <ClCompile Include="aci_thrift_parse.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="test_main.hpp">
+      <Filter>测试</Filter>
+    </ClCompile>
+  </ItemGroup>
+</Project>
