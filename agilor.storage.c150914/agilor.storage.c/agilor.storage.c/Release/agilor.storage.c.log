@@ -1,40 +1,24 @@
-﻿生成启动时间为 2015/9/29 20:54:02。
-     1>项目“F:\agilor.distributed\agilor.storage.c150914\agilor.storage.c\agilor.storage.c\agilor.storage.c.vcxproj”在节点 2 上(Rebuild 个目标)。
-     1>ClCompile:
-         D:\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /I"C:\Users\LQ\Downloads\thrift-0.9.2\lib\cpp\src" /IF:\boost_1_58_0 /I"F:\log4cplus-master\include" /Zi /nologo /W3 /WX- /sdl /O2 /Oi /Oy- /GL /D WIN32_LEAN_AND_MEAN /D _MBCS /Gm- /EHsc /MD /GS /Gy /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Release\\" /Fd"Release\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt ACI.cpp aci_thrift_parse.cpp Agilor.cpp Agilor_server.skeleton.cpp BaseServerEventHandler.cpp device.cpp device_collection.cpp inter_constants.cpp inter_types.cpp AgilorHandler.cpp test_main.hpp
-         ACI.cpp
-         aci_thrift_parse.cpp
-     1>aci_thrift_parse.cpp(77): warning C4244: “=”: 从“const double”转换到“float”，可能丢失数据
-     1>aci_thrift_parse.cpp(78): warning C4244: “=”: 从“const double”转换到“float”，可能丢失数据
-     1>aci_thrift_parse.cpp(87): warning C4244: “=”: 从“const double”转换到“float”，可能丢失数据
-     1>aci_thrift_parse.cpp(118): warning C4244: “=”: 从“const WORD”转换到“int8_t”，可能丢失数据
-         Agilor.cpp
-         Agilor_server.skeleton.cpp
-         BaseServerEventHandler.cpp
-         device.cpp
-         device_collection.cpp
-     1>device_collection.cpp(14): warning C4018: “>=”: 有符号/无符号不匹配
-         inter_constants.cpp
-         inter_types.cpp
-         AgilorHandler.cpp
-         test_main.hpp
-       Link:
+﻿生成启动时间为 2015/10/15 9:52:21。
+     1>项目“F:\agilor.distributed\agilor.storage.c150914\agilor.storage.c\agilor.storage.c\agilor.storage.c.vcxproj”在节点 2 上(Build 个目标)。
+     1>Link:
          D:\Microsoft Visual Studio 12.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"F:\agilor.distributed\agilor.storage.c150914\agilor.storage.c\Release\agilor.storage.c.exe" /NOLOGO /LIBPATH:F:\boost_1_58_0\stage\lib /LIBPATH:"C:\Users\LQ\Downloads\thrift-0.9.2\lib\cpp\Release" /LIBPATH:"F:\openssl-master\out32" /LIBPATH:"F:\log4cplus-master\msvc14\Win32\bin.Release" libthrift.lib libthriftnb.lib AgilorAPI.lib DeviceRtdb.lib libeay32.lib ssleay32.lib log4cplusS.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"F:\agilor.distributed\agilor.storage.c150914\agilor.storage.c\Release\agilor.storage.c.pdb" /OPT:REF /OPT:ICF /LTCG /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"F:\agilor.distributed\agilor.storage.c150914\agilor.storage.c\Release\agilor.storage.c.lib" /MACHINE:X86 /SAFESEH Release\ACI.obj
          Release\aci_thrift_parse.obj
          Release\Agilor.obj
          Release\Agilor_server.skeleton.obj
          Release\BaseServerEventHandler.obj
-         Release\device.obj
-         Release\device_collection.obj
+         Release\config.obj
          Release\inter_constants.obj
          Release\inter_types.obj
          Release\AgilorHandler.obj
+         Release\new_device_test.obj
+         Release\target.obj
+         Release\target_value.obj
          Release\test_main.obj
          正在生成代码
          已完成代码的生成
          agilor.storage.c.vcxproj -> F:\agilor.distributed\agilor.storage.c150914\agilor.storage.c\Release\agilor.storage.c.exe
-     1>已完成生成项目“F:\agilor.distributed\agilor.storage.c150914\agilor.storage.c\agilor.storage.c\agilor.storage.c.vcxproj”(Rebuild 个目标)的操作。
+     1>已完成生成项目“F:\agilor.distributed\agilor.storage.c150914\agilor.storage.c\agilor.storage.c\agilor.storage.c.vcxproj”(Build 个目标)的操作。
 
 生成成功。
 
-已用时间 00:00:30.49
+已用时间 00:00:19.22

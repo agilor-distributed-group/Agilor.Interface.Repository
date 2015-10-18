@@ -64,26 +64,7 @@ public class Target extends AWidget {
     private List<Val> cache = Collections.synchronizedList(new ArrayList<Val>());
 
 
-    @Deprecated
-    public  Target(Agilor agilor) {
-        this();
-        this.agilor = agilor;
 
-    }
-
-    @Deprecated
-    public Target(Device device) {
-
-        this.dateCreated = Calendar.getInstance();
-        this.value=new Val();
-        this.IOState=1;
-    }
-    @Deprecated
-    public Target() {
-        this.dateCreated = Calendar.getInstance();
-        this.IOState = 1;
-        this.value=new Val();
-    }
 
 
     public Target(String name,ValType type)

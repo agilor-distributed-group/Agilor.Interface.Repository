@@ -1,6 +1,6 @@
 package agilor.distributed.storage.inter.jlient;
 
-import agilor.distributed.storage.inter.thrift.*;
+import agilor.distributed.storage.inter.thrift.TAGNODE;
 import org.apache.thrift.TException;
 
 import java.util.ArrayList;
@@ -15,26 +15,17 @@ public class Device extends AWidget {
     private String name;
 
 
-
-
     //private final static Device DEFAULT = new Device();
 
 
-    @Deprecated
-    public Device() {
-        //client.QueryTagsbyDevice()
+    public Device(String name) {
+        this.name = name;
     }
-
-    public Device(String name)
-    {
-        this.name=name;
-    }
-
-
 
 
     /**
      * 点数量
+     *
      * @return 点数量
      */
     public long targetCount() throws TException {
@@ -47,6 +38,7 @@ public class Device extends AWidget {
 
     /**
      * 获取target集合指针
+     *
      * @return 点集合初始迭代器
      * @throws TException
      */
@@ -67,6 +59,7 @@ public class Device extends AWidget {
 
     /**
      * 获取target集合
+     *
      * @return 点集合列表
      * @throws TException
      */
@@ -88,6 +81,7 @@ public class Device extends AWidget {
 
     /**
      * 获取符合条件的点集合
+     *
      * @param p 指定条件
      * @return 点集合列表
      * @throws TException
@@ -106,6 +100,7 @@ public class Device extends AWidget {
 
     /**
      * 获取符合的第一个点
+     *
      * @param p 指定条件
      * @return 点
      * @throws TException
@@ -126,6 +121,7 @@ public class Device extends AWidget {
 
     /**
      * 删除点
+     *
      * @param target 指定要删除的点
      * @return 是否删除成功
      * @throws TException
@@ -140,6 +136,7 @@ public class Device extends AWidget {
 
     /**
      * 增加点
+     *
      * @param target 要增加的点
      * @return 是否增加成功
      * @throws TException
@@ -157,12 +154,9 @@ public class Device extends AWidget {
     }
 
 
-
-    public void  attached()
-    {
+    public void attached() {
 
     }
-
 
 
 }

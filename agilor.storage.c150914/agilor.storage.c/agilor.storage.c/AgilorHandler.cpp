@@ -71,6 +71,7 @@ AgilorHandler::~AgilorHandler()
 
 void AgilorHandler::ping() {
 	//LOG4CPLUS_INFO(logger, "trigger function that ping..");
+	cout << "总运行次数" << target_count << endl;
 }
 
 bool AgilorHandler::find_device(const string& name)
@@ -369,8 +370,8 @@ void AgilorHandler::GetTagInfo(TAGNODE& _return, const std::string& tagName){
 
 void AgilorHandler::AddNewTag(const TAGNODE& node, const bool isOverwrite) {
 
-	LOG4CPLUS_INFO(logger, "trigger function that AddNewTag");
-
+	LOG4CPLUS_INFO(logger, "trigger function that AddNewTag"<<target_count);
+	target_count++;
 	if (node.name.empty())
 		throw aci::exception::EParamErrorException("name");
 	if (node.deviceName.empty())
@@ -403,6 +404,8 @@ void AgilorHandler::AddNewTag(const TAGNODE& node, const bool isOverwrite) {
 		//}
 	}
 	else throw aci::exception::ETargetInsertException();
+
+	
 	
 }
 

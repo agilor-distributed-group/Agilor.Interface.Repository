@@ -57,16 +57,31 @@
     <ClInclude Include="aci_thrift_parse.h">
       <Filter>头文件</Filter>
     </ClInclude>
-    <ClInclude Include="device.h">
-      <Filter>头文件</Filter>
-    </ClInclude>
     <ClInclude Include="target.h">
       <Filter>头文件</Filter>
     </ClInclude>
-    <ClInclude Include="inter_enum_type.h">
+    <ClInclude Include="device.h">
       <Filter>头文件</Filter>
     </ClInclude>
-    <ClInclude Include="device_collection.h">
+    <ClInclude Include="snapshot.hpp">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="target_value.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="config.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="runtime.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="inter_enum_types.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="device_base.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="agilor_handler_new.h">
       <Filter>头文件</Filter>
     </ClInclude>
   </ItemGroup>
@@ -98,10 +113,16 @@
     <ClCompile Include="test_main.hpp">
       <Filter>测试</Filter>
     </ClCompile>
-    <ClCompile Include="device.cpp">
+    <ClCompile Include="target.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
-    <ClCompile Include="device_collection.cpp">
+    <ClCompile Include="new_device_test.cpp">
+      <Filter>测试</Filter>
+    </ClCompile>
+    <ClCompile Include="target_value.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="config.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>

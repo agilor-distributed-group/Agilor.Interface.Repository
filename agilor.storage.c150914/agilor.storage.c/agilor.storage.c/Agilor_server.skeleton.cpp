@@ -1,4 +1,4 @@
-//#define TEST_MAIN
+#define TEST_MAIN
 #ifndef TEST_MAIN
 #include "Agilor.h"
 #include <thrift/protocol/TBinaryProtocol.h>

@@ -29,9 +29,9 @@ public class AgilorTest {
         Agilor agilor = new Agilor("127.0.0.1",9090,2000);
         agilor.open();
 
-        for(int i =0;i<50;i++)
+        for(int i =0;i<30;i++)
         {
-            Device device = new Device();
+            Device device = new Device("d");
             device.setName("DEVICE_"+i);
             agilor.insert(device);
         }

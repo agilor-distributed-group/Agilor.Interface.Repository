@@ -60,7 +60,7 @@ long aci::startup()
 }
 
 
-long aci::removeTag(const string& serverName, long& tagId)
+long aci::removeTag(const string& serverName, long tagId)
 {
 	return Agpt_RemoveTag(serverName.data(), tagId);
 }
@@ -91,7 +91,7 @@ long aci::md_sendNewValue(const string& deviceName, TAG_VALUE_LOCAL& value, bool
 	return DRTDB_MD_SendNewValue(const_cast<LPSTR>(deviceName.data()), value, bImmediate);
 }
 
-long aci::queryTagsbyDevice(const string& serverName, const string& deviceName)
+long aci::queryTagsbyDevice(const string serverName, const string& deviceName)
 {
 	return Agpt_QueryTagsbyDevice(serverName.data(), deviceName.data());
 }
@@ -102,7 +102,10 @@ long aci::enumTagName(long hRecordset, long *tagId, string& name)
 	long id;
 	char tagName[C_TAGNAME_LEN];
 	long r = Agpt_EnumTagName(hRecordset, &id, tagName);
-	name.append(tagName);
+	if (r>0){
+		name.clear(); 
+		name.append(tagName);
+	}
 	if (tagId != NULL) *tagId = id;
 	return r;
 }

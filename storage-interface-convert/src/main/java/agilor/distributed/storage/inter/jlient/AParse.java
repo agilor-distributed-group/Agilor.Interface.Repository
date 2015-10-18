@@ -15,9 +15,7 @@ public class AParse {
 
     public static Device parse(DEVICE data)
     {
-        Device r = new Device();
-        r.setName(data.getName());
-
+        Device r = new Device(data.name);
         return r;
     }
 
@@ -112,7 +110,7 @@ public class AParse {
 
     public static Target parse(TAGNODE data)
     {
-        Target r = new Target();
+        Target r = new Target(data.getName(),ValType.value(data.type));
         r.setName(data.getName());
 
         r.setValue(parse(data.value, ValType.value(data.type)));

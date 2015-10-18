@@ -12,7 +12,7 @@ public class DeviceTest {
     @Test
     public void testTargetCount() throws Exception {
 
-        Agilor agilor = new Agilor();
+        Agilor agilor = new Agilor("127.0.0.1",9090,2000);
         Device device = agilor.first(x->x.getName().contains("abc"));
 
         System.out.println(device.targetCount());
@@ -22,7 +22,7 @@ public class DeviceTest {
 
     @Test
     public void testTarget() throws Exception {
-        Agilor agilor = new Agilor();
+        Agilor agilor = new Agilor("127.0.0.1",9090,2000);
         Device device = agilor.first();
         Iterator<Target> it = device.target();
         if(it.hasNext()) {
@@ -34,7 +34,7 @@ public class DeviceTest {
 
     @Test
     public void testTargets() throws Exception {
-        Agilor agilor = new Agilor();
+        Agilor agilor = new Agilor("127.0.0.1",9090,2000);
         Device device = agilor.first();
         Iterator<Target> it = device.target();
 
@@ -55,7 +55,7 @@ public class DeviceTest {
     @Test
     public void testFisrt() throws Exception {
 
-        Agilor agilor = new Agilor();
+        Agilor agilor = new Agilor("127.0.0.1",9090,2000);
         Device device = agilor.first();
         Target target = device.fisrt(x->true);
         System.out.println(target.getName());
@@ -63,7 +63,7 @@ public class DeviceTest {
 
     @Test
     public void testRemove() throws Exception {
-        Agilor agilor = new Agilor();
+        Agilor agilor = new Agilor("127.0.0.1",9090,2000);
         Device device = agilor.first();
         Target target = device.fisrt(x->x.getName().contains("CSD_001"));
         device.remove(target);
@@ -76,16 +76,18 @@ public class DeviceTest {
         Agilor agilor = new Agilor("127.0.0.1",9090,2000);
         agilor.open();
 
-        for(int i=0;i<30;i++)
+        for(int i=0;i<3;i++)
         {
             Device device = new Device("DEVICE_"+i);
             agilor.attach(device);
 
-            for(int j=0;j<50;j++) {
+            for(int j=0;j<400;j++) {
                 Target target = new Target("device_" + i + "target_" + j, ValType.FLOAT);
                 device.insert(target);
             }
         }
+
+        agilor.ping();
         agilor.close();
 
     }

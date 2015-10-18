@@ -23,7 +23,7 @@ namespace aci
 	long connect(const string& serverName, const string& ip, const string& userName, const string& password, int port = 900);
 	long createConnNode(const string& name, HWND hwnd = 0, unsigned long threadID = 0UL, bool allowEvent = false);
 	long startup();
-	long removeTag(const string& serverName, long& tagId);
+	long removeTag(const string& serverName, long tagId);
 	long queryDeviceInfo(const string& serverName);
 	long enumDeviceInfo(long hwnd, long* deviceId, DEV_INFO* info);
 	long md_UnregisterDevice(const string& deviceName, string* cause, long errCode = 0);
@@ -32,7 +32,7 @@ namespace aci
 	long md_flush(const string& deviceName);
 
 	//long registerAllDevice();
-	long queryTagsbyDevice(const string& serverName, const string& deviceName);
+	long queryTagsbyDevice(const string serverName, const string& deviceName);
 
 	long enumTagName(long hRecordset, long *tagId, string& name);
 	long getTagInfo(const string& serverName,const string& tagName,TAG_INFO* info);

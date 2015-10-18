@@ -36,7 +36,7 @@ private:
 	static vector<string> devices;
 	static mutex _mDevice;
 	
-
+	int target_count = 0;
 	string agilor_name = "agilor";
 
 protected:
