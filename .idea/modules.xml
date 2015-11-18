@@ -4,6 +4,7 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/agilor-client/agilor-client.iml" filepath="$PROJECT_DIR$/agilor-client/agilor-client.iml" />
       <module fileurl="file://$PROJECT_DIR$/agilor-distributed-storage.iml" filepath="$PROJECT_DIR$/agilor-distributed-storage.iml" />
+      <module fileurl="file://$PROJECT_DIR$/scoket-new/scoket-new.iml" filepath="$PROJECT_DIR$/scoket-new/scoket-new.iml" />
       <module fileurl="file://$PROJECT_DIR$/storage-interface-convert/storage-interface-convert.iml" filepath="$PROJECT_DIR$/storage-interface-convert/storage-interface-convert.iml" />
     </modules>
   </component>

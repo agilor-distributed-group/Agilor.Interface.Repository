@@ -9,6 +9,7 @@
     <ignored path="$PROJECT_DIR$/storage-interface-convert/target/" />
     <ignored path="$PROJECT_DIR$/storage-interface-iconvert/target/" />
     <ignored path="$PROJECT_DIR$/agilor-client/target/" />
+    <ignored path="$PROJECT_DIR$/scoket-new/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -17,6 +18,9 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="ChangesViewManager" flattened_view="true" show_ignored="false" />
+  <component name="CoverageDataManager">
+    <SUITE FILE_PATH="coverage/agilor-distributed-storage$Client_getValue.coverage" NAME="Client.getValue Coverage Results" MODIFIED="1447222624775" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+  </component>
   <component name="CreatePatchCommitExecutor">
     <option name="PATCH_PATH" value="" />
   </component>
@@ -26,98 +30,64 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="TargetTest.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/storage-interface-convert/src/test/java/agilor/distributed/storage/inter/jlient/TargetTest.java">
+      <file leaf-file-name="Client.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/scoket-new/src/test/java/Client.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="108" column="0" selection-start-line="108" selection-start-column="0" selection-end-line="108" selection-end-column="0" />
+            <state vertical-scroll-proportion="0.57750344">
+              <caret line="331" column="23" selection-start-line="331" selection-start-column="23" selection-end-line="331" selection-end-column="23" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Device.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/storage-interface-convert/src/main/java/agilor/distributed/storage/inter/jlient/Device.java">
+      <file leaf-file-name="Client.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/scoket-new/src/main/java/agilor/distributed/communication/client/Client.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="134" column="0" selection-start-line="134" selection-start-column="0" selection-end-line="134" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="DeviceIterator.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/storage-interface-convert/src/main/java/agilor/distributed/storage/inter/jlient/DeviceIterator.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="44" column="9" selection-start-line="44" selection-start-column="9" selection-end-line="44" selection-end-column="9" />
+              <caret line="72" column="5" selection-start-line="72" selection-start-column="5" selection-end-line="72" selection-end-column="5" />
               <folding>
-                <element signature="imports" expanded="false" />
+                <element signature="method#open#0;class#Client#0" expanded="false" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="HistoryIterator.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/storage-interface-convert/src/main/java/agilor/distributed/storage/inter/jlient/HistoryIterator.java">
+      <file leaf-file-name="SimpleProtocolTest.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/scoket-new/src/test/java/agilor/distributed/communication/protocol/SimpleProtocolTest.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="26" column="112" selection-start-line="26" selection-start-column="112" selection-end-line="26" selection-end-column="112" />
-              <folding>
-                <element signature="imports" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Iterator.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/storage-interface-convert/src/main/java/agilor/distributed/storage/inter/jlient/Iterator.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="23" column="12" selection-start-line="23" selection-start-column="12" selection-end-line="23" selection-end-column="12" />
+              <caret line="88" column="0" selection-start-line="88" selection-start-column="0" selection-end-line="88" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="AWidgetImpl.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/storage-interface-convert/src/main/java/agilor/distributed/storage/inter/jlient/AWidgetImpl.java">
+      <file leaf-file-name="WriteValueException.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/scoket-new/src/main/java/agilor/distributed/communication/client/exception/WriteValueException.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="5" column="17" selection-start-line="5" selection-start-column="17" selection-end-line="5" selection-end-column="17" />
+              <caret line="19" column="46" selection-start-line="19" selection-start-column="46" selection-end-line="19" selection-end-column="46" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="DeviceTest.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/storage-interface-convert/src/test/java/agilor/distributed/storage/inter/jlient/DeviceTest.java">
+      <file leaf-file-name="QueryTagHistory.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/storage-interface-convert/src/test/java/storage/inter/conver/test/QueryTagHistory.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.46585736">
-              <caret line="83" column="23" selection-start-line="83" selection-start-column="23" selection-end-line="83" selection-end-column="23" />
+            <state vertical-scroll-proportion="0.0">
+              <caret line="11" column="13" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Agilor.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/storage-interface-convert/src/main/java/agilor/distributed/storage/inter/jlient/Agilor.java">
+      <file leaf-file-name="ConnTest.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/agilor-client/src/test/java/ConnTest.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="46" column="20" selection-start-line="46" selection-start-column="20" selection-end-line="46" selection-end-column="20" />
+              <caret line="19" column="13" selection-start-line="19" selection-start-column="13" selection-end-line="19" selection-end-column="13" />
               <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="AParse.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/storage-interface-convert/src/main/java/agilor/distributed/storage/inter/jlient/AParse.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="114" column="0" selection-start-line="114" selection-start-column="0" selection-end-line="114" selection-end-column="0" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -126,7 +96,37 @@
         <entry file="file://$PROJECT_DIR$/storage-interface-convert/src/test/java/agilor/distributed/storage/inter/jlient/AgilorTest.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="34" column="20" selection-start-line="34" selection-start-column="20" selection-end-line="34" selection-end-column="20" />
+              <caret line="11" column="13" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="DeviceTest.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/storage-interface-convert/src/test/java/agilor/distributed/storage/inter/jlient/DeviceTest.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="TargetTest.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/storage-interface-convert/src/test/java/agilor/distributed/storage/inter/jlient/TargetTest.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="52" column="37" selection-start-line="52" selection-start-column="37" selection-end-line="52" selection-end-column="37" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Target.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/storage-interface-convert/src/main/java/agilor/distributed/storage/inter/jlient/Target.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="126" column="21" selection-start-line="126" selection-start-column="21" selection-end-line="126" selection-end-column="21" />
               <folding />
             </state>
           </provider>
@@ -137,8 +137,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Enum" />
         <option value="JUnit4 Test Class" />
+        <option value="Enum" />
         <option value="Interface" />
         <option value="Class" />
       </list>
@@ -152,57 +152,57 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/agilor-client/src/main/java/agilor/distributed/storage/msg/BaseMsg.java" />
-        <option value="$PROJECT_DIR$/agilor-client/src/main/java/agilor/distributed/storage/msg/MsgType.java" />
-        <option value="$PROJECT_DIR$/storage-interface-convert/src/main/java/agilor/distributed/storage/gate/msg/AskMsg.java" />
-        <option value="$PROJECT_DIR$/storage-interface-convert/src/main/java/agilor/distributed/storage/gate/msg/Msg.java" />
-        <option value="$PROJECT_DIR$/agilor-client/src/main/java/agilor/distributed/storage/msg/Msg.java" />
-        <option value="$PROJECT_DIR$/storage-interface-convert/src/main/java/agilor/distributed/storage/gate/msg/MsgTest.java" />
-        <option value="$PROJECT_DIR$/agilor-client/src/main/java/agilor/distributed/storage/msg/MsgTest.java" />
-        <option value="$PROJECT_DIR$/agilor-client/src/main/java/agilor/distributed/storage/connection/Connection.java" />
-        <option value="$PROJECT_DIR$/storage-interface-convert/src/main/java/agilor/distributed/storage/gate/Server.java" />
-        <option value="$PROJECT_DIR$/agilor-client/src/main/java/agilor/distributed/storage/connection/ClientHandler.java" />
-        <option value="$PROJECT_DIR$/storage-interface-convert/src/main/java/agilor/distributed/storage/gate/handler/InAfterHandler.java" />
-        <option value="$PROJECT_DIR$/storage-interface-convert/src/main/java/agilor/distributed/storage/inter/jlient/AIterator.java" />
-        <option value="$PROJECT_DIR$/storage-interface-convert/src/main/java/agilor/distributed/storage/inter/entities/DEVICE.java" />
-        <option value="$PROJECT_DIR$/storage-interface-convert/src/main/java/agilor/distributed/storage/inter/entities/TAGVAL.java" />
-        <option value="$PROJECT_DIR$/storage-interface-convert/src/test/java/storage/inter/inter/jlient/test/Agilor.java" />
-        <option value="$PROJECT_DIR$/storage-interface-convert/src/test/java/storage/inter/inter/jlient/test/AgilorTest.java" />
-        <option value="D:/apache-maven-3.3.1/conf/settings.xml" />
-        <option value="$PROJECT_DIR$/storage-interface-convert/src/main/java/agilor/distributed/storage/inter/jlient/HVal.java" />
-        <option value="$PROJECT_DIR$/storage-interface-convert/src/main/java/agilor/distributed/storage/inter/jlient/Iterator.java" />
-        <option value="$PROJECT_DIR$/agilor-client/pom.xml" />
-        <option value="$PROJECT_DIR$/storage-interface-convert/src/main/java/agilor/distributed/storage/inter/thrift/Agilor.java" />
-        <option value="$PROJECT_DIR$/storage-interface-convert/src/main/java/agilor/distributed/storage/inter/client/ThriftPoolableObjectFactory.java" />
-        <option value="$PROJECT_DIR$/storage-interface-convert/src/main/java/agilor/distributed/storage/inter/client/GenericConnectionProvider.java" />
-        <option value="$PROJECT_DIR$/storage-interface-convert/src/main/java/agilor/distributed/storage/inter/jlient/AWidgetImpl.java" />
-        <option value="$PROJECT_DIR$/storage-interface-convert/src/test/java/storage/inter/conver/test/QueryTagHistory.java" />
-        <option value="$PROJECT_DIR$/storage-interface-convert/src/test/java/storage/inter/conver/test/AddNewTag.java" />
-        <option value="$PROJECT_DIR$/storage-interface-convert/src/test/java/storage/inter/conver/test/Ping.java" />
-        <option value="$PROJECT_DIR$/storage-interface-convert/src/main/java/agilor/distributed/storage/inter/client/ConnectionProvider.java" />
-        <option value="$PROJECT_DIR$/storage-interface-convert/src/main/java/agilor/distributed/storage/inter/client/ThriftPoolObjectFactory.java" />
-        <option value="$PROJECT_DIR$/storage-interface-convert/src/main/java/agilor/distributed/storage/inter/client/KeyGenericConnectionProvider.java" />
-        <option value="$PROJECT_DIR$/storage-interface-convert/src/main/java/agilor/distributed/storage/inter/client/TAddress.java" />
-        <option value="$PROJECT_DIR$/storage-interface-convert/src/main/java/agilor/distributed/storage/inter/jlient/AWidget.java" />
-        <option value="$PROJECT_DIR$/storage-interface-convert/src/main/java/agilor/distributed/storage/inter/thrift/TAGVAL.java" />
-        <option value="$PROJECT_DIR$/pom.xml" />
-        <option value="$PROJECT_DIR$/storage-interface-convert/pom.xml" />
-        <option value="$PROJECT_DIR$/storage-interface-convert/src/main/java/agilor/distributed/storage/inter/jlient/HistoryIterator.java" />
-        <option value="$PROJECT_DIR$/storage-interface-convert/src/test/java/storage/inter/conver/test/QueryDeviceInfo.java" />
-        <option value="$PROJECT_DIR$/storage-interface-convert/src/test/java/storage/inter/conver/test/QuerySnapshots.java" />
-        <option value="$PROJECT_DIR$/storage-interface-convert/src/main/java/agilor/distributed/storage/inter/jlient/DeviceIterator.java" />
-        <option value="$PROJECT_DIR$/storage-interface-convert/src/main/java/agilor/distributed/storage/inter/jlient/Val.java" />
-        <option value="$PROJECT_DIR$/storage-interface-convert/src/main/java/agilor/distributed/storage/inter/jlient/ValType.java" />
-        <option value="$PROJECT_DIR$/storage-interface-convert/src/main/java/agilor/distributed/storage/inter/thrift/AGGREGATE.java" />
-        <option value="$PROJECT_DIR$/storage-interface-convert/src/main/java/agilor/distributed/storage/inter/jlient/TargetIterator.java" />
-        <option value="$PROJECT_DIR$/storage-interface-convert/src/main/java/agilor/distributed/storage/inter/client/IClient.java" />
-        <option value="$PROJECT_DIR$/storage-interface-convert/src/test/java/agilor/distributed/storage/inter/jlient/TargetTest.java" />
-        <option value="$PROJECT_DIR$/storage-interface-convert/src/main/java/agilor/distributed/storage/inter/jlient/Target.java" />
-        <option value="$PROJECT_DIR$/storage-interface-convert/src/main/java/agilor/distributed/storage/inter/jlient/AParse.java" />
-        <option value="$PROJECT_DIR$/storage-interface-convert/src/test/java/agilor/distributed/storage/inter/jlient/AgilorTest.java" />
-        <option value="$PROJECT_DIR$/storage-interface-convert/src/main/java/agilor/distributed/storage/inter/jlient/Device.java" />
-        <option value="$PROJECT_DIR$/storage-interface-convert/src/main/java/agilor/distributed/storage/inter/jlient/Agilor.java" />
-        <option value="$PROJECT_DIR$/storage-interface-convert/src/test/java/agilor/distributed/storage/inter/jlient/DeviceTest.java" />
+        <option value="$PROJECT_DIR$/scoket-new/src/main/java/agilor/distributed/socket/Socket.java" />
+        <option value="$PROJECT_DIR$/scoket-new/src/main/java/agilor/distributed/socket/Connection.java" />
+        <option value="$PROJECT_DIR$/scoket-new/src/main/java/agilor/distributed/socket/SocketPoolObjectFactory.java" />
+        <option value="$PROJECT_DIR$/scoket-new/src/main/java/agilor/distributed/socket/KeyGenericSocketProvider.java" />
+        <option value="$PROJECT_DIR$/scoket-new/src/main/java/agilor/distributed/socket/Client.java" />
+        <option value="$PROJECT_DIR$/scoket-new/src/main/java/agilor/distributed/communication/socket/SocketPoolObjectFactory.java" />
+        <option value="$PROJECT_DIR$/scoket-new/src/test/java/agilor/distributed/protocol/SimpleProtocol.java" />
+        <option value="$PROJECT_DIR$/scoket-new/src/test/java/agilor/distributed/communication/protocol/SimpleProtocol.java" />
+        <option value="$PROJECT_DIR$/scoket-new/src/main/java/agilor/distributed/communication/utils/ArrayUtils.java" />
+        <option value="$PROJECT_DIR$/scoket-new/src/main/java/agilor/distributed/communication/protocol/Token.java" />
+        <option value="$PROJECT_DIR$/scoket-new/src/main/java/agilor/distributed/communication/protocol/ProtocolDataTypes.java" />
+        <option value="$PROJECT_DIR$/scoket-new/src/main/java/agilor/distributed/communication/protocol/Assemble.java" />
+        <option value="$PROJECT_DIR$/scoket-new/src/main/java/agilor/distributed/communication/protocol/SimpleProtocolAssemble.java" />
+        <option value="$PROJECT_DIR$/scoket-new/src/main/java/agilor/distributed/communication/protocol/Protocol.java" />
+        <option value="$PROJECT_DIR$/scoket-new/src/main/java/agilor/distributed/communication/protocol/ProtocolBase.java" />
+        <option value="$PROJECT_DIR$/scoket-new/src/main/java/agilor/distributed/communication/protocol/SimpleProtocol.java" />
+        <option value="$PROJECT_DIR$/scoket-new/src/main/java/agilor/distributed/communication/protocol/AssembleContext.java" />
+        <option value="$PROJECT_DIR$/scoket-new/src/main/java/agilor/distributed/communication/client/LongValueAssemble.java" />
+        <option value="$PROJECT_DIR$/scoket-new/src/main/java/agilor/distributed/communication/client/FloatValueAssemble.java" />
+        <option value="$PROJECT_DIR$/scoket-new/src/main/java/agilor/distributed/communication/client/ValueAssemble.java" />
+        <option value="$PROJECT_DIR$/scoket-new/src/main/java/agilor/distributed/communication/client/StringValueAssemble.java" />
+        <option value="$PROJECT_DIR$/scoket-new/src/main/java/agilor/distributed/communication/client/IntValueAssemble.java" />
+        <option value="$PROJECT_DIR$/scoket-new/src/main/java/agilor/distributed/communication/client/BoolValueAssemble.java" />
+        <option value="$PROJECT_DIR$/scoket-new/src/main/java/agilor/distributed/communication/protocol/ProtocolObject.java" />
+        <option value="$PROJECT_DIR$/scoket-new/src/test/java/BufferTest.java" />
+        <option value="$PROJECT_DIR$/scoket-new/src/main/java/agilor/distributed/communication/support/inter/ValueAssemble.java" />
+        <option value="$PROJECT_DIR$/scoket-new/src/main/java/agilor/distributed/communication/support/factory/AssembleFactory.java" />
+        <option value="$PROJECT_DIR$/scoket-new/src/main/java/agilor/distributed/communication/support/impl/IntValueAssemble.java" />
+        <option value="$PROJECT_DIR$/scoket-new/src/main/java/agilor/distributed/communication/support/impl/FloatValueAssemble.java" />
+        <option value="$PROJECT_DIR$/scoket-new/src/main/java/agilor/distributed/communication/support/factory/ValueAssembleFactory.java" />
+        <option value="$PROJECT_DIR$/scoket-new/src/main/java/agilor/distributed/communication/support/impl/BoolValueAssembleOfCollection.java" />
+        <option value="$PROJECT_DIR$/scoket-new/src/main/java/agilor/distributed/communication/support/impl/StringValueAssembleOfCollection.java" />
+        <option value="$PROJECT_DIR$/scoket-new/src/main/java/agilor/distributed/communication/support/impl/IntValueAssembleOfCollection.java" />
+        <option value="$PROJECT_DIR$/scoket-new/src/main/java/agilor/distributed/communication/support/factory/ValueAssembleFactoryOfCollection.java" />
+        <option value="$PROJECT_DIR$/scoket-new/src/main/java/agilor/distributed/communication/support/inter/ValueResolve.java" />
+        <option value="$PROJECT_DIR$/scoket-new/src/main/java/agilor/distributed/communication/support/impl/StringValueResolveOfCollection.java" />
+        <option value="$PROJECT_DIR$/scoket-new/src/main/java/agilor/distributed/communication/support/factory/ValueResolveFactoryOfCollection.java" />
+        <option value="$PROJECT_DIR$/scoket-new/src/main/java/agilor/distributed/communication/support/impl/BoolValueResolveOfCollection.java" />
+        <option value="$PROJECT_DIR$/scoket-new/src/main/java/agilor/distributed/communication/support/impl/IntValueResolveOfCollection.java" />
+        <option value="$PROJECT_DIR$/scoket-new/src/main/java/agilor/distributed/communication/client/ValueCollection.java" />
+        <option value="$PROJECT_DIR$/scoket-new/src/main/java/agilor/distributed/communication/support/impl/FloatValueResolveOfCollection.java" />
+        <option value="$PROJECT_DIR$/scoket-new/src/main/java/agilor/distributed/communication/protocol/SimpleToken.java" />
+        <option value="$PROJECT_DIR$/scoket-new/src/main/java/agilor/distributed/communication/protocol/SimpleAssemble.java" />
+        <option value="$PROJECT_DIR$/scoket-new/src/main/java/agilor/distributed/communication/utils/ConvertUtils.java" />
+        <option value="$PROJECT_DIR$/scoket-new/src/main/java/agilor/distributed/communication/support/impl/FloatValueAssembleOfCollection.java" />
+        <option value="$PROJECT_DIR$/scoket-new/src/test/java/agilor/distributed/communication/protocol/SimpleProtocolTest.java" />
+        <option value="$PROJECT_DIR$/scoket-new/src/main/java/agilor/distributed/communication/client/Value.java" />
+        <option value="$PROJECT_DIR$/scoket-new/src/main/java/agilor/distributed/communication/socket/Connection.java" />
+        <option value="$PROJECT_DIR$/scoket-new/src/main/java/agilor/distributed/communication/client/exception/WriteValueException.java" />
+        <option value="$PROJECT_DIR$/scoket-new/src/main/java/agilor/distributed/communication/client/Client.java" />
+        <option value="$PROJECT_DIR$/scoket-new/src/test/java/Client.java" />
       </list>
     </option>
   </component>
@@ -222,8 +222,10 @@
     <order />
   </component>
   <component name="ProjectFrameBounds">
-    <option name="width" value="1920" />
-    <option name="height" value="1160" />
+    <option name="x" value="-8" />
+    <option name="y" value="-8" />
+    <option name="width" value="1936" />
+    <option name="height" value="1176" />
   </component>
   <component name="ProjectInspectionProfilesVisibleTreeState">
     <entry key="Project Default">
@@ -236,6 +238,9 @@
             <id>Android Lint</id>
           </State>
           <State>
+            <id>General</id>
+          </State>
+          <State>
             <id>Gradle</id>
           </State>
           <State>
@@ -245,6 +250,11 @@
             <id>Probable bugsGradle</id>
           </State>
         </expanded-state>
+        <selected-state>
+          <State>
+            <id>DefaultFileTemplate</id>
+          </State>
+        </selected-state>
       </profile-state>
     </entry>
   </component>
@@ -271,7 +281,8 @@
       <sortByType />
     </navigator>
     <panes>
-      <pane id="Scope" />
+      <pane id="Scratches" />
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -279,15 +290,9 @@
               <option name="myItemId" value="agilor-distributed-storage" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
-          </PATH>
-          <PATH>
             <PATH_ELEMENT>
-              <option name="myItemId" value="agilor-distributed-storage" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="agilor.distributed" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+              <option name="myItemId" value="External Libraries" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ExternalLibrariesNode" />
             </PATH_ELEMENT>
           </PATH>
           <PATH>
@@ -299,8 +304,18 @@
               <option name="myItemId" value="agilor.distributed" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
+          </PATH>
+          <PATH>
             <PATH_ELEMENT>
-              <option name="myItemId" value="storage-interface-convert" />
+              <option name="myItemId" value="agilor-distributed-storage" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="agilor.distributed" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="scoket-new" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -314,7 +329,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="storage-interface-convert" />
+              <option name="myItemId" value="scoket-new" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
@@ -340,7 +355,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="storage-interface-convert" />
+              <option name="myItemId" value="scoket-new" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
@@ -356,7 +371,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="jlient" />
+              <option name="myItemId" value="protocol" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -370,7 +385,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="storage-interface-convert" />
+              <option name="myItemId" value="scoket-new" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
@@ -392,37 +407,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="storage-interface-convert" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="storage" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="agilor-distributed-storage" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="agilor.distributed" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="storage-interface-convert" />
+              <option name="myItemId" value="scoket-new" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
@@ -438,11 +423,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="storage" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="inter" />
+              <option name="myItemId" value="communication" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -456,7 +437,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="storage-interface-convert" />
+              <option name="myItemId" value="scoket-new" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
@@ -472,49 +453,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="storage" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="inter" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="jlient" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="agilor-distributed-storage" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="agilor.distributed" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="storage-interface-convert" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="storage" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="inter" />
+              <option name="myItemId" value="communication" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
@@ -522,10 +461,47 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="agilor-distributed-storage" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="agilor.distributed" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="scoket-new" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="communication" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="client" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="exception" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
         </subPane>
       </pane>
-      <pane id="Scratches" />
-      <pane id="PackagesPane" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -540,7 +516,7 @@
     <property name="project.structure.side.proportion" value="0.3643678" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit4" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.includeInheritedMembers" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/pom.xml" />
+    <property name="last_opened_file_path" value="F:/lq.learn" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -554,6 +530,7 @@
       <recent name="" />
     </key>
     <key name="CreateTestDialog.RecentsKey">
+      <recent name="agilor.distributed.communication.protocol" />
       <recent name="agilor.distributed.storage.inter.jlient" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
@@ -561,20 +538,15 @@
       <recent name="agilor.distributed.storage.gate.msg" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.DeviceTest.testInsert">
-    <configuration default="false" name="DeviceTest.testInsert" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
-        <pattern>
-          <option name="PATTERN" value="agilor.distributed.storage.inter.jlient.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <module name="storage-interface-convert" />
+  <component name="RunManager" selected="JUnit.Client.set_value_pressure_test">
+    <configuration default="false" name="Client.getValue" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <module name="scoket-new" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
       <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PACKAGE_NAME" value="agilor.distributed.storage.inter.jlient" />
-      <option name="MAIN_CLASS_NAME" value="agilor.distributed.storage.inter.jlient.DeviceTest" />
-      <option name="METHOD_NAME" value="testInsert" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="Client" />
+      <option name="METHOD_NAME" value="getValue" />
       <option name="TEST_OBJECT" value="method" />
       <option name="VM_PARAMETERS" value="-ea" />
       <option name="PARAMETERS" />
@@ -588,19 +560,14 @@
       <patterns />
       <method />
     </configuration>
-    <configuration default="false" name="TargetTest.write_lots_value" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
-        <pattern>
-          <option name="PATTERN" value="agilor.distributed.storage.inter.jlient.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <module name="storage-interface-convert" />
+    <configuration default="false" name="BufferTest.bufferArray" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <module name="scoket-new" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
       <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PACKAGE_NAME" value="agilor.distributed.storage.inter.jlient" />
-      <option name="MAIN_CLASS_NAME" value="agilor.distributed.storage.inter.jlient.TargetTest" />
-      <option name="METHOD_NAME" value="write_lots_value" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="BufferTest" />
+      <option name="METHOD_NAME" value="bufferArray" />
       <option name="TEST_OBJECT" value="method" />
       <option name="VM_PARAMETERS" value="-ea" />
       <option name="PARAMETERS" />
@@ -614,19 +581,19 @@
       <patterns />
       <method />
     </configuration>
-    <configuration default="false" name="AgilorTest.testDelete" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration default="false" name="SimpleProtocolTest.testResolve3" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
-          <option name="PATTERN" value="agilor.distributed.storage.inter.jlient.*" />
+          <option name="PATTERN" value="agilor.distributed.communication.protocol.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <module name="storage-interface-convert" />
+      <module name="scoket-new" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
       <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PACKAGE_NAME" value="agilor.distributed.storage.inter.jlient" />
-      <option name="MAIN_CLASS_NAME" value="agilor.distributed.storage.inter.jlient.AgilorTest" />
-      <option name="METHOD_NAME" value="testDelete" />
+      <option name="PACKAGE_NAME" value="agilor.distributed.communication.protocol" />
+      <option name="MAIN_CLASS_NAME" value="agilor.distributed.communication.protocol.SimpleProtocolTest" />
+      <option name="METHOD_NAME" value="testResolve3" />
       <option name="TEST_OBJECT" value="method" />
       <option name="VM_PARAMETERS" value="-ea" />
       <option name="PARAMETERS" />
@@ -640,19 +607,14 @@
       <patterns />
       <method />
     </configuration>
-    <configuration default="false" name="AgilorTest.testInsert" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
-        <pattern>
-          <option name="PATTERN" value="agilor.distributed.storage.inter.jlient.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <module name="storage-interface-convert" />
+    <configuration default="false" name="Client.addValues" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <module name="scoket-new" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
       <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PACKAGE_NAME" value="agilor.distributed.storage.inter.jlient" />
-      <option name="MAIN_CLASS_NAME" value="agilor.distributed.storage.inter.jlient.AgilorTest" />
-      <option name="METHOD_NAME" value="testInsert" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="Client" />
+      <option name="METHOD_NAME" value="addValues" />
       <option name="TEST_OBJECT" value="method" />
       <option name="VM_PARAMETERS" value="-ea" />
       <option name="PARAMETERS" />
@@ -666,19 +628,14 @@
       <patterns />
       <method />
     </configuration>
-    <configuration default="false" name="TargetTest.testSave" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
-        <pattern>
-          <option name="PATTERN" value="agilor.distributed.storage.inter.jlient.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <module name="storage-interface-convert" />
+    <configuration default="false" name="Client.set_value_pressure_test" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <module name="scoket-new" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
       <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PACKAGE_NAME" value="agilor.distributed.storage.inter.jlient" />
-      <option name="MAIN_CLASS_NAME" value="agilor.distributed.storage.inter.jlient.TargetTest" />
-      <option name="METHOD_NAME" value="testSave" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="Client" />
+      <option name="METHOD_NAME" value="set_value_pressure_test" />
       <option name="TEST_OBJECT" value="method" />
       <option name="VM_PARAMETERS" value="-ea" />
       <option name="PARAMETERS" />
@@ -888,19 +845,19 @@
       <method />
     </configuration>
     <list size="5">
-      <item index="0" class="java.lang.String" itemvalue="JUnit.DeviceTest.testInsert" />
-      <item index="1" class="java.lang.String" itemvalue="JUnit.TargetTest.write_lots_value" />
-      <item index="2" class="java.lang.String" itemvalue="JUnit.AgilorTest.testDelete" />
-      <item index="3" class="java.lang.String" itemvalue="JUnit.AgilorTest.testInsert" />
-      <item index="4" class="java.lang.String" itemvalue="JUnit.TargetTest.testSave" />
+      <item index="0" class="java.lang.String" itemvalue="JUnit.Client.getValue" />
+      <item index="1" class="java.lang.String" itemvalue="JUnit.BufferTest.bufferArray" />
+      <item index="2" class="java.lang.String" itemvalue="JUnit.SimpleProtocolTest.testResolve3" />
+      <item index="3" class="java.lang.String" itemvalue="JUnit.Client.addValues" />
+      <item index="4" class="java.lang.String" itemvalue="JUnit.Client.set_value_pressure_test" />
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="JUnit.DeviceTest.testInsert" />
-        <item index="1" class="java.lang.String" itemvalue="JUnit.AgilorTest.testInsert" />
-        <item index="2" class="java.lang.String" itemvalue="JUnit.TargetTest.testSave" />
-        <item index="3" class="java.lang.String" itemvalue="JUnit.TargetTest.write_lots_value" />
-        <item index="4" class="java.lang.String" itemvalue="JUnit.AgilorTest.testDelete" />
+        <item index="0" class="java.lang.String" itemvalue="JUnit.Client.set_value_pressure_test" />
+        <item index="1" class="java.lang.String" itemvalue="JUnit.Client.getValue" />
+        <item index="2" class="java.lang.String" itemvalue="JUnit.Client.addValues" />
+        <item index="3" class="java.lang.String" itemvalue="JUnit.SimpleProtocolTest.testResolve3" />
+        <item index="4" class="java.lang.String" itemvalue="JUnit.BufferTest.bufferArray" />
       </list>
     </recent_temporary>
   </component>
@@ -932,32 +889,34 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="0" width="1920" height="1160" extended-state="1" />
+    <frame x="-8" y="-8" width="1936" height="1176" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32910156" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32226562" sideWeight="0.42552084" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3221154" sideWeight="0.41666666" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.31390977" sideWeight="0.49739584" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.26923078" sideWeight="0.57371795" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32617188" sideWeight="0.5026042" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.26923078" sideWeight="0.42628205" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="IvyIDEA" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3298077" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.25215518" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2542735" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.29785156" sideWeight="0.45416668" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.2923077" sideWeight="0.39423078" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32800752" sideWeight="0.49791667" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Coverage" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.1330819" sideWeight="0.5" order="4" side_tool="true" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32714844" sideWeight="0.49791667" order="1" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="Vcs.Log.UiProperties">
@@ -980,8 +939,38 @@
           <properties />
           <option name="timeStamp" value="71" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/scoket-new/src/main/java/agilor/distributed/communication/socket/Connection.java</url>
+          <line>213</line>
+          <properties />
+          <option name="timeStamp" value="86" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/scoket-new/src/test/java/agilor/distributed/communication/protocol/SimpleProtocolTest.java</url>
+          <line>56</line>
+          <properties />
+          <option name="timeStamp" value="91" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/scoket-new/src/main/java/agilor/distributed/communication/protocol/SimpleToken.java</url>
+          <line>125</line>
+          <properties />
+          <option name="timeStamp" value="121" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/scoket-new/src/main/java/agilor/distributed/communication/protocol/SimpleProtocol.java</url>
+          <line>201</line>
+          <properties />
+          <option name="timeStamp" value="137" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/scoket-new/src/main/java/agilor/distributed/communication/client/Client.java</url>
+          <line>86</line>
+          <properties />
+          <option name="timeStamp" value="153" />
+        </line-breakpoint>
       </breakpoints>
-      <option name="time" value="74" />
+      <option name="time" value="157" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -990,255 +979,17 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/storage-interface-convert/src/main/java/agilor/distributed/storage/inter/jlient/Device.java">
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_45/src.zip!/java/io/DataInputStream.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="147" column="20" selection-start-line="147" selection-start-column="20" selection-end-line="147" selection-end-column="20" />
-          <folding />
+        <state vertical-scroll-proportion="0.33284885">
+          <caret line="98" column="21" selection-start-line="98" selection-start-column="21" selection-end-line="98" selection-end-column="21" />
         </state>
       </provider>
     </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/junit/junit/4.12/junit-4.12.jar!/org/junit/runners/ParentRunner.class">
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_45/src.zip!/java/lang/System.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="194" column="25" selection-start-line="194" selection-start-column="25" selection-end-line="194" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/storage-interface-convert/src/main/java/agilor/distributed/storage/gate/ChannelContext.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="27" column="48" selection-start-line="27" selection-start-column="48" selection-end-line="27" selection-end-column="48" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/junit/junit/4.12/junit-4.12-sources.jar!/org/junit/internal/runners/statements/RunBefores.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.7394247">
-          <caret line="26" column="0" selection-start-line="26" selection-start-column="0" selection-end-line="26" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/junit/junit/4.12/junit-4.12-sources.jar!/org/junit/internal/runners/statements/InvokeMethod.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.59560066">
-          <caret line="17" column="0" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/apache/thrift/libthrift/0.9.2/libthrift-0.9.2.jar!/org/apache/thrift/transport/TTransport.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.20214395">
-          <caret line="10" column="22" selection-start-line="10" selection-start-column="22" selection-end-line="10" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/apache/thrift/libthrift/0.9.2/libthrift-0.9.2.jar!/org/apache/thrift/transport/TSocket.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="1.4150077">
-          <caret line="56" column="11" selection-start-line="56" selection-start-column="11" selection-end-line="56" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0_45/src.zip!/java/lang/Object.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="147" column="36" selection-start-line="147" selection-start-column="33" selection-end-line="147" selection-end-column="36" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0_45/src.zip!/java/lang/Class.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="487" column="63" selection-start-line="487" selection-start-column="63" selection-end-line="487" selection-end-column="63" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/storage-interface-convert/src/test/java/storage/inter/conver/test/AddNewTag.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="18" column="10" selection-start-line="18" selection-start-column="10" selection-end-line="18" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/storage-interface-convert/src/test/java/storage/inter/conver/test/Ping.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="30" column="12" selection-start-line="30" selection-start-column="12" selection-end-line="30" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/javax/xml/jaxb-impl/2.1/jaxb-impl-2.1.jar!/com/sun/istack/NotNull.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-6.6">
-          <caret line="16" column="18" selection-start-line="16" selection-start-column="18" selection-end-line="16" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/apache/commons/commons-pool2/2.4.2/commons-pool2-2.4.2.jar!/org/apache/commons/pool2/KeyedObjectPool.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.23019432">
-          <caret line="10" column="6" selection-start-line="10" selection-start-column="6" selection-end-line="10" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0_45/src.zip!/java/util/Map.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="3.0715308">
-          <caret line="211" column="6" selection-start-line="211" selection-start-column="6" selection-end-line="211" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/apache/commons/commons-pool2/2.4.2/commons-pool2-2.4.2.jar!/org/apache/commons/pool2/impl/GenericKeyedObjectPool.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-10.266666">
-          <caret line="61" column="37" selection-start-line="61" selection-start-column="37" selection-end-line="61" selection-end-column="37" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0_45/src.zip!/java/util/concurrent/ConcurrentHashMap.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="266" column="30" selection-start-line="266" selection-start-column="13" selection-end-line="266" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/storage-interface-convert/src/main/java/agilor/distributed/storage/inter/client/TAddress.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="17" column="0" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0_45/src.zip!/java/net/SocketInputStream.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="145" column="0" selection-start-line="145" selection-start-column="0" selection-end-line="145" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/junit/junit/4.12/junit-4.12-sources.jar!/org/junit/runners/BlockJUnit4ClassRunner.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="79" column="0" selection-start-line="79" selection-start-column="0" selection-end-line="79" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/junit/junit/4.12/junit-4.12-sources.jar!/org/junit/runners/ParentRunner.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="71" column="0" selection-start-line="71" selection-start-column="0" selection-end-line="71" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/storage-interface-convert/src/test/java/storage/inter/conver/test/QueryTagHistory.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="27" column="5" selection-start-line="27" selection-start-column="5" selection-end-line="27" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/junit/junit/4.12/junit-4.12-sources.jar!/org/junit/internal/runners/model/ReflectiveCallable.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="13" column="0" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/junit/junit/4.12/junit-4.12-sources.jar!/org/junit/runners/model/FrameworkMethod.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="49" column="0" selection-start-line="49" selection-start-column="0" selection-end-line="49" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/agilor-client/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="7" column="29" selection-start-line="7" selection-start-column="17" selection-end-line="7" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/storage-interface-convert/src/test/java/storage/inter/conver/test/QueryDeviceInfo.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="39" column="10" selection-start-line="39" selection-start-column="10" selection-end-line="39" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/storage-interface-convert/src/test/java/storage/inter/conver/test/QuerySnapshots.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="42" column="10" selection-start-line="42" selection-start-column="10" selection-end-line="42" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/apache/thrift/libthrift/0.9.2/libthrift-0.9.2.jar!/org/apache/thrift/TException.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.13643411">
-          <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/storage-interface-convert/src/main/java/agilor/distributed/storage/inter/thrift/AGGREGATE.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="20" column="15" selection-start-line="20" selection-start-column="15" selection-end-line="20" selection-end-column="15" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0_45/src.zip!/java/util/function/Predicate.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.3323217">
-          <caret line="48" column="12" selection-start-line="48" selection-start-column="12" selection-end-line="48" selection-end-column="12" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/storage-interface-convert/src/main/java/agilor/distributed/storage/inter/thrift/Agilor.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.23216996">
-          <caret line="171" column="16" selection-start-line="171" selection-start-column="16" selection-end-line="171" selection-end-column="16" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/storage-interface-convert/src/main/java/agilor/distributed/storage/inter/client/KeyGenericConnectionProvider.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="24" column="31" selection-start-line="24" selection-start-column="31" selection-end-line="24" selection-end-column="31" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/storage-interface-convert/src/main/java/agilor/distributed/storage/inter/client/ConnectionProvider.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="9" column="12" selection-start-line="9" selection-start-column="12" selection-end-line="9" selection-end-column="12" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/storage-interface-convert/src/main/java/agilor/distributed/storage/inter/client/ThriftPoolObjectFactory.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="25" column="31" selection-start-line="25" selection-start-column="31" selection-end-line="25" selection-end-column="31" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/storage-interface-convert/src/main/java/agilor/distributed/storage/inter/client/IClient.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="67" column="12" selection-start-line="67" selection-start-column="12" selection-end-line="67" selection-end-column="12" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/storage-interface-convert/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="16" column="8" selection-start-line="16" selection-start-column="8" selection-end-line="20" selection-end-column="21" />
+        <state vertical-scroll-proportion="0.66005945">
+          <caret line="492" column="30" selection-start-line="492" selection-start-column="30" selection-end-line="492" selection-end-column="30" />
           <folding />
         </state>
       </provider>
@@ -1246,112 +997,329 @@
     <entry file="file://$PROJECT_DIR$/pom.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="38" column="32" selection-start-line="38" selection-start-column="32" selection-end-line="38" selection-end-column="32" />
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/storage-interface-convert/src/main/java/agilor/distributed/storage/inter/jlient/AWidget.java">
+    <entry file="file://$PROJECT_DIR$/scoket-new/src/main/java/agilor/distributed/communication/utils/ArrayUtils.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="5" column="15" selection-start-line="5" selection-start-column="15" selection-end-line="5" selection-end-column="15" />
+          <caret line="21" column="5" selection-start-line="21" selection-start-column="5" selection-end-line="21" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_45/src.zip!/java/net/Socket.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="1196" column="60" selection-start-line="1196" selection-start-column="60" selection-end-line="1196" selection-end-column="60" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scoket-new/src/main/java/agilor/distributed/communication/socket/SocketProvider.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="11" column="1" selection-start-line="11" selection-start-column="1" selection-end-line="11" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scoket-new/src/main/java/agilor/distributed/communication/socket/SocketPoolObjectFactory.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="47" column="0" selection-start-line="47" selection-start-column="0" selection-end-line="47" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scoket-new/src/main/java/agilor/distributed/communication/socket/KeyGenericSocketProvider.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="30" column="49" selection-start-line="30" selection-start-column="49" selection-end-line="30" selection-end-column="49" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scoket-new/src/main/java/agilor/distributed/communication/support/inter/ValueAssemble.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="9" column="12" selection-start-line="9" selection-start-column="12" selection-end-line="9" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scoket-new/src/main/java/agilor/distributed/communication/support/inter/ValueResolve.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="8" column="30" selection-start-line="8" selection-start-column="30" selection-end-line="8" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scoket-new/src/main/java/agilor/distributed/communication/support/factory/ValueResolveFactoryOfCollection.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="25" column="5" selection-start-line="25" selection-start-column="5" selection-end-line="25" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/junit/junit/4.12/junit-4.12.jar!/org/junit/runners/ParentRunner.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-7.4333334">
+          <caret line="194" column="25" selection-start-line="194" selection-start-column="25" selection-end-line="194" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scoket-new/src/main/java/agilor/distributed/communication/protocol/ProtocolObject.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="11" column="15" selection-start-line="11" selection-start-column="15" selection-end-line="11" selection-end-column="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scoket-new/src/main/java/agilor/distributed/communication/support/factory/ValueAssembleFactoryOfCollection.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="14" column="32" selection-start-line="14" selection-start-column="32" selection-end-line="14" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scoket-new/src/main/java/agilor/distributed/communication/support/impl/BoolValueAssembleOfCollection.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="16" column="5" selection-start-line="16" selection-start-column="5" selection-end-line="16" selection-end-column="5" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/storage-interface-convert/src/main/java/agilor/distributed/storage/inter/jlient/Val.java">
+    <entry file="file://$PROJECT_DIR$/scoket-new/src/main/java/agilor/distributed/communication/protocol/ProtocolBase.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="106" column="0" selection-start-line="106" selection-start-column="0" selection-end-line="106" selection-end-column="0" />
+          <caret line="56" column="29" selection-start-line="56" selection-start-column="22" selection-end-line="56" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scoket-new/src/main/java/agilor/distributed/communication/protocol/Token.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="18" column="10" selection-start-line="18" selection-start-column="10" selection-end-line="18" selection-end-column="10" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/storage-interface-convert/src/main/java/agilor/distributed/storage/inter/jlient/ValType.java">
+    <entry file="file://$PROJECT_DIR$/scoket-new/src/main/java/agilor/distributed/communication/protocol/Assemble.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="38" column="31" selection-start-line="38" selection-start-column="31" selection-end-line="38" selection-end-column="31" />
+          <caret line="6" column="7" selection-start-line="6" selection-start-column="7" selection-end-line="6" selection-end-column="7" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/storage-interface-convert/src/main/java/agilor/distributed/storage/inter/jlient/TargetIterator.java">
+    <entry file="file://$PROJECT_DIR$/scoket-new/src/main/java/agilor/distributed/communication/protocol/AssembleContext.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="64" column="44" selection-start-line="64" selection-start-column="44" selection-end-line="64" selection-end-column="44" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/storage-interface-convert/src/main/java/agilor/distributed/storage/inter/jlient/HistoryIterator.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="26" column="112" selection-start-line="26" selection-start-column="112" selection-end-line="26" selection-end-column="112" />
+          <caret line="7" column="20" selection-start-line="7" selection-start-column="20" selection-end-line="7" selection-end-column="20" />
           <folding>
-            <element signature="imports" expanded="false" />
+            <element signature="e#301#302#0" expanded="false" />
+            <element signature="e#327#328#0" expanded="false" />
+            <element signature="e#355#356#0" expanded="false" />
+            <element signature="e#383#384#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/storage-interface-convert/src/main/java/agilor/distributed/storage/inter/jlient/DeviceIterator.java">
+    <entry file="file://$PROJECT_DIR$/scoket-new/src/main/java/agilor/distributed/communication/protocol/Protocol.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="44" column="9" selection-start-line="44" selection-start-column="9" selection-end-line="44" selection-end-column="9" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/storage-interface-convert/src/main/java/agilor/distributed/storage/inter/jlient/AWidgetImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="5" column="17" selection-start-line="5" selection-start-column="17" selection-end-line="5" selection-end-column="17" />
+          <caret line="30" column="13" selection-start-line="30" selection-start-column="13" selection-end-line="30" selection-end-column="13" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/storage-interface-convert/src/main/java/agilor/distributed/storage/inter/jlient/Target.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.33333334">
-          <caret line="152" column="16" selection-start-line="152" selection-start-column="16" selection-end-line="152" selection-end-column="16" />
-          <folding>
-            <element signature="e#4184#4185#0" expanded="false" />
-            <element signature="e#4218#4219#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/storage-interface-convert/src/main/java/agilor/distributed/storage/inter/jlient/Iterator.java">
+    <entry file="file://$PROJECT_DIR$/scoket-new/src/main/java/agilor/distributed/communication/protocol/SimpleAssemble.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="23" column="12" selection-start-line="23" selection-start-column="12" selection-end-line="23" selection-end-column="12" />
+          <caret line="75" column="0" selection-start-line="75" selection-start-column="0" selection-end-line="75" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/storage-interface-convert/src/main/java/agilor/distributed/storage/inter/jlient/AParse.java">
+    <entry file="file://$PROJECT_DIR$/scoket-new/src/main/java/agilor/distributed/communication/protocol/ProtocolDataTypes.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="114" column="0" selection-start-line="114" selection-start-column="0" selection-end-line="114" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/storage-interface-convert/src/main/java/agilor/distributed/storage/inter/jlient/Device.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="134" column="0" selection-start-line="134" selection-start-column="0" selection-end-line="134" selection-end-column="0" />
+          <caret line="52" column="0" selection-start-line="52" selection-start-column="0" selection-end-line="52" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/storage-interface-convert/src/main/java/agilor/distributed/storage/inter/jlient/Agilor.java">
+    <entry file="file://$PROJECT_DIR$/scoket-new/src/main/java/agilor/distributed/communication/protocol/SimpleProtocol.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="46" column="20" selection-start-line="46" selection-start-column="20" selection-end-line="46" selection-end-column="20" />
+          <caret line="292" column="0" selection-start-line="292" selection-start-column="0" selection-end-line="292" selection-end-column="0" />
+          <folding>
+            <element signature="method#getMethodName#0;class#SimpleProtocol#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scoket-new/src/main/java/agilor/distributed/communication/protocol/SimpleToken.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="98" column="0" selection-start-line="98" selection-start-column="0" selection-end-line="98" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/junit/junit/4.12/junit-4.12.jar!/org/junit/internal/runners/model/ReflectiveCallable.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-10.266666">
+          <caret line="17" column="0" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scoket-new/src/main/java/agilor/distributed/communication/client/ValueCollection.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="70" column="0" selection-start-line="70" selection-start-column="0" selection-end-line="70" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scoket-new/src/main/java/agilor/distributed/communication/support/impl/StringValueAssembleOfCollection.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="23" column="5" selection-start-line="23" selection-start-column="5" selection-end-line="23" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scoket-new/src/main/java/agilor/distributed/communication/support/impl/StringValueResolveOfCollection.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="10" column="31" selection-start-line="10" selection-start-column="31" selection-end-line="10" selection-end-column="31" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scoket-new/src/main/java/agilor/distributed/communication/support/impl/IntValueResolveOfCollection.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="21" column="69" selection-start-line="21" selection-start-column="69" selection-end-line="21" selection-end-column="69" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scoket-new/src/main/java/agilor/distributed/communication/support/impl/IntValueAssembleOfCollection.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="16" column="22" selection-start-line="16" selection-start-column="22" selection-end-line="16" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scoket-new/src/main/java/agilor/distributed/communication/support/impl/BoolValueResolveOfCollection.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="23" column="5" selection-start-line="23" selection-start-column="5" selection-end-line="23" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scoket-new/src/main/java/agilor/distributed/communication/support/impl/FloatValueResolveOfCollection.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="22" column="0" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scoket-new/src/main/java/agilor/distributed/communication/utils/ConvertUtils.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="37" column="33" selection-start-line="37" selection-start-column="33" selection-end-line="37" selection-end-column="33" />
+          <folding>
+            <element signature="e#194#195#0" expanded="true" />
+            <element signature="e#258#259#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scoket-new/src/test/java/BufferTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="69" column="20" selection-start-line="69" selection-start-column="20" selection-end-line="69" selection-end-column="20" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scoket-new/src/main/java/agilor/distributed/communication/support/impl/FloatValueAssembleOfCollection.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="25" column="0" selection-start-line="25" selection-start-column="0" selection-end-line="25" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scoket-new/src/main/java/agilor/distributed/communication/client/Value.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="62" column="20" selection-start-line="62" selection-start-column="20" selection-end-line="62" selection-end-column="20" />
+          <folding>
+            <element signature="e#1963#1964#0" expanded="true" />
+            <element signature="e#1991#1992#0" expanded="true" />
+            <element signature="class#Types#0;class#Value#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scoket-new/src/main/java/agilor/distributed/communication/socket/Connection.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="165" column="9" selection-start-line="165" selection-start-column="9" selection-end-line="165" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/storage-interface-convert/src/test/java/storage/inter/inter/jlient/test/AgilorTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/storage-interface-convert/src/test/java/storage/inter/conver/test/AddNewTag.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="13" column="13" selection-start-line="13" selection-start-column="13" selection-end-line="13" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/storage-interface-convert/src/test/java/storage/inter/conver/test/QueryDeviceInfo.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="14" column="13" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/storage-interface-convert/src/test/java/storage/inter/conver/test/QuerySnapshots.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="38" column="29" selection-start-line="38" selection-start-column="29" selection-end-line="38" selection-end-column="29" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/storage-interface-convert/src/test/java/storage/inter/conver/test/QueryTagHistory.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="11" column="13" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/agilor-client/src/test/java/ConnTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="19" column="13" selection-start-line="19" selection-start-column="13" selection-end-line="19" selection-end-column="13" />
           <folding />
         </state>
       </provider>
@@ -1359,7 +1327,23 @@
     <entry file="file://$PROJECT_DIR$/storage-interface-convert/src/test/java/agilor/distributed/storage/inter/jlient/AgilorTest.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="34" column="20" selection-start-line="34" selection-start-column="20" selection-end-line="34" selection-end-column="20" />
+          <caret line="11" column="13" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/storage-interface-convert/src/test/java/agilor/distributed/storage/inter/jlient/DeviceTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/storage-interface-convert/src/main/java/agilor/distributed/storage/inter/jlient/Target.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="126" column="21" selection-start-line="126" selection-start-column="21" selection-end-line="126" selection-end-column="21" />
           <folding />
         </state>
       </provider>
@@ -1367,15 +1351,41 @@
     <entry file="file://$PROJECT_DIR$/storage-interface-convert/src/test/java/agilor/distributed/storage/inter/jlient/TargetTest.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="108" column="0" selection-start-line="108" selection-start-column="0" selection-end-line="108" selection-end-column="0" />
+          <caret line="52" column="37" selection-start-line="52" selection-start-column="37" selection-end-line="52" selection-end-column="37" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/storage-interface-convert/src/test/java/agilor/distributed/storage/inter/jlient/DeviceTest.java">
+    <entry file="file://$PROJECT_DIR$/scoket-new/src/main/java/agilor/distributed/communication/client/exception/WriteValueException.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.46585736">
-          <caret line="83" column="23" selection-start-line="83" selection-start-column="23" selection-end-line="83" selection-end-column="23" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="19" column="46" selection-start-line="19" selection-start-column="46" selection-end-line="19" selection-end-column="46" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scoket-new/src/main/java/agilor/distributed/communication/client/Client.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="72" column="5" selection-start-line="72" selection-start-column="5" selection-end-line="72" selection-end-column="5" />
+          <folding>
+            <element signature="method#open#0;class#Client#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scoket-new/src/test/java/agilor/distributed/communication/protocol/SimpleProtocolTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="88" column="0" selection-start-line="88" selection-start-column="0" selection-end-line="88" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scoket-new/src/test/java/Client.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.57750344">
+          <caret line="331" column="23" selection-start-line="331" selection-start-column="23" selection-end-line="331" selection-end-column="23" />
           <folding />
         </state>
       </provider>
@@ -1432,7 +1442,7 @@
       </state>
       <state key="ModuleStructureConfigurable.UI">
         <settings>
-          <last-edited>agilor-client</last-edited>
+          <last-edited>scoket-new</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>

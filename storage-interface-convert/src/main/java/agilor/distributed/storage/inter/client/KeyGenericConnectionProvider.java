@@ -24,9 +24,6 @@ public class KeyGenericConnectionProvider implements ConnectionProvider {
 
         pool = new GenericKeyedObjectPool<TAddress,TSocket>(new ThriftPoolObjectFactory());
 
-
-
-
     }
 
 

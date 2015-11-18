@@ -38,10 +38,18 @@
         <processorPath useClasspath="true" />
         <module name="storage-interface-convert" />
       </profile>
+      <profile default="false" name="Annotation profile for scoket-new" enabled="true">
+        <sourceOutputDir name="target\generated-sources\annotations" />
+        <sourceTestOutputDir name="target\generated-test-sources\test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <processorPath useClasspath="true" />
+        <module name="scoket-new" />
+      </profile>
     </annotationProcessing>
     <bytecodeTargetLevel target="1.8">
       <module name="agilor-client" target="1.8" />
       <module name="agilor-distributed-storage" target="1.8" />
+      <module name="scoket-new" target="1.8" />
       <module name="storage-interface-convert" target="1.8" />
     </bytecodeTargetLevel>
   </component>

@@ -11,6 +11,7 @@
     <modules>
         <module>storage-interface-convert</module>
         <module>agilor-client</module>
+        <module>scoket-new</module>
     </modules>
 
 
