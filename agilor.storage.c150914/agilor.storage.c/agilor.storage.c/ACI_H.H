@@ -143,14 +143,14 @@ typedef struct struTagNode
 		float	rval;		// 浮点	
 		long	lval;		// 长整
 		BOOL	bval;		// 开关
-		char	sval[C_STRINGVALUE_LEN];// 字符串
+		//char	sval[C_STRINGVALUE_LEN];// 字符串
 		//wk, 2005.10.20, del: struct EVAL{
 		//wk, 2005.10.20, add:
-		struct {
-			short	type;					// 0x0001表示使用key,0x0002表示使用name (0x0003 表示同时使用key,name),
-			short	key;					// 枚举(值)	
-			char	name[C_STRINGVALUE_LEN];	// 枚举(字符串)
-		}eval;						 // 枚举
+		//struct {
+		//	short	type;					// 0x0001表示使用key,0x0002表示使用name (0x0003 表示同时使用key,name),
+		//	short	key;					// 枚举(值)	
+		//	char	name[C_STRINGVALUE_LEN];	// 枚举(字符串)
+		//}eval;						 // 枚举
 	};
 	char	enumdesc[C_ENUMDESC_LEN];	//*@枚举描述   eg. "2:1,2,on:0,3,off" 
 			// "枚举个数:标志1,枚举名1长度,枚举名1:标志2,枚举名2长度,枚举名2...   

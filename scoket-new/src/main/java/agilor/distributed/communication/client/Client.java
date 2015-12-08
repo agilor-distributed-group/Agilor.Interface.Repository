@@ -94,7 +94,7 @@ public class Client {
             }
         }
         else
-        System.out.println(data[0]);
+            System.out.println(data[0]);
         return null;
     }
 
