@@ -3,6 +3,7 @@ package agilor.distributed.communication.client;
 import agilor.distributed.communication.protocol.*;
 
 import java.util.Calendar;
+import java.util.LinkedHashMap;
 
 /**
  * Created by LQ on 2015/10/21.
@@ -11,7 +12,7 @@ public class Value implements ProtocolObject {
     @Override
     public byte[] toBytes() throws Exception {
         Protocol protocol = SimpleProtocol.getInstance();
-//        byte[] time_bytes = protocol.resolve((int) (time.getTimeInMillis() / 1000));
+        //byte[] time_bytes = protocol.resolve((int) (time.getTimeInMillis() / 1000));
 
         byte[] val = null;
         switch (valueType) {
@@ -29,10 +30,11 @@ public class Value implements ProtocolObject {
                 break;
         }
         return val;
-//        int size = time_bytes.length + val.length;
+
+//        int size = time_bytes.length + val.length - 1;
 //        byte[] result = new byte[size];
 //        System.arraycopy(time_bytes, 0, result, 0, time_bytes.length);
-//        System.arraycopy(val, 0, result, 5, val.length);
+//        System.arraycopy(val, 1, result, 5, val.length);
 //        return result;
     }
 
@@ -66,8 +68,8 @@ public class Value implements ProtocolObject {
     public static enum Types
     {
         BOOL((byte)'B'),
-        FLOAT((byte)'R'),
-        INT((byte)'L'),
+        FLOAT((byte)'F'),
+        INT((byte)32),
         STRING((byte)'S');
 
         private byte flag;
@@ -77,6 +79,21 @@ public class Value implements ProtocolObject {
         }
 
         byte value(){ return flag;}
+        static Types value(byte b)
+        {
+            switch (b) {
+                case 'B':
+                    return BOOL;
+                case 'F':
+                    return FLOAT;
+                case 32:
+                    return INT;
+                case 'S':
+                    return STRING;
+                default:
+                    throw new RuntimeException("error type data");
+            }
+        }
 
 
         ProtocolDataTypes convert() {

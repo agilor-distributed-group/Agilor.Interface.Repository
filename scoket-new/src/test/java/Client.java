@@ -1,3 +1,5 @@
+import agilor.distributed.communication.client.Target;
+import agilor.distributed.communication.client.TargetCollection;
 import agilor.distributed.communication.client.Value;
 import agilor.distributed.communication.client.ValueCollection;
 import agilor.distributed.communication.protocol.*;
@@ -6,6 +8,7 @@ import org.junit.Test;
 import org.omg.CORBA.PUBLIC_MEMBER;
 import org.omg.PortableInterceptor.SYSTEM_EXCEPTION;
 
+import javax.xml.crypto.Data;
 import java.io.DataInputStream;
 import java.io.DataOutputStream;
 import java.io.IOException;
@@ -336,6 +339,84 @@ public class Client {
 
         client.close();
     }
+
+
+
+    @Test
+    public void set_value_pressure_test2() throws Exception {
+        Connection connection = new Connection("11.0.0.16", 3200, 5000, SimpleProtocol.getInstance());
+        agilor.distributed.communication.client.Client client = new agilor.distributed.communication.client.Client(connection);
+        client.open();
+        Value val = new Value(Value.Types.FLOAT);
+        val.setFvalue(102.5f);
+        long st=System.currentTimeMillis();
+        for(int j=1;j<=1000;j++) {
+            for (int i = 0; i < 10; i++) {
+                val.setFvalue(102.5f + i);
+                client.addValue("T" + String.valueOf(j), "Simu1", val);
+            }
+        }
+
+        System.out.println(connection.timm_all);
+        System.out.println(System.currentTimeMillis() - st);
+
+        client.close();;
+    }
+
+
+    @Test
+    public  void  test_socket() throws IOException {
+        Socket socket = new Socket("11.0.0.16", 3200);
+        socket.setSoTimeout(2000);
+
+
+        byte[] data = new byte[35];
+        for (int i = 0; i < data.length; i++) {
+            data[i] = 5;
+        }
+
+        DataInputStream in = new DataInputStream(socket.getInputStream());
+
+        DataOutputStream os = new DataOutputStream(socket.getOutputStream());
+
+
+        long st = System.currentTimeMillis();
+
+        for (int j = 1; j <= 1000; j++) {
+            for (int i = 0; i < 10; i++) {
+                os.write(data);
+                os.flush();
+
+                 in.readInt();
+
+                 in.readByte();
+            }
+        }
+
+        System.out.println(System.currentTimeMillis() - st);
+    }
+
+    @Test
+    public void get_all_target() throws Exception {
+        Connection connection = new Connection("10.0.0.148", 10001, 1000*60, SimpleProtocol.getInstance());
+        agilor.distributed.communication.client.Client client = new agilor.distributed.communication.client.Client(connection);
+        client.open();
+
+
+        TargetCollection collection = client.getAllTag();
+        if(collection!=null)
+        {
+            System.out.println(collection.size());
+            for (Target it:collection) {
+                System.out.println("name:" + it.getName() + "       type:" + it.getType().toString());
+            }
+        }
+        else
+            System.out.print("null");
+        client.close();
+    }
+
+
 
 
 

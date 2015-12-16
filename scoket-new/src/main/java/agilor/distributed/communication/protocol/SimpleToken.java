@@ -11,6 +11,7 @@ import java.util.List;
  */
 public class SimpleToken implements Token {
     private byte[] _data = null;
+
     private int _pos = 0;
     private int _len = 0;
     private ProtocolDataTypes _type=ProtocolDataTypes.NULL;
@@ -20,6 +21,7 @@ public class SimpleToken implements Token {
         this._data = data;
         this._pos = pos;
         this._len = len;
+
         _type =ProtocolDataTypes.type(data[_pos]);
     }
 
@@ -171,6 +173,11 @@ public class SimpleToken implements Token {
             }
 
         }
+
+
+
+
         return result;
     }
+
 }

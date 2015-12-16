@@ -12,6 +12,8 @@ public class SimpleAssemble implements Assemble {
     private int _pos =0;
     private int _len=0;
     private int _end =0;
+    private int _base_pos=0;
+    private int _base_len=0;
 
 
 
@@ -20,6 +22,8 @@ public class SimpleAssemble implements Assemble {
         this._pos = pos;
         this._len = len;
         this._end = pos+len;
+        this._base_pos=pos;
+        this._base_len=len;
     }
 
 
@@ -74,5 +78,17 @@ public class SimpleAssemble implements Assemble {
 
         token = new SimpleToken(_data, pos, len);
         return token;
+    }
+
+    public void forward(int len) {
+
+        if (((_pos + len) > _len - 1) || ((_pos + len) < _base_pos))
+            throw new RuntimeException("the pos must between " + _base_pos + " and " + (_base_pos + _len-1));
+        _pos += len;
+    }
+
+    public int  pos()
+    {
+        return _pos;
     }
 }

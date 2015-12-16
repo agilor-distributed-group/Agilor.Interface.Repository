@@ -1,27 +1,35 @@
 package agilor.distributed.communication.socket;
 
 import agilor.distributed.communication.protocol.Protocol;
-import agilor.distributed.communication.protocol.SimpleProtocol;
 import agilor.distributed.communication.utils.ConvertUtils;
 
 import javax.xml.soap.SOAPConnection;
 import java.io.*;
 import java.net.Socket;
-import java.nio.ByteBuffer;
-import java.nio.CharBuffer;
+
 
 /**
  * Created by LQ on 2015/10/19.
  */
 public class Connection {
 
+
+
+
+
     private final static SocketProvider provider = new KeyGenericSocketProvider();
 
 
     protected Socket socket = null;
 
+
+
+
+    protected DataInputStream  in = null;
     protected DataOutputStream os = null;
-    protected DataInputStream in = null;
+
+
+
 
 
     private String ip;
@@ -32,6 +40,8 @@ public class Connection {
     private Protocol protocol=null;
 
     private Object lock= new Object();
+
+    public static long timm_all =0;
 
 
 
@@ -50,33 +60,33 @@ public class Connection {
 
 
 
-    public  byte[] write(byte[] data)
+    public   byte[] write(byte[] data)
     {
+
         synchronized(lock) {
             try {
 
                 os.write(data);
-
                 os.flush();
 
 
-                byte head = in.readByte();//头
-//                in.readByte();
-//
-//                System.out.println(head);
-//                if(true)return null;
+
+                //long st = System.currentTimeMillis();
 
 
 
+//                in.readInt();
+
+                in.readByte();
+                //System.out.print( in.readByte());
+
+                //timm_all+=(System.currentTimeMillis()-st);
 
 
-                byte[] len_bytes = new byte[4];
-                len_bytes[0] = in.readByte();
-                len_bytes[1] = in.readByte();
-                len_bytes[2] = in.readByte();
-                len_bytes[3] = in.readByte();
-                int length = ConvertUtils.toInt(len_bytes);
-                //int length = ConvertUtils.toInt(in.readByte(),in.readByte(),in.readByte(),in.readByte());
+                //System.out.println( in.readByte());
+
+
+                int length = ConvertUtils.toInt(in.readByte(),in.readByte(),in.readByte(),in.readByte());
 
                 byte[] result = new byte[length];
 
@@ -88,6 +98,7 @@ public class Connection {
                     position += len;
                 }
 
+
                 return result;
 
             } catch (IOException e) {
@@ -97,12 +108,18 @@ public class Connection {
         }
     }
 
+
+
+
+
+
+
     public <TRESULT,T0> byte[] write(byte[] head, T0 t0) throws Exception {
 
         byte[] d0 = protocol.resolve(t0);
 
 
-        int len = d0.length;
+        int len = d0==null?0:d0.length;
 
         byte[] data = new byte[len+(head==null?0:head.length)+4];
 
@@ -118,7 +135,7 @@ public class Connection {
         data[position++] = (byte)((len>>24)&0xff);
 
 
-        System.arraycopy(d0,0,data,position,d0.length);
+        if(d0!=null) System.arraycopy(d0,0,data,position,d0.length);
 
         return write(data);
     }
@@ -150,33 +167,38 @@ public class Connection {
         return write(data);
     }
     public <TRESULT,T0,T1,T2> byte[] write(byte[] head,T0 t0,T1 t1,T2 t2) throws Exception {
+
         byte[] d0 = protocol.resolve(t0);
         byte[] d1 = protocol.resolve(t1);
         byte[] d2 = protocol.resolve(t2);
 
 
-        int len = d0.length+d1.length+d2.length;
+        int len = d0.length + d1.length + d2.length;
 
-        byte[] data = new byte[len+(head==null?0:head.length)+4];
+        byte[] data = new byte[len + (head == null ? 0 : head.length) + 4];
 
-        int position=0;
-        if(head!=null) {
+        int position = 0;
+        if (head != null) {
             System.arraycopy(head, 0, data, position, head.length);
             position = head.length;
         }
 
-        data[position++] = (byte)(len&0xff);
-        data[position++] = (byte)((len>>8)&0xff);
-        data[position++] = (byte)((len>>16)&0xff);
-        data[position++] = (byte)((len>>24)&0xff);
+        data[position++] = (byte) (len & 0xff);
+        data[position++] = (byte) ((len >> 8) & 0xff);
+        data[position++] = (byte) ((len >> 16) & 0xff);
+        data[position++] = (byte) ((len >> 24) & 0xff);
 
 
-        System.arraycopy(d0,0,data,position,d0.length);
-        position+=d0.length;
-        System.arraycopy(d1,0,data,position,d1.length);
-        position+=d1.length;
-        System.arraycopy(d2,0,data,position,d2.length);
+        System.arraycopy(d0, 0, data, position, d0.length);
+        position += d0.length;
+        System.arraycopy(d1, 0, data, position, d1.length);
+        position += d1.length;
+        System.arraycopy(d2, 0, data, position, d2.length);
+
+
         return write(data);
+
+
     }
     public <TRESULT,T0,T1,T2,T3> byte[] write(byte[] head,T0 t0,T1 t1,T2 t2,T3 t3) throws Exception {
         byte[] d0 = protocol.resolve(t0);
@@ -298,9 +320,11 @@ public class Connection {
         if(!isOpen()) {
             socket = provider.getSocket(ip,port);
             socket.setSoTimeout(timeout);
-            //socket.setSendBufferSize();
-            os = new DataOutputStream(socket.getOutputStream());
+            socket.setSendBufferSize(2048);
+            socket.setReceiveBufferSize(2048);
+
             in = new DataInputStream(socket.getInputStream());
+            os = new DataOutputStream(socket.getOutputStream());
 
         }
 
@@ -310,7 +334,7 @@ public class Connection {
             if (isOpen()) {
                 os.flush();
                 provider.returnSocket(socket);
-                socket=null;
+                socket = null;
             }
         }
     }

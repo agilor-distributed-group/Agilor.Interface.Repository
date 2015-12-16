@@ -5,4 +5,6 @@ package agilor.distributed.communication.protocol;
  */
 public interface Assemble {
     Token next();
+    void forward(int len);
+    int pos();
 }

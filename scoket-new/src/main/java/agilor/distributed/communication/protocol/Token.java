@@ -20,4 +20,6 @@ public interface Token {
     <T> T[] toArray(Class cls);
     <T> List<T> toList(Class cls) throws Exception;
 
+
+
 }

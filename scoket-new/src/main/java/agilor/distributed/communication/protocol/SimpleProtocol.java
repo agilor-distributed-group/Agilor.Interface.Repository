@@ -125,6 +125,8 @@ public class SimpleProtocol extends ProtocolBase {
     @Override
     public <T> byte[] resolve(T data) throws Exception {
 
+        if(data==null) return null;
+
         byte[] result = null;
         if (data instanceof ProtocolObject) {
             ProtocolObject obj = (ProtocolObject) data;

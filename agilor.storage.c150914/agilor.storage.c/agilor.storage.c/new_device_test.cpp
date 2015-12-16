@@ -178,6 +178,7 @@ void main()
 	boost::thread *snampshot_thread = new boost::thread(boost::bind(&aci::snapshot::_snapshot_save_exec, &_run));
 	_run.test_string = "123";
 
+	
 	//øÏ’’∂¡»°≤‚ ‘
 	
 
