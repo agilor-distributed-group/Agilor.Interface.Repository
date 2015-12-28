@@ -45,12 +45,35 @@
         <processorPath useClasspath="true" />
         <module name="scoket-new" />
       </profile>
+      <profile default="false" name="Annotation profile for relational.data.manage" enabled="true">
+        <sourceOutputDir name="target\generated-sources\annotations" />
+        <sourceTestOutputDir name="target\generated-test-sources\test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <processorPath useClasspath="true" />
+        <module name="relational.data.manage" />
+      </profile>
+      <profile default="false" name="Annotation profile for http.interface" enabled="true">
+        <sourceOutputDir name="target\generated-sources\annotations" />
+        <sourceTestOutputDir name="target\generated-test-sources\test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <processorPath useClasspath="true" />
+      </profile>
+      <profile default="false" name="Annotation profile for web.inter.server" enabled="true">
+        <sourceOutputDir name="target\generated-sources\annotations" />
+        <sourceTestOutputDir name="target\generated-test-sources\test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <processorPath useClasspath="true" />
+        <module name="web.inter.server" />
+      </profile>
     </annotationProcessing>
     <bytecodeTargetLevel target="1.8">
       <module name="agilor-client" target="1.8" />
       <module name="agilor-distributed-storage" target="1.8" />
+      <module name="http.interface" target="1.8" />
+      <module name="relational.data.manage" target="1.8" />
       <module name="scoket-new" target="1.8" />
       <module name="storage-interface-convert" target="1.8" />
+      <module name="web.inter.server" target="1.8" />
     </bytecodeTargetLevel>
   </component>
 </project>

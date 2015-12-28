@@ -12,6 +12,8 @@
         <module>storage-interface-convert</module>
         <module>agilor-client</module>
         <module>scoket-new</module>
+        <module>relational.data.manage</module>
+        <module>web.inter.server</module>
     </modules>
 
 
@@ -113,19 +115,19 @@
 
     </build>
 
-    <distributionManagement>
-        <snapshotRepository>
-            <id>user-snapshots</id>
-            <name>User Project SNAPSHOTS</name>
-            <url>http://101.200.77.14:8081/nexus/content/repositories/snapshots/</url>
-        </snapshotRepository>
+    <!--<distributionManagement>-->
+        <!--<snapshotRepository>-->
+            <!--<id>user-snapshots</id>-->
+            <!--<name>relational.data.manage.entities.User Project SNAPSHOTS</name>-->
+            <!--<url>http://101.200.77.14:8081/nexus/content/repositories/snapshots/</url>-->
+        <!--</snapshotRepository>-->
 
-        <repository>
-            <id>user-releases</id>
-            <name>User Project Release</name>
-            <url>http://101.200.77.14:8081/nexus/content/repositories/releases/</url>
-        </repository>
-    </distributionManagement>
+        <!--<repository>-->
+            <!--<id>user-releases</id>-->
+            <!--<name>relational.data.manage.entities.User Project Release</name>-->
+            <!--<url>http://101.200.77.14:8081/nexus/content/repositories/releases/</url>-->
+        <!--</repository>-->
+    <!--</distributionManagement>-->
 
 
 

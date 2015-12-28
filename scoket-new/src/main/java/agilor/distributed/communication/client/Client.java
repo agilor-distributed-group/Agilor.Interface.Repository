@@ -54,20 +54,18 @@ public class Client {
         connection.write(data);
     }
 
-    public void addTarget(String tagName,String tageName,Value value) throws Exception {
+    public boolean addTarget(String tagName,String tageName,Value value) throws Exception {
         byte[] result = connection.write(new byte[]{COMM_ADD_TAG}, tagName, tageName, value);
 
-        if (result != null && result[0] == RES_OK)
-            System.out.println("ok");
-        else
-            System.out.println("fail");
+        return (result != null && result[0] == RES_OK);
+
     }
 
     public void addValue(String tagName,String deviceName,Value value) throws Exception {
         byte[] result = connection.write(new byte[]{COMM_ADD_VAL}, tagName, deviceName, value);
 
-//        if (!(result != null && result[0] == RES_OK))
-//            throw new WriteValueException(deviceName, tagName);
+        if (!(result != null && result[0] == RES_OK))
+            throw new WriteValueException(deviceName, tagName);
     }
 
 
@@ -89,8 +87,7 @@ public class Client {
                 return token.toClass(ValueCollection.class);
             }
         }
-        else
-            System.out.println(data[0]);
+
         return null;
     }
 
