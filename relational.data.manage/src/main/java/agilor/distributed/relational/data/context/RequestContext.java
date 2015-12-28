@@ -1,5 +1,7 @@
 package agilor.distributed.relational.data.context;
 
+import agilor.distributed.relational.data.db.DB;
+import agilor.distributed.relational.data.entities.User;
 import org.apache.commons.lang3.StringUtils;
 import org.apache.zookeeper.*;
 
@@ -34,6 +36,11 @@ public class RequestContext implements Context {
         if (ssCnxn.isValid()) {
             ssCnxn.create();
         }
+    }
+
+    public User user()
+    {
+        return user();
     }
 
     @Override

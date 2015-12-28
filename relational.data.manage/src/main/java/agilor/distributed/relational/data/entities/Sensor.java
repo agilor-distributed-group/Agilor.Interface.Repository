@@ -12,6 +12,7 @@ public class Sensor {
     private Date dateCreated;
     private int deviceId;
     private Date dateLastWrite;
+    private String baseName;
 
 
     public int getId() {
@@ -52,5 +53,13 @@ public class Sensor {
 
     public void setDateLastWrite(Date dateLastWrite) {
         this.dateLastWrite = dateLastWrite;
+    }
+
+    public String getBaseName() {
+        return baseName;
+    }
+
+    public void setBaseName(String baseName) {
+        this.baseName = baseName;
     }
 }
