@@ -60,7 +60,7 @@ public class DeviceService {
 
 
     public List<Device> allByTypeId(int typeId) throws InvocationTargetException, NoSuchMethodException, InstantiationException, IllegalAccessException {
-        List<DB.Device> list = DB.Device.instance().find("SELECT *　FROM DEVICES WHERE typeId="+typeId);
+        List<DB.Device> list = DB.Device.instance().find("SELECT *　FROM DEVICES WHERE typeId=" + typeId);
         if(list.size()>0) {
             List<Device> result = new ArrayList<>(list.size());
             for (DB.Device it : list) {
@@ -101,6 +101,8 @@ public class DeviceService {
                         } catch (Exception e) {
                             return false;
                         }
+
+                        //Agilor.instance().createTagNode();
                         //写入agilor
                     }
                 }
