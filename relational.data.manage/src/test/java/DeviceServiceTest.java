@@ -4,7 +4,6 @@ import agilor.distributed.relational.data.entities.DeviceType;
 import agilor.distributed.relational.data.exceptions.NullParameterException;
 import agilor.distributed.relational.data.services.DeviceService;
 import agilor.distributed.relational.data.services.DeviceTypeService;
-import jdk.nashorn.internal.objects.NativeUint16Array;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -27,13 +26,19 @@ public class DeviceServiceTest {
 
     @Test
     public void insert() throws IllegalAccessException, InstantiationException, NullParameterException {
-        DeviceType type = typeService.getById(13);
 
-        Device device = type.build();
-        device.setCreatorId(20005);
-        device.setName("DEVICE_TEST");
+        for(int i =4;i<100;i++) {
 
-        service.insert(device);
+            DeviceType type = typeService.getById(13);
+
+            Device device = type.build();
+            device.setCreatorId(20005);
+            device.setName("DEVICE_TEST"+i);
+
+            service.insert(device);
+        }
+
+
     }
 
 

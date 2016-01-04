@@ -12,11 +12,22 @@
   -->
     <cacheManagerPeerProviderFactory
             class="net.sf.ehcache.distribution.RMICacheManagerPeerProviderFactory"
-            properties="peerDiscovery=automatic, multicastGroupAddress=192.168.0.1,
-                        multicastGroupPort=400004, timeToLive=32"
+            properties="peerDiscovery=automatic, multicastGroupAddress=230.0.0.1,
+                        multicastGroupPort=40004, timeToLive=32"
             />
 
-    <defaultCache maxElementsInMemory="10000" eternal="false" timeToIdleSeconds="30" timeToLiveSeconds="30" overflowToDisk="false"/>
+    <defaultCache maxElementsInMemory="10000" eternal="false" timeToIdleSeconds="100000" timeToLiveSeconds="0" overflowToDisk="false">
+        <cacheEventListenerFactory
+                class="net.sf.ehcache.distribution.RMICacheReplicatorFactory"
+                properties="replicateAsynchronously=true,
+            replicatePuts=true,
+            replicateUpdates=true,
+            replicateUpdatesViaCopy=false,
+            replicateRemovals=true "/>
+        <!-- 用于在初始化缓存，以及自动设置 -->
+        <!--<bootstrapCacheLoaderFactory class="net.sf.ehcache.bootstrap.BootstrapCacheLoaderFactory"/>-->
+    </defaultCache>
+
 
     <!--
  配置自定义缓存
@@ -31,13 +42,13 @@
 
  每一个小时更新一次缓存（1小时过期）
 -->
-    <cache name="mobileCache"
-           maxElementsInMemory="10000"
-           eternal="false"
-           overflowToDisk="true"
-           timeToIdleSeconds="1800"
-           timeToLiveSeconds="3600"
-           memoryStoreEvictionPolicy="LFU">
+    <!--<cache name="mobileCache"-->
+           <!--maxElementsInMemory="10000"-->
+           <!--eternal="false"-->
+           <!--overflowToDisk="true"-->
+           <!--timeToIdleSeconds="1800"-->
+           <!--timeToLiveSeconds="3600"-->
+           <!--memoryStoreEvictionPolicy="LFU">-->
         <!--
             RMI缓存分布同步查找 class使用net.sf.ehcache.distribution.RMICacheReplicatorFactory
             这个工厂支持以下属性：
@@ -50,18 +61,43 @@
                 asynchronousReplicationIntervalMillis=1000
             -->
         <!-- 监听RMI同步缓存对象配置 注册相应的的缓存监听类，用于处理缓存事件，如put,remove,update,和expire -->
-        <cacheEventListenerFactory
-                class="net.sf.ehcache.distribution.RMICacheReplicatorFactory"
-                properties="replicateAsynchronously=true,
-            replicatePuts=true,
-            replicateUpdates=true,
-            replicateUpdatesViaCopy=false,
-            replicateRemovals=true "/>
-        <!-- 用于在初始化缓存，以及自动设置 -->
-        <bootstrapCacheLoaderFactory class="net.sf.ehcache.bootstrap.BootstrapCacheLoaderFactory"/>
-    </cache>
-    
-    <cache name="sensor"></cache>
+        <!--<cacheEventListenerFactory-->
+                <!--class="net.sf.ehcache.distribution.RMICacheReplicatorFactory"-->
+                <!--properties="replicateAsynchronously=true,-->
+            <!--replicatePuts=true,-->
+            <!--replicateUpdates=true,-->
+            <!--replicateUpdatesViaCopy=false,-->
+            <!--replicateRemovals=true "/>-->
+
+
+    <!--</cache>-->
+
+
+    <cache name="User"
+           maxElementsInMemory="1000"
+           eternal="false"
+           timeToIdleSeconds="300000"
+           timeToLiveSeconds="0"
+           overflowToDisk="false"
+            ></cache>
+    <cache name="DeviceType"
+           maxElementsInMemory="50"
+           overflowToDisk="true"
+            ></cache>
+    <cache name="Device"
+           maxElementsInMemory="1000"
+            ></cache>
+    <cache name="Sensor"
+           maxElementsInMemory="100000"
+           timeToIdleSeconds="20000"
+           timeToLiveSeconds="0"
+           overflowToDisk="false"
+           memoryStoreEvictionPolicy="LFU"
+            ></cache>
+    <cache name="SensorOfType"
+           maxElementsInMemory="200"
+            ></cache>
+
 
 
 

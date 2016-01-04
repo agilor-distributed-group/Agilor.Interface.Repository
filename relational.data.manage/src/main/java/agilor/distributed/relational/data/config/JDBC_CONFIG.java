@@ -36,6 +36,8 @@ public class JDBC_CONFIG implements CONFIG {
         cacheFile=pps.getProperty("cacheFile");
 
 
+
+
         c3p0 = new C3p0Plugin(url, user, password);
         arp = new ActiveRecordPlugin(c3p0);
 
@@ -43,7 +45,7 @@ public class JDBC_CONFIG implements CONFIG {
 
 
 
-        //cache = new EhCachePlugin(cacheFile);
+        cache = new EhCachePlugin(Object.class.getResourceAsStream("/"+cacheFile) );
 
         arp.addMapping("users", DB.User.class);
         arp.addMapping("devices", DB.Device.class);
@@ -54,7 +56,7 @@ public class JDBC_CONFIG implements CONFIG {
 
         c3p0.start();
         arp.start();
-        //cache.start();
+        cache.start();
     }
 
 

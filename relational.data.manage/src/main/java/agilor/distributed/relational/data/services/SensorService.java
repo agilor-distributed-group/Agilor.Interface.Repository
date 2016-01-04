@@ -62,7 +62,9 @@ public class SensorService {
 
 
     public Sensor findById(int id) throws InvocationTargetException, NoSuchMethodException, InstantiationException, IllegalAccessException {
-        return DB.Sensor.instance().findById(id).build(Sensor.class);
+        DB.Sensor model = DB.Sensor.instance().findById(id);
+        return model != null? model.build(Sensor.class):null;
+
     }
 
 

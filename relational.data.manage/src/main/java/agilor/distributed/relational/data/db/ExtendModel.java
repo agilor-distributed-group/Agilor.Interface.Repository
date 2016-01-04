@@ -1,15 +1,12 @@
 package agilor.distributed.relational.data.db;
 
-import agilor.distributed.relational.data.entities.DeviceType;
+import com.jfinal.plugin.activerecord.Db;
 import com.jfinal.plugin.activerecord.Model;
 import com.jfinal.plugin.ehcache.CacheKit;
-import com.jfinal.plugin.ehcache.IDataLoader;
-import org.apache.commons.lang3.time.DateUtils;
+import org.apache.commons.lang3.ArrayUtils;
 
 import java.lang.reflect.Field;
-import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
-import java.security.spec.ECField;
 import java.util.Map;
 
 /**
@@ -31,6 +28,25 @@ public class ExtendModel<M extends Model> extends Model<M> {
         }
     }
 
+
+    protected static String getCacheName(Object obj)
+    {
+        Cache annotation = obj.getClass().getAnnotation(Cache.class);
+        return annotation!=null?annotation.value():obj.getClass().getCanonicalName();
+    }
+
+
+    private static String buildCacheKey(Object ... values) {
+        StringBuilder builder = new StringBuilder();
+        for (int i = 0; i < values.length; i++)
+            builder.append(values[i].toString()).append('-');
+
+        builder.deleteCharAt(builder.length() - 1);
+        return builder.toString();
+    }
+
+
+
     public <T> T build(Class cls) throws IllegalAccessException, InstantiationException {
         T _instance = (T) cls.newInstance();
 
@@ -39,6 +55,8 @@ public class ExtendModel<M extends Model> extends Model<M> {
 
 
         for (Map.Entry<String, Object> it : attrs.entrySet()) {
+            Object val = it.getValue();
+            if(val==null) continue;
 
             try {
 
@@ -47,7 +65,7 @@ public class ExtendModel<M extends Model> extends Model<M> {
                 Method method = getMethod(cls, buildMethodName("set", it.getKey()), field.getType());
 
                 if (method != null) {
-                    Object val = it.getValue();
+
                     if (field.getType().isEnum()) {
                         Method static_method = getMethod(field.getType(), "value", int.class);
                         if (static_method != null) {
@@ -69,11 +87,89 @@ public class ExtendModel<M extends Model> extends Model<M> {
         return _instance;
     }
 
-//
-//    @Override
-//    public M findById(Object idValue) {
-//
-//        M model = CacheKit.get(this.getClass().getName(), idValue);
-//        return model!=null?model:super.findById(idValue);
-//    }
+
+
+
+
+    @Override
+    public M findById(Object idValue) {
+
+
+
+        M model = CacheKit.get(getCacheName(this), idValue);
+
+        if(model==null) {
+            model = super.findById(idValue);
+            if (model != null)
+                CacheKit.put(getCacheName(this), idValue, model);
+        }
+        return model;
+    }
+
+
+    @Override
+    public M findById(Object... idValues) {
+
+        M model = CacheKit.get(getCacheName(this),buildCacheKey(idValues));
+        if(model==null) {
+            model = super.findById(idValues);
+            if (model != null)
+                CacheKit.put(getCacheName(this), buildCacheKey(idValues), model);
+        }
+        return model;
+    }
+
+    @Override
+    public boolean save() {
+
+
+        boolean result = super.save();
+
+        if (result)
+            CacheKit.put(getCacheName(this), getInt("id"), this);
+        return result;
+
+    }
+
+
+    @Override
+    public boolean update() {
+        boolean result = super.update();
+        if(result)
+            CacheKit.put(getCacheName(this),getInt("id"),this);
+        return result;
+    }
+
+
+    @Override
+    public boolean delete() {
+        boolean result = super.delete();
+        if (result)
+            CacheKit.remove(getCacheName(this), getInt("id"));
+        return result;
+    }
+
+
+    @Override
+    public boolean deleteById(Object idValue) {
+
+
+        boolean result = super.deleteById(idValue);
+
+        if (result)
+            CacheKit.remove(getCacheName(this), idValue);
+        return result;
+    }
+
+
+    @Override
+    public boolean deleteById(Object... idValues) {
+
+        boolean result =  super.deleteById(idValues);
+        if(result)
+            CacheKit.remove(getCacheName(this),buildCacheKey(idValues));
+        return result;
+    }
+
+
 }
