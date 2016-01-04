@@ -78,8 +78,8 @@ public class Value implements ProtocolObject {
             this.flag=flag;
         }
 
-        byte value(){ return flag;}
-        static Types value(byte b)
+        public byte value(){ return flag;}
+        public static Types value(byte b)
         {
             switch (b) {
                 case 'B':

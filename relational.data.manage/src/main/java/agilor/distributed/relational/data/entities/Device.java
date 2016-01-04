@@ -1,9 +1,12 @@
 package agilor.distributed.relational.data.entities;
 
+import agilor.distributed.communication.client.Value;
 import agilor.distributed.relational.data.db.DB;
 
 import java.lang.reflect.InvocationTargetException;
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 /**
  * Created by LQ on 2015/12/23.
@@ -16,8 +19,14 @@ public class Device {
     private int creatorId;
 
 
-    private DeviceType type;
-    private User creator;
+    private List<Sensor> sensors=null;
+
+
+public Device()
+{
+    dateCreated = new Date();
+}
+
 
 
     public int getId() {
@@ -41,11 +50,7 @@ public class Device {
     }
 
     public void setTypeId(int typeId) {
-
-        if (this.typeId != typeId) {
-            this.typeId = typeId;
-            type = null;
-        }
+        this.typeId = typeId;
     }
 
     public Date getDateCreated() {
@@ -61,26 +66,23 @@ public class Device {
     }
 
     public void setCreatorId(int creatorId) {
-        if (this.creatorId != creatorId) {
-            this.creatorId = creatorId;
-            creator = null;
-        }
+        this.creatorId=creatorId;
     }
 
 
-    public DeviceType getType() throws InvocationTargetException, NoSuchMethodException, InstantiationException, IllegalAccessException {
-        if (this.typeId <= 0)
-            return null;
-        if (type == null)
-            type = DB.DeviceType.instance().findFirst("select * from deviceTypes where id=" + typeId).build(DeviceType.class);
-        return type;
+    public List<Sensor> getSensors()
+    {
+        return sensors;
     }
 
-    public User getCreator() throws InvocationTargetException, NoSuchMethodException, InstantiationException, IllegalAccessException {
-        if (this.creatorId <= 0)
-            return null;
-        if (creator == null)
-            creator = DB.User.instance().findFirst("select * from users where id=" + creatorId).build(User.class);
-        return creator;
+    public void addSensor(Sensor sensor)
+    {
+        if(getSensors()==null)
+            sensors=new ArrayList<>();
+        sensors.add(sensor);
+
+
     }
+
+
 }

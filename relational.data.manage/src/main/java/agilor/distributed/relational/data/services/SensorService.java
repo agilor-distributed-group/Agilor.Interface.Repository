@@ -1,5 +1,6 @@
 package agilor.distributed.relational.data.services;
 
+import agilor.distributed.relational.data.context.RequestContext;
 import agilor.distributed.relational.data.db.DB;
 import agilor.distributed.relational.data.entities.Sensor;
 
@@ -11,6 +12,8 @@ import java.util.List;
  * Created by LQ on 2015/12/25.
  */
 public class SensorService {
+
+
 
 
 
@@ -34,6 +37,8 @@ public class SensorService {
                 .set("deviceId", sensor.getDeviceId())
                 .set("dateCreated", sensor.getDateCreated())
                 .set("dateLastWrite", sensor.getDateLastWrite())
+                .set("dataType", sensor.getDataType().value())
+                .set("creatorId",sensor)
                 .save();
         return model.build(Sensor.class);
     }
@@ -46,7 +51,6 @@ public class SensorService {
                 .set("id",sensor.getId())
                 .set("deviceId", sensor.getDeviceId())
                 .set("dateCreated", sensor.getDateCreated())
-                .set("dateLastWrite", sensor.getDateLastWrite())
                 .update();
     }
 
@@ -54,6 +58,16 @@ public class SensorService {
 
     public boolean delete(int id) {
         return DB.Sensor.instance().deleteById(id);
+    }
+
+
+    public Sensor findById(int id) throws InvocationTargetException, NoSuchMethodException, InstantiationException, IllegalAccessException {
+        return DB.Sensor.instance().findById(id).build(Sensor.class);
+    }
+
+
+    public Sensor get(int id) throws InstantiationException, IllegalAccessException {
+        return DB.Sensor.instance().findById(id).build(Sensor.class);
     }
 
 

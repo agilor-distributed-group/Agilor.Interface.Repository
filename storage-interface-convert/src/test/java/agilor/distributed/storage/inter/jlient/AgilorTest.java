@@ -14,7 +14,7 @@ public class AgilorTest {
     public Agilor agilor = null;
 
 
-    @Before
+
     public void before() throws Exception {
         agilor = new Agilor("127.0.0.1",9090,2000);
         agilor.open();
@@ -46,7 +46,7 @@ public class AgilorTest {
         agilor.open();
         for(int i=0;i<50;i++)
         {
-            agilor.delete("DEVICE_"+i);
+            agilor.delete("DEVICE_" + i);
         }
 
         agilor.close();
@@ -113,7 +113,7 @@ public class AgilorTest {
     public void testConnectionPool_close() throws Exception {
         for(int i=0;i<10;i++)
         {
-            System.out.println("the test:"+i);
+            System.out.println("the test:" + i);
             Agilor agilor = new Agilor("127.0.0.1",9090,2000);
             agilor.open();
             agilor.close();
@@ -160,6 +160,33 @@ public class AgilorTest {
 
         }
         Thread.sleep(60000);
+    }
+
+
+    /**
+     * 101测试 所用函数
+     */
+    public void test_101_fn(int i) {
+        if (i >= 30000)
+            return;
+        test_101_fn(i+1);
+
+        int a =0;
+        a+=1;
+    }
+
+    /**
+     * 测试循环 和 递归的效率
+     */
+    @Test
+    public void test_101() {
+        long start = System.currentTimeMillis();
+        for (int i = 0; i < 100000000; i++) {}
+        System.out.println(System.currentTimeMillis() - start);
+
+        start = System.currentTimeMillis();
+        //test_101_fn(0);
+        System.out.println(System.currentTimeMillis() - start);
     }
 
 

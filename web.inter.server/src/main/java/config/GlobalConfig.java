@@ -1,5 +1,6 @@
 package config;
 
+
 import com.jfinal.config.*;
 import com.jfinal.plugin.activerecord.ActiveRecordPlugin;
 import com.jfinal.plugin.c3p0.C3p0Plugin;
@@ -12,6 +13,8 @@ public class GlobalConfig extends JFinalConfig   {
 
     @Override
     public void configConstant(Constants constants) {
+
+
 
     }
 
@@ -33,6 +36,7 @@ public class GlobalConfig extends JFinalConfig   {
 
     @Override
     public void configInterceptor(Interceptors interceptors) {
+
 
     }
 
