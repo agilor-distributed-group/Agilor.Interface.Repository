@@ -5,3 +5,7 @@
 4.建立分布式session（未完全测试，暂不提供使用，可先实现agilor.distributed.relational.data.context.IConnection接口）
 6.部分服务调用方式见test代码
 7.结构会在未来有变化
+
+
+2016-1-4 更新内容(2)
+1.缓存机制完成
