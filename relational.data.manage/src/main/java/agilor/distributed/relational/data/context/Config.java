@@ -49,8 +49,8 @@ public class Config {
     static {
 
 
-        //parse_config(ZOOKEEPER_CONFIG_FILE,zookeeper);
-        parse_config(JDBC_CONFIG_FILE, jdbc);
+        parse_config(ZOOKEEPER_CONFIG_FILE,zookeeper);
+        //parse_config(JDBC_CONFIG_FILE, jdbc);
         //parse_config(GLOBAL_CONFIG_FILE,global);
 
     }

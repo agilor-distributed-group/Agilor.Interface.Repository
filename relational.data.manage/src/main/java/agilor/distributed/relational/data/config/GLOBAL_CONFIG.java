@@ -13,9 +13,6 @@ public class GLOBAL_CONFIG implements CONFIG {
 
     private static long sessionTimeOut=1000*60*10;
 
-    private static C3p0Plugin cp = null;
-
-
     @Override
     public void parse(Properties pps) {
 

@@ -2,7 +2,7 @@ package agilor.distributed.relational.data.context;
 
 import org.apache.commons.lang3.StringUtils;
 
-import java.io.Serializable;
+import java.io.*;
 import java.util.UUID;
 
 /**
@@ -23,24 +23,45 @@ public class SessionMetaData implements Serializable {
     private int               version          = 0;
 
 
+    public Object            value=null;
+
+
     public SessionMetaData(Object data)
     {
 
+        this(null,data);
     }
 
 
-
-    public SessionMetaData(byte[] data)
+    public SessionMetaData(String id,Object data)
     {
-
+        this.id=id;
+        this.value = data;
+        createTime = System.currentTimeMillis();
+        lastAccessTime=System.currentTimeMillis();
     }
+
+
 
     public SessionMetaData(){}
 
 
-    public byte[] serializable()
-    {
-        return null;
+    public byte[] serialize() throws IOException {
+        ByteArrayOutputStream bos = new ByteArrayOutputStream();
+
+
+        ObjectOutputStream os = new ObjectOutputStream(bos);
+        os.writeObject(this);
+
+        return bos.toByteArray();
+    }
+
+
+    public static   SessionMetaData deserialize(byte[] data) throws IOException, ClassNotFoundException {
+        ByteArrayInputStream bin = new ByteArrayInputStream(data);
+        ObjectInputStream in = new ObjectInputStream(bin);
+
+        return (SessionMetaData) in.readObject();
     }
 
 
@@ -54,8 +75,7 @@ public class SessionMetaData implements Serializable {
     }
 
     public boolean isValid() {
-
-        return System.currentTimeMillis() - lastAccessTime > Config.global.getSessionTimeOut();
+        return (System.currentTimeMillis() - lastAccessTime) < Config.global.getSessionTimeOut();
     }
 
     public Long getCreateTime() {

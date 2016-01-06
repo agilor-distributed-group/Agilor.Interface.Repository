@@ -1,5 +1,7 @@
 package agilor.distributed.relational.data.config;
 
+import org.apache.commons.lang3.StringUtils;
+
 import java.util.Properties;
 
 /**
@@ -17,6 +19,14 @@ public class ZOOKEEPER_CONFIG implements CONFIG {
 
     @Override
     public void parse(Properties pps) {
+
+        address = pps.getProperty("address");
+        timeout = Integer.parseInt(pps.getProperty("timeout"));
+        dataPath=pps.getProperty("dataPath");
+
+        if(!StringUtils.isEmpty(dataPath)&&dataPath.endsWith("/")) {
+            dataPath = dataPath.substring(0, dataPath.length() - 1);
+        }
 
     }
 

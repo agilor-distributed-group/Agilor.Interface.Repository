@@ -11,8 +11,6 @@ import java.io.IOException;
  * Created by LQ on 2015/12/24.
  */
 public class RequestContext implements Context {
-    protected Config cfg = new Config();
-
 
 
     private IConnection connection;
@@ -33,7 +31,7 @@ public class RequestContext implements Context {
         ssCnxn = new ZkSessionCnxn(conn);
 
         //第一次请求 添加key
-        if (ssCnxn.isValid()) {
+        if (!ssCnxn.isValid()) {
             ssCnxn.create();
         }
     }

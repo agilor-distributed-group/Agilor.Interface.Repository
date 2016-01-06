@@ -12,6 +12,6 @@ public interface SessionCnxn {
 
 
     void setSession(String key,Object value) throws Exception;
-    byte[] getSession(String key) throws Exception;
+    Object getSession(String key) throws Exception;
 
 }

@@ -2,6 +2,8 @@ package agilor.distributed.relational.data.context;
 
 import org.apache.commons.lang3.StringUtils;
 import org.apache.zookeeper.*;
+import org.apache.zookeeper.data.Stat;
+import org.omg.CORBA.DATA_CONVERSION;
 
 import java.io.IOException;
 import java.util.Map;
@@ -15,31 +17,25 @@ import java.util.concurrent.TimeUnit;
 public class ZkSessionCnxn implements SessionCnxn {
 
 
-    private   final static String SESSION_ID="DISTRIBUTED_SESSION_FINAL";
+    private final static String SESSION_ID="DISTRIBUTED_SESSION_FINAL";
 
-    private Map<String,String> base = new ConcurrentHashMap<>();
-
-    private static ZooKeeper zk = null;
+    private static Map<String,SessionMetaData> base = new ConcurrentHashMap<>();
 
     private static LinkedBlockingQueue<ZkExcData> zkExcQueue = new LinkedBlockingQueue<>();
 
+    private static ZooKeeper zk = null;
     private static Thread zkExcThread = null;
 
+    private static String BASE_PATH = null;
 
 
-    private final static byte UPDATE_SESSION=0;
-    private final static byte DELETE_SESSION=1;
-
-
-    //zk异步执行队列
-
+    private String SESSION_KEY = null;
 
 
 
 
 
     static {
-        Config c = new Config();
         try {
 
             zk = new ZooKeeper(Config.zookeeper.getAddress(), Config.zookeeper.getTimeout(), new Watcher() {
@@ -52,34 +48,35 @@ public class ZkSessionCnxn implements SessionCnxn {
             //创建session保存节点
             String path = Config.zookeeper.getDataPath();
 
+            String tmp = "";
 
-            String tmp="";
-
-            for(String i:path.split("/")) {
+            for (String i : path.split("/")) {
+                if (StringUtils.isEmpty(i))
+                    continue;
                 tmp += "/" + i;
                 if (zk.exists(tmp, false) == null)
-                    zk.create(tmp, null, null, CreateMode.PERSISTENT);
+                    zk.create(tmp, tmp.getBytes(), ZooDefs.Ids.OPEN_ACL_UNSAFE, CreateMode.PERSISTENT);
             }
 
+            BASE_PATH=path+"/session";
 
             //创建用户session节点
-            if(zk.exists(path+"/session",false)==null)
-                zk.create(path+"/session",null,null,CreateMode.PERSISTENT);
+            if (zk.exists(BASE_PATH, false) == null)
+                zk.create(BASE_PATH, BASE_PATH.getBytes(), ZooDefs.Ids.OPEN_ACL_UNSAFE, CreateMode.PERSISTENT);
+
 
             //启动一个session 操作线程
-
             zkExcThread = new Thread(new Runnable() {
                 @Override
                 public void run() {
-                    while (Config.isRuning())
-                    {
+                    while (Config.isRuning()) {
                         try {
                             ZkExcData data = zkExcQueue.poll(3000, TimeUnit.MILLISECONDS);
                             if (data == null)
                                 continue;
 
                             if (data.getAction() == ZkExcData.UPDATE)
-                                zk.setData(data.getPath(), data.getData().serializable(), 0);
+                                zk.setData(data.getPath(), data.getData().serialize(), 0);
                             else if (data.getAction() == ZkExcData.DELETE)
                                 zk.delete(data.getPath(), 0);
 
@@ -87,10 +84,16 @@ public class ZkSessionCnxn implements SessionCnxn {
                             e.printStackTrace();
                         } catch (KeeperException e) {
                             e.printStackTrace();
+                        } catch (IOException e) {
+                            e.printStackTrace();
                         }
                     }
                 }
             });
+
+            zkExcThread.start();
+
+
         } catch (IOException e) {
             e.printStackTrace();
         } catch (InterruptedException e) {
@@ -102,64 +105,88 @@ public class ZkSessionCnxn implements SessionCnxn {
 
 
     private IConnection connection = null;
-    private String base_path = null;
+
 
     public ZkSessionCnxn(IConnection connection) {
         this.connection = connection;
-        base_path = Config.zookeeper.getDataPath() + "/" + get_address_str(connection);
+
+        SESSION_KEY = connection.attr(SESSION_ID);
+
     }
 
 
     @Override
-    public String create() throws KeeperException, InterruptedException {
+    public String create() throws KeeperException, InterruptedException, IOException {
 
-        SessionMetaData s = new SessionMetaData();
+        SessionMetaData root = new SessionMetaData(get_address_str(connection).getBytes());
 
-        String path = zk.create( base_path , s.serializable(), null, CreateMode.EPHEMERAL);
+        SESSION_KEY = root.getKey();
+        String path = zk.create(getSessionRoot(), root.serialize(), ZooDefs.Ids.OPEN_ACL_UNSAFE, CreateMode.PERSISTENT);
+
 
         if (!StringUtils.isEmpty(path)) {
-            base.put(s.getKey(), get_address_str(connection));
-
+            base.put(root.getKey(), root);
         }
 
-        return null;
+        return SESSION_KEY;
     }
 
     @Override
-    public boolean isValid() throws KeeperException, InterruptedException {
-        String key = connection.attr(SESSION_ID);
+    public boolean isValid() throws KeeperException, InterruptedException, IOException, ClassNotFoundException {
 
-        if(!(StringUtils.isEmpty(key)||base.get(key)!=get_address_str(connection))) {
 
-            byte[] data = zk.getData(base_path, false, null);
+        if (StringUtils.isEmpty(SESSION_KEY)) return false;
+
+        SessionMetaData root = null;
+
+
+        if (!base.containsKey(SESSION_KEY) || !(root = base.get(SESSION_KEY)).isValid()) {
+            byte[] data = zk.getData(getSessionRoot(), false, null);
             if (data != null) {
-                SessionMetaData s = new SessionMetaData(data);
-                if (s.isValid()) {
-                    s.setLastAccessTime(System.currentTimeMillis());
-                    zkExcQueue.put(new ZkExcData(ZkExcData.UPDATE, base_path, s));
+                root = SessionMetaData.deserialize(data);
+                if (root.isValid()) {
+                    update0(root);
+                    base.put(root.getKey(), root);
                     return true;
-                } else
-                    zkExcQueue.put(new ZkExcData(ZkExcData.DELETE, base_path, null));
+                } else {
+                    delete0(root.getKey());
+                    base.remove(root.getKey());
+                    SESSION_KEY = null;
+                    return false;
+                }
             }
         }
-        return false;
 
+
+        Host host = new Host(new String((byte[]) root.value));
+
+
+        return (host.getAddress() == connection.getHost() && host.getPort() == connection.getPort());
     }
 
     @Override
-    public void setSession(String key, Object value) throws KeeperException, InterruptedException {
-        String path = base_path + "/" + key;
+    public void setSession(String key, Object value) throws KeeperException, InterruptedException, IOException, ClassNotFoundException {
+
+        if (!isValid())
+            create();
+
+
+        String path = getSessionRoot()+"/"+key;
 
         if (zk.exists(path, false) == null)
-            zk.create(path, new SessionMetaData(value).serializable(), null, CreateMode.EPHEMERAL);
+            zk.create(path, new SessionMetaData(key,value).serialize(), ZooDefs.Ids.OPEN_ACL_UNSAFE, CreateMode.PERSISTENT);
         else
-            zk.setData(path, new SessionMetaData(value).serializable(), 0);
+            zk.setData(path, new SessionMetaData(key,value).serialize(), 0);
     }
 
     @Override
-    public byte[] getSession(String key) throws KeeperException, InterruptedException {
-        String path = base_path + "/" + key;
-        return zk.getData(path, false, null);
+    public Object getSession(String key) throws KeeperException, InterruptedException, IOException, ClassNotFoundException {
+        String path = getSessionRoot() + "/" + key;
+        byte[] data = zk.getData(path, false, null);
+        if(data!=null)
+            return SessionMetaData.deserialize(data).value;
+
+        return null;
     }
 
 
@@ -167,6 +194,47 @@ public class ZkSessionCnxn implements SessionCnxn {
     {
         return conn.getHost()+":"+conn.getPort();
     }
+
+
+
+
+    private void update0(SessionMetaData meta) throws InterruptedException {
+        meta.setLastAccessTime(System.currentTimeMillis());
+
+        if (StringUtils.equals(SESSION_KEY, meta.getKey()))
+            zkExcQueue.put(new ZkExcData(ZkExcData.UPDATE, getSessionRoot(), meta));
+        else
+            zkExcQueue.put(new ZkExcData(ZkExcData.UPDATE, getSessionRoot() + "/" + meta.getKey(), meta));
+    }
+
+
+    private void delete0(String name) throws InterruptedException {
+
+        if (StringUtils.equals(name,SESSION_KEY))
+            zkExcQueue.put(new ZkExcData(ZkExcData.DELETE, getSessionRoot(), null));
+        else
+            zkExcQueue.put(new ZkExcData(ZkExcData.DELETE, getSessionRoot() + "/" + name, null));
+    }
+
+
+    private String getSessionRoot()
+    {
+        return BASE_PATH+"/"+SESSION_KEY;
+    }
+
+
+    public void update() throws InterruptedException, ClassNotFoundException, KeeperException, IOException {
+        if(isValid()) {
+            SessionMetaData data = base.get(SESSION_KEY);
+            update0(data);
+        }
+    }
+
+
+
+
+
+
 
 
 

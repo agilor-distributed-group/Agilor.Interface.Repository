@@ -2,12 +2,13 @@ package agilor.distributed.relational.data.entities;
 
 import com.jfinal.plugin.activerecord.Model;
 
+import java.io.Serializable;
 import java.util.Date;
 
 /**
  * Created by LQ on 2015/12/21.
  */
-public class User  {
+public class User implements Serializable {
 
     private int id;
     private String userName;
