@@ -13,5 +13,9 @@ public interface SessionCnxn {
 
     void setSession(String key,Object value) throws Exception;
     Object getSession(String key) throws Exception;
+    void removeSession(String key) throws Exception;
+
+
+    void update() throws Exception;
 
 }

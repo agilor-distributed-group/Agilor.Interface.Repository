@@ -34,6 +34,7 @@ public class RequestContext implements Context {
         if (!ssCnxn.isValid()) {
             ssCnxn.create();
         }
+        else ssCnxn.update();
     }
 
     public User user()
@@ -49,6 +50,11 @@ public class RequestContext implements Context {
     @Override
     public void setSession(String key, Object value) throws Exception {
         ssCnxn.setSession(key,value);
+    }
+
+
+    public void removeSession(String key) throws Exception {
+        ssCnxn.removeSession(key);
     }
 
 

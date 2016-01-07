@@ -69,21 +69,8 @@ public class Connection {
                 os.write(data);
                 os.flush();
 
-
-
-                //long st = System.currentTimeMillis();
-
-
-
-//                in.readInt();
-
                 in.readByte();
-                //System.out.print( in.readByte());
 
-                //timm_all+=(System.currentTimeMillis()-st);
-
-
-                //System.out.println( in.readByte());
 
 
                 int length = ConvertUtils.toInt(in.readByte(),in.readByte(),in.readByte(),in.readByte());
@@ -109,11 +96,56 @@ public class Connection {
     }
 
 
+    /***
+     * 新的wirte函数，不定长参数，效率比旧的慢(300-)ms/10000000
+     * 如果非性能瓶颈，建议使用这个
+     * @param head
+     * @param objects
+     * @return
+     * @throws Exception
+     */
+    public  byte[] write2(byte[] head,Object... objects) throws Exception {
+         byte[][] d0 = new byte[objects.length][];
+
+
+        int len = 0;
+
+        for(int i=0;i<objects.length;i++) {
+            d0[i] = protocol.resolve(objects[i]);
+            len += d0[i].length;
+        }
+        byte[] data = new byte[len+(head==null?0:head.length)+4];
+
+        int position=0;
+
+        if(head!=null) {
+            System.arraycopy(head, 0, data, position, head.length);
+            position = head.length;
+        }
+
+
+        data[position++] = (byte)(len&0xff);
+        data[position++] = (byte)((len>>8)&0xff);
+        data[position++] = (byte)((len>>16)&0xff);
+        data[position++] = (byte)((len>>24)&0xff);
+
+
+        for(int i=0;i<d0.length;i++) {
+            System.arraycopy(d0[i], 0, data, position, d0[i].length);
+            position += d0[i].length;
+        }
+
+
+        return write(data);
+    }
 
 
 
 
 
+
+
+    @Deprecated
     public <TRESULT,T0> byte[] write(byte[] head, T0 t0) throws Exception {
 
         byte[] d0 = protocol.resolve(t0);
@@ -137,8 +169,10 @@ public class Connection {
 
         if(d0!=null) System.arraycopy(d0,0,data,position,d0.length);
 
+
         return write(data);
     }
+    @Deprecated
     public <TRESULT,T0,T1> byte[] write(byte[] head,T0 t0,T1 t1) throws Exception {
         byte[] d0 = protocol.resolve(t0);
         byte[] d1 = protocol.resolve(t1);
@@ -164,8 +198,13 @@ public class Connection {
         System.arraycopy(d0,0,data,position,d0.length);
         position+=d0.length;
         System.arraycopy(d1,0,data,position,d1.length);
+
+
+
         return write(data);
     }
+
+    @Deprecated
     public <TRESULT,T0,T1,T2> byte[] write(byte[] head,T0 t0,T1 t1,T2 t2) throws Exception {
 
         byte[] d0 = protocol.resolve(t0);
@@ -196,10 +235,13 @@ public class Connection {
         System.arraycopy(d2, 0, data, position, d2.length);
 
 
+
         return write(data);
 
 
     }
+
+    @Deprecated
     public <TRESULT,T0,T1,T2,T3> byte[] write(byte[] head,T0 t0,T1 t1,T2 t2,T3 t3) throws Exception {
         byte[] d0 = protocol.resolve(t0);
         byte[] d1 = protocol.resolve(t1);
@@ -230,8 +272,16 @@ public class Connection {
         System.arraycopy(d2,0,data,position,d2.length);
         position+=d2.length;
         System.arraycopy(d3,0,data,position,d3.length);
+
+
+
+
         return write(data);
     }
+
+
+
+    @Deprecated
     public <TRESULT,T0,T1,T2,T3,T4> byte[] write(byte[] head,T0 t0,T1 t1,T2 t2,T3 t3,T4 t4) throws Exception {
         byte[] d0 = protocol.resolve(t0);
         byte[] d1 = protocol.resolve(t1);
@@ -266,8 +316,12 @@ public class Connection {
         position+=d3.length;
         System.arraycopy(d4,0,data,position,d4.length);
 
+
+
         return write(data);
     }
+
+    @Deprecated
     public <TRESULT,T0,T1,T2,T3,T4,T5> byte[] write(byte[] head,T0 t0,T1 t1,T2 t2,T3 t3,T4 t4,T5 t5) throws Exception {
         byte[] d0 = protocol.resolve(t0);
         byte[] d1 = protocol.resolve(t1);
@@ -303,6 +357,8 @@ public class Connection {
         System.arraycopy(d4,0,data,position,d4.length);
         position+=d4.length;
         System.arraycopy(d5,0,data,position,d5.length);
+
+
 
 
         return write(data);

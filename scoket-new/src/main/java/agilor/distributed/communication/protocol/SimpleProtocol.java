@@ -8,7 +8,7 @@ import java.util.List;
 /**
  * Created by LQ on 2015/10/20.
  */
-public class SimpleProtocol extends ProtocolBase {
+public final class SimpleProtocol extends ProtocolBase {
     private static SimpleProtocol _instance = null;
 
     private final static int MAX_LEN = (Integer.MAX_VALUE - 5);

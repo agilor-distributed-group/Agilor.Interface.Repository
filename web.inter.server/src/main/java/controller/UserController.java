@@ -2,9 +2,12 @@ package controller;
 
 import agilor.distributed.relational.data.entities.User;
 import agilor.distributed.relational.data.exceptions.NullParameterException;
+import agilor.distributed.relational.data.exceptions.SqlHandlerException;
 import agilor.distributed.relational.data.exceptions.ValidateParameterException;
 import agilor.distributed.relational.data.services.UserService;
-
+import com.jfinal.aop.Before;
+import interceptor.LoginInterceptor;
+import result.Data;
 
 
 /**
@@ -18,7 +21,7 @@ public class UserController extends DistrController {
 
     public UserController() throws Exception {
         super();
-        service = new UserService(getContext());
+        service = new UserService();
     }
 
     public void login() {
@@ -26,20 +29,35 @@ public class UserController extends DistrController {
         String p = getPara("p");
 
 
-        User model = null;
+
         try {
-            model = service.check(u, p);
-            if (model != null)
-                service.login(model);
+            User model = service.check(u, p);
+
+            if(model!=null) {
+                getContext().setSession("user", model.getId());
+                renderResult(Data.success());
+            }
+            else
+                renderResult(Data.failed());
+
+
         } catch (NullParameterException e) {
             e.printStackTrace();
         } catch (ValidateParameterException e) {
             e.printStackTrace();
+        } catch (Exception e) {
+            e.printStackTrace();
         }
     }
 
+    @Before(LoginInterceptor.class)
     public void logout() {
-        service.logout(null);
+        try {
+            getContext().removeSession("user");
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
     }
 
 
@@ -48,17 +66,18 @@ public class UserController extends DistrController {
 
         try {
             User user = service.register(getPara("u"), getPara("p"));
-            if(user!=null)
-                service.login(user);
-
+            if (user != null)
+                login();
+            else
+                renderResult(Data.failed());
 
         } catch (NullParameterException e) {
             e.printStackTrace();
         } catch (ValidateParameterException e) {
             e.printStackTrace();
+        } catch (SqlHandlerException e) {
+            e.printStackTrace();
         }
-
-        renderJson("r","ture");
     }
 
 

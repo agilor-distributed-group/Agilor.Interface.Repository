@@ -121,6 +121,12 @@ public class DeviceType {
         sensors.add(sensor);
     }
 
+    public void addSensor(List<SensorOfType> sensors) {
+        if (getSensors() == null)
+            sensors = new ArrayList<>();
+        sensors.addAll(sensors);
+    }
+
 
     public Device build()
     {

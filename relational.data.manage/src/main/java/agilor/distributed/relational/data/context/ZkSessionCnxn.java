@@ -189,6 +189,11 @@ public class ZkSessionCnxn implements SessionCnxn {
         return null;
     }
 
+    @Override
+    public void removeSession(String key) throws Exception {
+        delete0(key);
+    }
+
 
     private static String get_address_str(IConnection conn)
     {

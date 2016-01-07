@@ -146,13 +146,12 @@ public class DeviceService {
     }
 
 
-    public void delete(int id)
+    public boolean delete(int id)
     {
-        Db.tx(new IAtom() {
+        return Db.tx(new IAtom() {
             @Override
             public boolean run() throws SQLException {
-                if(DB.Device.instance().findById(id).delete())
-                {
+                if (DB.Device.instance().findById(id).delete()) {
 
                     //未完成 没有接口
                 }
@@ -160,5 +159,15 @@ public class DeviceService {
             }
         });
     }
+
+
+    public Device getById(int id) throws InstantiationException, IllegalAccessException {
+        DB.Device model = DB.Device.instance().findById(id);
+        if (model != null)
+            return model.build(Device.class);
+        else
+            return null;
+    }
+
 
 }

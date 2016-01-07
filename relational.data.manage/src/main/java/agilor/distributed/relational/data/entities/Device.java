@@ -80,8 +80,13 @@ public Device()
         if(getSensors()==null)
             sensors=new ArrayList<>();
         sensors.add(sensor);
+    }
 
 
+    public void addSensors(List<Sensor> sensors) {
+        if (getSensors() == null)
+            sensors = new ArrayList<>();
+        sensors.addAll(sensors);
     }
 
 
