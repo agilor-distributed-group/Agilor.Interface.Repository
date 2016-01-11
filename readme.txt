@@ -1,3 +1,8 @@
+2016-1-11 更新内容
+
+relational.data.manage 部分代码优化
+
+
 2016-1-7 更新内容
 socket-new模块更新,增加agilor.distributed.communication.socket.Connection.write2()函数
 废弃 旧的 wirte函数，write(byte[] data) 没有废弃

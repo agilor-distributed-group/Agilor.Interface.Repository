@@ -38,7 +38,7 @@ public class ZkSessionCnxn implements SessionCnxn {
     static {
         try {
 
-            zk = new ZooKeeper(Config.zookeeper.getAddress(), Config.zookeeper.getTimeout(), new Watcher() {
+            zk = new ZooKeeper(Config.getZkAddress(), Config.getZkTimeout(), new Watcher() {
                 @Override
                 public void process(WatchedEvent watchedEvent) {
 
@@ -46,7 +46,7 @@ public class ZkSessionCnxn implements SessionCnxn {
             });
 
             //创建session保存节点
-            String path = Config.zookeeper.getDataPath();
+            String path = Config.getSessionPath();
 
             String tmp = "";
 

@@ -1,7 +1,6 @@
 package controller;
 
 import agilor.distributed.communication.client.Value;
-import agilor.distributed.relational.data.db.DB;
 import agilor.distributed.relational.data.entities.Device;
 import agilor.distributed.relational.data.entities.DeviceType;
 import agilor.distributed.relational.data.entities.Sensor;
@@ -12,11 +11,9 @@ import agilor.distributed.relational.data.services.DeviceService;
 import agilor.distributed.relational.data.services.DeviceTypeService;
 import agilor.distributed.relational.data.services.SensorOfTypeService;
 import agilor.distributed.relational.data.services.SensorService;
-import com.fasterxml.jackson.databind.ObjectMapper;
 import com.jfinal.aop.Before;
-import interceptor.CreatorInterceptor;
 import interceptor.LoginInterceptor;
-import result.Data;
+import result.Action;
 
 import java.lang.reflect.InvocationTargetException;
 import java.util.Date;
@@ -42,9 +39,9 @@ public class SensorController extends DistrController {
         try {
             Device device = ds.getById(deviceId);
             if(device==null)
-                renderResult(Data.notFound());
+                renderResult(Action.notFound());
             else if(device.getCreatorId()==userId())
-                renderResult(Data.error());
+                renderResult(Action.error());
             else {
                 Sensor sensor = new Sensor();
                 sensor.setDeviceId(device.getId());
@@ -54,7 +51,7 @@ public class SensorController extends DistrController {
 
                 service.insert(sensor);
 
-                renderResult(Data.success());
+                renderResult(Action.success());
             }
         } catch (InstantiationException e) {
             e.printStackTrace();
@@ -77,16 +74,16 @@ public class SensorController extends DistrController {
         try {
             DeviceType dt = dts.getById(typeId);
             if(dt==null)
-                renderResult(Data.notFound());
+                renderResult(Action.notFound());
             else if(dt.getCreatorId()!=userId())
-                renderResult(Data.error());
+                renderResult(Action.error());
             else {
                 SensorOfTypeService sts = new SensorOfTypeService();
                 SensorOfType data = new SensorOfType();
                 data.setType(Value.Types.value(getParaToInt("t").byteValue()));
                 data.setTypeId(typeId);
                 sts.insert(data);
-                renderResult(Data.success());
+                renderResult(Action.success());
             }
 
         } catch (InstantiationException e) {

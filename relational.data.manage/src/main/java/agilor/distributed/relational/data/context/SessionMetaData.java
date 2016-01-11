@@ -75,7 +75,7 @@ public class SessionMetaData implements Serializable {
     }
 
     public boolean isValid() {
-        return (System.currentTimeMillis() - lastAccessTime) < Config.global.getSessionTimeOut();
+        return (System.currentTimeMillis() - lastAccessTime) < Config.getSessionTimeout();
     }
 
     public Long getCreateTime() {

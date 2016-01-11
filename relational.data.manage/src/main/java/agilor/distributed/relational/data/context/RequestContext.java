@@ -1,12 +1,5 @@
 package agilor.distributed.relational.data.context;
 
-import agilor.distributed.relational.data.db.DB;
-import agilor.distributed.relational.data.entities.User;
-import org.apache.commons.lang3.StringUtils;
-import org.apache.zookeeper.*;
-
-import java.io.IOException;
-
 /**
  * Created by LQ on 2015/12/24.
  */
@@ -37,10 +30,16 @@ public class RequestContext implements Context {
         else ssCnxn.update();
     }
 
-    public User user()
-    {
-        return user();
+//    public User user()
+//    {
+//        return user();
+//    }
+
+
+    public IConnection getConnection(){
+        return this.connection;
     }
+
 
     @Override
     public Object getSession(String key) throws Exception {

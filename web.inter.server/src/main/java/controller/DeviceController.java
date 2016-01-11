@@ -1,25 +1,16 @@
 package controller;
 
-import agilor.distributed.relational.data.db.DB;
 import agilor.distributed.relational.data.entities.Device;
 import agilor.distributed.relational.data.entities.DeviceType;
 import agilor.distributed.relational.data.entities.Sensor;
-import agilor.distributed.relational.data.exceptions.DataNotExistException;
 import agilor.distributed.relational.data.exceptions.NullParameterException;
 import agilor.distributed.relational.data.services.DeviceService;
 import agilor.distributed.relational.data.services.DeviceTypeService;
-import com.fasterxml.jackson.core.type.TypeReference;
 import com.jfinal.aop.Before;
-import com.jfinal.kit.JsonKit;
 import interceptor.LoginInterceptor;
-import org.codehaus.jackson.JsonParseException;
-import org.codehaus.jackson.map.ObjectMapper;
-import org.codehaus.jackson.type.JavaType;
-import result.Data;
+import result.Action;
 
 import java.io.IOException;
-import java.lang.reflect.InvocationTargetException;
-import java.util.List;
 
 /**
  * Created by LQ on 2015/12/28.
@@ -48,15 +39,15 @@ public class DeviceController extends DistrController {
             try {
                 DeviceType type =  ts.getById(id);
                 if(type==null)
-                    renderResult(Data.notFound());
+                    renderResult(Action.notFound());
                 else if(type.getCreatorId()!=userId()&& type.getScope()!= DeviceType.ScopeTypes.PUBLIC)
-                    renderResult(Data.error());
+                    renderResult(Action.error());
                 else {
                     Device device = type.build();
                     device.setName(n);
                     device.setCreatorId(userId());
                     service.insert(device);
-                    renderResult(Data.success());
+                    renderResult(Action.success());
                 }
             } catch (InstantiationException e) {
                 e.printStackTrace();
@@ -64,7 +55,7 @@ public class DeviceController extends DistrController {
                 e.printStackTrace();
             } catch (NullParameterException e) {
                 e.printStackTrace();
-                renderResult(Data.validate(e.getMessage()));
+                renderResult(Action.validate(e.getMessage()));
             }
 
 
@@ -78,11 +69,11 @@ public class DeviceController extends DistrController {
                 device.setCreatorId(userId());
                 service.insert(device);
 
-                renderResult(Data.success());
+                renderResult(Action.success());
             } catch (IOException e) {
                 e.printStackTrace();
             } catch (NullParameterException e) {
-                renderResult(Data.validate(e.getMessage()));
+                renderResult(Action.validate(e.getMessage()));
             }
         }
     }
@@ -97,13 +88,13 @@ public class DeviceController extends DistrController {
         try {
             Device device = service.getById(id);
             if(device==null)
-                renderResult(Data.notFound());
+                renderResult(Action.notFound());
             else if(device.getCreatorId()!=userId())
-                renderResult(Data.error());
+                renderResult(Action.error());
             else {
                 if (service.delete(id))
-                    renderResult(Data.success());
-                else renderResult(Data.failed());
+                    renderResult(Action.success());
+                else renderResult(Action.failed());
             }
 
 
@@ -123,13 +114,13 @@ public class DeviceController extends DistrController {
         try {
             Device device = service.getById(id);
             if (device == null)
-                renderResult(Data.notFound());
+                renderResult(Action.notFound());
             else if (device.getCreatorId() != userId())
-                renderResult(Data.error());
+                renderResult(Action.error());
 
             service.update(device.getId(), name);
 
-            renderResult(Data.success());
+            renderResult(Action.success());
 
         } catch (InstantiationException e) {
             e.printStackTrace();

@@ -4,7 +4,7 @@ import agilor.distributed.relational.data.entities.User;
 import com.jfinal.aop.Interceptor;
 import com.jfinal.aop.Invocation;
 import controller.DistrController;
-import result.Login;
+import result.Action;
 
 /**
  * Created by LQ on 2016/1/6.
@@ -16,7 +16,7 @@ public class LoginInterceptor implements Interceptor {
         try {
             User user = (User) controller.getContext().getSession("user");
             if (user == null)
-                controller.renderText(Login.failed().serialize());
+                controller.renderText(Action.failed().serialize());
             else {
 
                 invocation.getController().setSessionAttr("userId", user.getId());

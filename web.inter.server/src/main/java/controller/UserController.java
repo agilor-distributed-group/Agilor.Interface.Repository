@@ -7,7 +7,7 @@ import agilor.distributed.relational.data.exceptions.ValidateParameterException;
 import agilor.distributed.relational.data.services.UserService;
 import com.jfinal.aop.Before;
 import interceptor.LoginInterceptor;
-import result.Data;
+import result.Action;
 
 
 /**
@@ -35,10 +35,10 @@ public class UserController extends DistrController {
 
             if(model!=null) {
                 getContext().setSession("user", model.getId());
-                renderResult(Data.success());
+                renderResult(Action.success());
             }
             else
-                renderResult(Data.failed());
+                renderResult(Action.failed());
 
 
         } catch (NullParameterException e) {
@@ -69,7 +69,7 @@ public class UserController extends DistrController {
             if (user != null)
                 login();
             else
-                renderResult(Data.failed());
+                renderResult(Action.failed());
 
         } catch (NullParameterException e) {
             e.printStackTrace();

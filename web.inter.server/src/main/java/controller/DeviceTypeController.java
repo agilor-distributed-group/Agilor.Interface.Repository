@@ -1,20 +1,14 @@
 package controller;
 
-import agilor.distributed.relational.data.db.DB;
 import agilor.distributed.relational.data.entities.DeviceType;
 import agilor.distributed.relational.data.entities.SensorOfType;
-import agilor.distributed.relational.data.exceptions.ExceptionTypes;
 import agilor.distributed.relational.data.exceptions.SqlHandlerException;
 import agilor.distributed.relational.data.exceptions.ValidateParameterException;
 import agilor.distributed.relational.data.services.DeviceTypeService;
 import com.jfinal.aop.Before;
-import com.jfinal.kit.JsonKit;
 import interceptor.LoginInterceptor;
-import org.omg.PortableServer.SERVANT_RETENTION_POLICY_ID;
-import result.ActionResult;
-import result.Data;
+import result.Action;
 
-import javax.print.DocFlavor;
 import java.io.IOException;
 
 /**
@@ -47,7 +41,7 @@ public class DeviceTypeController extends DistrController {
 
         try {
             service.insert(data);
-            renderResult(Data.success());
+            renderResult(Action.success());
         } catch (ValidateParameterException e) {
             e.printStackTrace();
         } catch (SqlHandlerException e) {
@@ -63,19 +57,19 @@ public class DeviceTypeController extends DistrController {
             DeviceType data = service.getById(getParaToInt("i", 0));
 
             if(data==null||data.getCreatorId()!=userId()) {
-                renderResult(Data.notFound());
+                renderResult(Action.notFound());
             }
 
             data.setName(getPara("n"));
             data.setScope(DeviceType.ScopeTypes.value(getParaToInt("sc", 0).byteValue()));
             service.update(data);
-            renderResult(Data.success());
+            renderResult(Action.success());
         } catch (InstantiationException e) {
             e.printStackTrace();
         } catch (IllegalAccessException e) {
             e.printStackTrace();
         } catch (ValidateParameterException e) {
-            renderResult(Data.validate(e.getError().getDescription()));
+            renderResult(Action.validate(e.getError().getDescription()));
         }
     }
 
@@ -85,11 +79,11 @@ public class DeviceTypeController extends DistrController {
         try {
             DeviceType data = service.getById(getParaToInt("i", 0));
             if (data == null || data.getCreatorId() != userId()) {
-                renderResult(Data.notFound());
+                renderResult(Action.notFound());
             }
 
             if (service.delete(data.getId()))
-                renderResult(Data.success());
+                renderResult(Action.success());
 
 
         } catch (InstantiationException e) {
