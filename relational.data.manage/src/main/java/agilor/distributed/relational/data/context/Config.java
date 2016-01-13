@@ -4,14 +4,14 @@ import agilor.distributed.relational.data.db.DB;
 import com.jfinal.plugin.activerecord.ActiveRecordPlugin;
 import com.jfinal.plugin.c3p0.C3p0Plugin;
 import com.jfinal.plugin.ehcache.EhCachePlugin;
+import net.sf.ehcache.Ehcache;
 import org.apache.commons.lang3.StringUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-
 import java.io.IOException;
+import java.io.InputStream;
 import java.util.Properties;
-
 
 /**
  * Created by LQ on 2015/12/24.
@@ -41,12 +41,16 @@ public class Config {
     private static boolean isInit=false;
 
 
+
+
     public static void init(String fileName) {
         if(!isInit) {
             Properties pps = new Properties();
 
             try {
-                pps.load(Object.class.getResourceAsStream("/" + fileName));
+
+                InputStream in = Config.class.getClassLoader().getResourceAsStream(fileName);
+                pps.load(in);
 
                 zkAddress=pps.getProperty("zkAddress");
                 zkTimeout=Integer.parseInt(pps.getProperty("zkTimeout", "3000"));
@@ -57,16 +61,22 @@ public class Config {
                 jdbcPassword = pps.getProperty("jdbcPassword", null);
 
 
+
                 if(!StringUtils.isEmpty(sessionPath)&&sessionPath.endsWith("/")) {
                     sessionPath = sessionPath.substring(0, sessionPath.length() - 1);
                 }
+
 
 
                 c3p0 = new C3p0Plugin(jdbcUrl, jdbcUserName, jdbcPassword);
                 arp = new ActiveRecordPlugin(c3p0);
 
 
-                cache = new EhCachePlugin(Object.class.getResourceAsStream("/cache-context.xml"));
+                InputStream stream = Config.class.getClassLoader().getResourceAsStream("cache-context.xml");
+
+                logger.info("cache config stream size {}",stream.available());
+
+                cache = new EhCachePlugin(stream);
 
                 arp.addMapping("users", DB.User.class);
                 arp.addMapping("devices", DB.Device.class);
@@ -82,10 +92,13 @@ public class Config {
 
 
 
+
+
                 isInit=true;
 
             } catch (IOException e) {
-                logger.error("load config file {} error", fileName);
+                logger.info("load config file {} error,message:{}", fileName, e.getMessage());
+                e.printStackTrace();
             }
         }
     }
@@ -109,9 +122,6 @@ public class Config {
         return isRuning;
     }
 
-    public static void setIsRuning(boolean isRuning) {
-        Config.isRuning = isRuning;
-    }
 
 
     public static String getSessionPath() {

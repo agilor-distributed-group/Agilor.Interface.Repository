@@ -12,6 +12,7 @@ import agilor.distributed.relational.data.services.DeviceTypeService;
 import agilor.distributed.relational.data.services.SensorOfTypeService;
 import agilor.distributed.relational.data.services.SensorService;
 import com.jfinal.aop.Before;
+import com.jfinal.core.DistrController;
 import interceptor.LoginInterceptor;
 import result.Action;
 
@@ -92,9 +93,10 @@ public class SensorController extends DistrController {
             e.printStackTrace();
         } catch (NullParameterException e) {
             e.printStackTrace();
-        } catch (SqlHandlerException e) {
-            e.printStackTrace();
         }
+//        catch (SqlHandlerException e) {
+//            e.printStackTrace();
+//        }
     }
 
 

@@ -17,6 +17,7 @@
             <groupId>mysql</groupId>
             <artifactId>mysql-connector-java</artifactId>
             <version>5.1.38</version>
+
         </dependency>
 
 
@@ -24,6 +25,7 @@
             <groupId>com.jfinal</groupId>
             <artifactId>jfinal</artifactId>
             <version>2.0</version>
+            <scope>provided</scope>
         </dependency>
 
         <dependency>
@@ -39,11 +41,6 @@
             <version>3.4</version>
         </dependency>
 
-        <dependency>
-            <groupId>commons-codec</groupId>
-            <artifactId>commons-codec</artifactId>
-            <version>1.10</version>
-        </dependency>
 
         <dependency>
             <groupId>org.apache.zookeeper</groupId>
@@ -65,21 +62,10 @@
         </dependency>
 
         <dependency>
-            <groupId>javax.servlet</groupId>
-            <artifactId>servlet-api</artifactId>
-            <version>2.5</version>
-            <scope>provided</scope>
-        </dependency>
-
-        <dependency>
             <groupId>net.sf.ehcache</groupId>
             <artifactId>ehcache</artifactId>
             <version>2.10.1</version>
         </dependency>
-
-
-
-
     </dependencies>
 
 </project>

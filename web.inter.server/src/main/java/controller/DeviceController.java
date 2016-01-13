@@ -7,6 +7,7 @@ import agilor.distributed.relational.data.exceptions.NullParameterException;
 import agilor.distributed.relational.data.services.DeviceService;
 import agilor.distributed.relational.data.services.DeviceTypeService;
 import com.jfinal.aop.Before;
+import com.jfinal.core.DistrController;
 import interceptor.LoginInterceptor;
 import result.Action;
 

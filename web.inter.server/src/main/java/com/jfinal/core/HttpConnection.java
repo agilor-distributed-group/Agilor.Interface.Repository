@@ -1,5 +1,6 @@
-package controller;
+package com.jfinal.core;
 
+import agilor.distributed.relational.data.context.Config;
 import agilor.distributed.relational.data.context.IConnection;
 import agilor.distributed.relational.data.context.RequestContext;
 
@@ -20,7 +21,6 @@ public class HttpConnection implements IConnection {
     public HttpConnection(HttpServletRequest request,HttpServletResponse response) throws Exception {
         this.request=request;
         this.response=response;
-
     }
 
 

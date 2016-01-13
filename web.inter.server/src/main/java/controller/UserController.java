@@ -6,6 +6,7 @@ import agilor.distributed.relational.data.exceptions.SqlHandlerException;
 import agilor.distributed.relational.data.exceptions.ValidateParameterException;
 import agilor.distributed.relational.data.services.UserService;
 import com.jfinal.aop.Before;
+import com.jfinal.core.DistrController;
 import interceptor.LoginInterceptor;
 import result.Action;
 
@@ -72,13 +73,22 @@ public class UserController extends DistrController {
                 renderResult(Action.failed());
 
         } catch (NullParameterException e) {
-            e.printStackTrace();
+            renderResult(Action.validate(e.getName()));
         } catch (ValidateParameterException e) {
-            e.printStackTrace();
-        } catch (SqlHandlerException e) {
-            e.printStackTrace();
+            renderResult(Action.validate(e.getName()));
         }
+//        catch (SqlHandlerException e) {
+//            e.printStackTrace();
+//        }
     }
+
+
+    public void ping()
+    {
+        renderText("dddddddddddddddd");
+    }
+
+
 
 
 

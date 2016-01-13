@@ -57,9 +57,10 @@ public class DeviceTypeServiceTest {
             service.insert(data);
         } catch (ValidateParameterException e) {
             e.printStackTrace();
-        } catch (SqlHandlerException e) {
-            e.printStackTrace();
         }
+//        catch (SqlHandlerException e) {
+//            e.printStackTrace();
+//        }
     }
 
 
@@ -93,9 +94,10 @@ public class DeviceTypeServiceTest {
             service.insert(data);
         } catch (ValidateParameterException e) {
             e.printStackTrace();
-        } catch (SqlHandlerException e) {
-            e.printStackTrace();
         }
+//        catch (SqlHandlerException e) {
+//            e.printStackTrace();
+//        }
 
     }
 

@@ -1,9 +1,8 @@
 package agilor.distributed.relational.data.db;
 
-import com.jfinal.plugin.activerecord.Db;
+import com.jfinal.plugin.activerecord.ActiveRecordException;
 import com.jfinal.plugin.activerecord.Model;
 import com.jfinal.plugin.ehcache.CacheKit;
-import org.apache.commons.lang3.ArrayUtils;
 
 import java.lang.reflect.Field;
 import java.lang.reflect.Method;
@@ -92,7 +91,7 @@ public class ExtendModel<M extends Model> extends Model<M> {
 
 
     @Override
-    public M findById(Object idValue) {
+    public M findById(Object idValue)  {
 
 
 
@@ -108,7 +107,7 @@ public class ExtendModel<M extends Model> extends Model<M> {
 
 
     @Override
-    public M findById(Object... idValues) {
+    public M findById(Object... idValues)  {
 
         M model = CacheKit.get(getCacheName(this),buildCacheKey(idValues));
         if(model==null) {
@@ -120,7 +119,7 @@ public class ExtendModel<M extends Model> extends Model<M> {
     }
 
     @Override
-    public boolean save() {
+    public boolean save() throws ActiveRecordException {
 
 
         boolean result = super.save();
@@ -133,7 +132,7 @@ public class ExtendModel<M extends Model> extends Model<M> {
 
 
     @Override
-    public boolean update() {
+    public boolean update() throws ActiveRecordException {
         boolean result = super.update();
         if(result)
             CacheKit.put(getCacheName(this),getInt("id"),this);
@@ -142,7 +141,7 @@ public class ExtendModel<M extends Model> extends Model<M> {
 
 
     @Override
-    public boolean delete() {
+    public boolean delete() throws ActiveRecordException {
         boolean result = super.delete();
         if (result)
             CacheKit.remove(getCacheName(this), getInt("id"));

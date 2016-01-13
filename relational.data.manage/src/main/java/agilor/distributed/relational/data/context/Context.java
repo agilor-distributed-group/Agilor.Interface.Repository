@@ -1,8 +1,6 @@
 package agilor.distributed.relational.data.context;
 
 
-import agilor.distributed.relational.data.entities.User;
-
 /**
  * Created by LQ on 2015/12/24.
  */

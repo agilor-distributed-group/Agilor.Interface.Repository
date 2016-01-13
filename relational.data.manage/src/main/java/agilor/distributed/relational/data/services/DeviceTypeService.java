@@ -74,9 +74,7 @@ public class DeviceTypeService {
             try {
                 for(DB.DeviceType it:list)
                 {
-
                     result.add(it.build(DeviceType.class));
-
                 }
             } catch (IllegalAccessException e) {
                 e.printStackTrace();
@@ -96,48 +94,47 @@ public class DeviceTypeService {
      * @throws ValidateParameterException
      * @throws SqlHandlerException
      */
-    public DeviceType insert(DeviceType data) throws ValidateParameterException, SqlHandlerException {
+    public DeviceType insert(DeviceType data) throws ValidateParameterException {
 
         if (data.getSensorCount() <= 0)
             throw new ValidateParameterException("sensor", ExceptionTypes.MODELRROR);
 
-        if(StringUtils.isEmpty(data.getName()))
-            throw new ValidateParameterException("name",ExceptionTypes.FILED_IS_NULL);
+        if (StringUtils.isEmpty(data.getName()))
+            throw new ValidateParameterException("name", ExceptionTypes.FILED_IS_NULL);
 
-        if(data.getCreatorId()<=0)
-            throw new ValidateParameterException("creatorId",ExceptionTypes.FILED_IS_NULL);
+        if (data.getCreatorId() <= 0)
+            throw new ValidateParameterException("creatorId", ExceptionTypes.FILED_IS_NULL);
 
 
         Model<DB.DeviceType> model = new DB.DeviceType();
-        try {
-            boolean tx = Db.tx(new IAtom() {
-                @Override
-                public boolean run() throws SQLException {
-                    model.set("name", data.getName())
-                            .set("scope", data.getScope().value())
-                            .set("creatorId", data.getCreatorId())
-                            .save();
+        //try {
+        boolean tx = Db.tx(new IAtom() {
+            @Override
+            public boolean run() throws SQLException {
+                model.set("name", data.getName())
+                        .set("scope", data.getScope().value())
+                        .set("creatorId", data.getCreatorId())
+                        .save();
 
-                    int id = model.getInt("id");
-                    for (SensorOfType it : data.getSensors()) {
-                        if (it.getId() == 0) {
-                            Model<DB.SensorOfType> s = (new DB.SensorOfType()
-                                    .set("type", it.getType().value())
-                                    .set("typeId", id));
+                int id = model.getInt("id");
+                for (SensorOfType it : data.getSensors()) {
+                    if (it.getId() == 0) {
+                        Model<DB.SensorOfType> s = (new DB.SensorOfType()
+                                .set("type", it.getType().value())
+                                .set("typeId", id));
 
-                            if (s.save())
-                                it.setId(s.getInt("id"));
-                        }
+                        if (s.save())
+                            it.setId(s.getInt("id"));
                     }
-
-                    return true;
                 }
-            });
-        }catch (ActiveRecordException e)
-        {
-            throw new SqlHandlerException(e.getCause());
-        }
 
+                return true;
+            }
+        });
+//        }catch (ActiveRecordException e)
+//        {
+//            throw new SqlHandlerException(e.getCause());
+//        }
 
 
         data.setId(model.getInt("id"));

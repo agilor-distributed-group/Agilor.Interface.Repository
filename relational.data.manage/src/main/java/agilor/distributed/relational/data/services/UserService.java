@@ -34,7 +34,7 @@ public class UserService {
      * @throws NullParameterException     空字符串异常
      * @throws ValidateParameterException 字段验证不同过异常
      */
-    public User register(String userName, String password) throws NullParameterException, ValidateParameterException, SqlHandlerException {
+    public User register(String userName, String password) throws NullParameterException, ValidateParameterException {
 
         if (StringUtils.isEmpty(userName))
             throw new NullParameterException("userName");
@@ -56,7 +56,7 @@ public class UserService {
             throw new ValidateParameterException("password", ExceptionTypes.STRTOOLONG);
 
 
-        try {
+        //try {
             Model<DB.User> model = new DB.User();
 
             model.set("userName", userName)
@@ -71,15 +71,15 @@ public class UserService {
             return data;
 
 
-
-        }
-        catch (ActiveRecordException e) {
-            throw new SqlHandlerException(e.getCause());
-        }
-        catch (Exception e) {
-            e.printStackTrace();
-            return null;
-        }
+//
+//        }
+//        catch (ActiveRecordException e) {
+//            throw new SqlHandlerException(e.getCause());
+//        }
+//        catch (Exception e) {
+//            e.printStackTrace();
+//            return null;
+//        }
     }
 
     /**

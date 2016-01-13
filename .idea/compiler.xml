@@ -65,10 +65,18 @@
         <processorPath useClasspath="true" />
         <module name="web.inter.server" />
       </profile>
+      <profile default="false" name="Annotation profile for client" enabled="true">
+        <sourceOutputDir name="target\generated-sources\annotations" />
+        <sourceTestOutputDir name="target\generated-test-sources\test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <processorPath useClasspath="true" />
+      </profile>
     </annotationProcessing>
     <bytecodeTargetLevel target="1.8">
       <module name="agilor-client" target="1.8" />
       <module name="agilor-distributed-storage" target="1.8" />
+      <module name="agilor.distributed" target="1.8" />
+      <module name="client" target="1.8" />
       <module name="http.interface" target="1.8" />
       <module name="relational.data.manage" target="1.8" />
       <module name="scoket-new" target="1.8" />

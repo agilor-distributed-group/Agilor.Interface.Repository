@@ -6,6 +6,7 @@ import agilor.distributed.relational.data.exceptions.SqlHandlerException;
 import agilor.distributed.relational.data.exceptions.ValidateParameterException;
 import agilor.distributed.relational.data.services.DeviceTypeService;
 import com.jfinal.aop.Before;
+import com.jfinal.core.DistrController;
 import interceptor.LoginInterceptor;
 import result.Action;
 
@@ -44,9 +45,10 @@ public class DeviceTypeController extends DistrController {
             renderResult(Action.success());
         } catch (ValidateParameterException e) {
             e.printStackTrace();
-        } catch (SqlHandlerException e) {
-            e.printStackTrace();
         }
+//        catch (SqlHandlerException e) {
+//            e.printStackTrace();
+//        }
     }
 
 

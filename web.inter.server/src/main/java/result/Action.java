@@ -64,4 +64,11 @@ public class Action extends BaseResult {
 
 
 
+    public static Result validatae(Object data,String info)
+    {
+        return new Action(false,data,info);
+    }
+
+
+
 }

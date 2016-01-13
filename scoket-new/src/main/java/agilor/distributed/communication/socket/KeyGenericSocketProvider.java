@@ -30,13 +30,11 @@ public class KeyGenericSocketProvider implements SocketProvider {
     @Override
     public Socket getSocket(String address, int port) throws Exception {
 
-        String key =address+":"+port;
+        String key = address + ":" + port;
 
-        try {
-            return pool.borrowObject(key);
-        }finally {
-            System.out.println("busy:"+pool.getNumActive(key)+" idle:"+pool.getNumIdle(key));
-        }
+
+        return pool.borrowObject(key);
+
     }
 
     @Override
@@ -48,7 +46,6 @@ public class KeyGenericSocketProvider implements SocketProvider {
 
         pool.returnObject(key,socket);
 
-        System.out.println("busy:" + pool.getNumActive(key) + " idle:" + pool.getNumIdle(key));
 
 
     }

@@ -36,9 +36,10 @@ public class UserServiceTest {
 
         } catch (ValidateParameterException e) {
             System.out.println(e.getName()+":"+e.getError());
-        } catch (SqlHandlerException e) {
-            System.out.println(e.getType().getCode());
         }
+//        catch (SqlHandlerException e) {
+//            System.out.println(e.getType().getCode());
+//        }
     }
 
 

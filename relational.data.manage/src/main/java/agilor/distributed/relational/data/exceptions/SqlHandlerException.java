@@ -14,21 +14,22 @@ public class SqlHandlerException extends Exception {
         this.type = type;
     }
 
-    public SqlHandlerException(Throwable e)
-    {
+    public SqlHandlerException(Throwable e) {
         super(e);
-        if(e instanceof SQLException) {
+        if (e instanceof SQLException) {
             SQLException sql_ex = (SQLException) e;
 
-            switch (sql_ex.getErrorCode())
-            {
-                case  1062:this.type=ExceptionTypes.SQL_ONLY_UNIQUE;break;
-                case  1452:this.type=ExceptionTypes.SQL_FOREIGN_KEY;break;
+            switch (sql_ex.getErrorCode()) {
+                case 1062:
+                    this.type = ExceptionTypes.SQL_ONLY_UNIQUE;
+                    break;
+                case 1452:
+                    this.type = ExceptionTypes.SQL_FOREIGN_KEY;
+                    break;
                 default:
                     System.out.println(sql_ex.getErrorCode());
             }
         }
-
     }
 
     @Override

@@ -3,7 +3,7 @@ package interceptor;
 import agilor.distributed.relational.data.entities.User;
 import com.jfinal.aop.Interceptor;
 import com.jfinal.aop.Invocation;
-import controller.DistrController;
+import com.jfinal.core.DistrController;
 import result.Action;
 
 /**

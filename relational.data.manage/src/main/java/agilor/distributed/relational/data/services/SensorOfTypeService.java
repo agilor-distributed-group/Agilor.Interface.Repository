@@ -43,21 +43,21 @@ public class SensorOfTypeService {
     }
 
 
-    public void insert(SensorOfType sensor) throws NullParameterException, SqlHandlerException {
+    public void insert(SensorOfType sensor) throws NullParameterException {
         if (sensor.getTypeId() == 0)
             throw new NullParameterException("typeId");
 
 
         DB.SensorOfType data = new DB.SensorOfType();
-        try {
+        //try {
             data.set("typeId", sensor.getTypeId())
                     .set("type", sensor.getType().value())
                     .save();
 
             sensor.setId(data.getInt("id"));
-        } catch (ActiveRecordException e) {
-            throw new SqlHandlerException(e.getCause());
-        }
+//        } catch (ActiveRecordException e) {
+//            throw new SqlHandlerException(e.getCause());
+//        }
     }
 
 
@@ -67,17 +67,17 @@ public class SensorOfTypeService {
         return DB.SensorOfType.instance().deleteById(id);
     }
 
-    public void update(SensorOfType sensor) throws SqlHandlerException {
+    public void update(SensorOfType sensor) {
         DB.SensorOfType data = new DB.SensorOfType();
-        try {
+       // try {
             data.set("id",sensor.getId())
                     .set("typeId", sensor.getTypeId())
                     .set("type", sensor.getType().value())
                     .update();
 
             sensor.setId(data.getInt("id"));
-        } catch (ActiveRecordException e) {
-            throw new SqlHandlerException(e.getCause());
-        }
+//        } catch (ActiveRecordException e) {
+//            throw new SqlHandlerException(e.getCause());
+//        }
     }
 }

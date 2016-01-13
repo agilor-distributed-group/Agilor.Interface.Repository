@@ -3,7 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/agilor-client/agilor-client.iml" filepath="$PROJECT_DIR$/agilor-client/agilor-client.iml" />
-      <module fileurl="file://$PROJECT_DIR$/agilor-distributed-storage.iml" filepath="$PROJECT_DIR$/agilor-distributed-storage.iml" />
+      <module fileurl="file://$PROJECT_DIR$/agilor.distributed.iml" filepath="$PROJECT_DIR$/agilor.distributed.iml" />
       <module fileurl="file://$PROJECT_DIR$/relational.data.manage/relational.data.manage.iml" filepath="$PROJECT_DIR$/relational.data.manage/relational.data.manage.iml" />
       <module fileurl="file://$PROJECT_DIR$/scoket-new/scoket-new.iml" filepath="$PROJECT_DIR$/scoket-new/scoket-new.iml" />
       <module fileurl="file://$PROJECT_DIR$/storage-interface-convert/storage-interface-convert.iml" filepath="$PROJECT_DIR$/storage-interface-convert/storage-interface-convert.iml" />

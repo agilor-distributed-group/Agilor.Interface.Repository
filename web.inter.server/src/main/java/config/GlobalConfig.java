@@ -1,15 +1,40 @@
 package config;
 
 
+import agilor.distributed.relational.data.context.Config;
 import com.jfinal.config.*;
-import com.jfinal.plugin.activerecord.ActiveRecordPlugin;
-import com.jfinal.plugin.c3p0.C3p0Plugin;
+import controller.TestController;
 import controller.UserController;
+
+import java.io.IOException;
+import java.io.InputStream;
+import java.util.Properties;
 
 /**
  * Created by LQ on 2015/12/24.
  */
 public class GlobalConfig extends JFinalConfig   {
+
+
+    public GlobalConfig()
+    {
+        Config.init("config.properties");
+
+
+//        Properties pps = new Properties();
+//        try {
+//
+//            InputStream stream = GlobalConfig.class.getClassLoader().getResourceAsStream("config.properties");
+//
+//            pps.load(Object.class.getResourceAsStream("/conwwwfig.properties"));
+//        } catch (IOException e) {
+//            System.out.println("32222222222222");
+//            e.printStackTrace();
+//        }
+
+    }
+
+
 
     @Override
     public void configConstant(Constants constants) {
@@ -20,16 +45,23 @@ public class GlobalConfig extends JFinalConfig   {
 
     @Override
     public void configRoute(Routes routes) {
+
         routes.add("/user", UserController.class);
+        routes.add("/test", TestController.class);
+        //routes.add("/user/ping", UserController.class);
     }
 
     @Override
     public void configPlugin(Plugins plugins) {
-        loadPropertyFile("database.properties");
-        C3p0Plugin c3p0Plugin = new C3p0Plugin(getProperty("jdbc"), getProperty("user"), getProperty("password"));
-        plugins.add(c3p0Plugin);
-        ActiveRecordPlugin arp = new ActiveRecordPlugin(c3p0Plugin);
-        plugins.add(arp);
+
+
+
+
+//        loadPropertyFile("config.properties");
+//        C3p0Plugin c3p0Plugin = new C3p0Plugin(getProperty("jdbcUrl"), getProperty("jdbcUserName"), getProperty("jdbcPassword"));
+//        plugins.add(c3p0Plugin);
+//        ActiveRecordPlugin arp = new ActiveRecordPlugin(c3p0Plugin);
+//        plugins.add(arp);
 
 
     }
