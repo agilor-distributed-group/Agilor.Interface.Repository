@@ -27,8 +27,13 @@ public class DistrController extends Controller {
 
 
     public RequestContext getContext() throws Exception {
-        if (context == null)
+        if (context == null) {
+            logger.info("excaute getContext and create requestContext ");
             context = new RequestContext(new HttpConnection(getRequest(), getResponse()));
+
+
+
+        }
         return context;
     }
 
@@ -57,6 +62,8 @@ public class DistrController extends Controller {
     }
 
     void init(HttpServletRequest request, HttpServletResponse response, String urlPara) {
+        logger.info("the distrcontroller is init");
+
         super.init(request, response, urlPara);
         try {
             context = new RequestContext(new HttpConnection(getRequest(), getResponse()));

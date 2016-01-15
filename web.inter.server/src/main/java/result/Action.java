@@ -26,17 +26,17 @@ public class Action extends BaseResult {
 
     @Override
     public boolean isOk() {
-        return false;
+        return isOk;
     }
 
     @Override
     public Object getData() {
-        return null;
+        return data;
     }
 
     @Override
     public String getInfo() {
-        return null;
+        return info;
     }
 
 
@@ -62,12 +62,13 @@ public class Action extends BaseResult {
         return new Action(false, -4, info);
     }
 
-
-
-    public static Result validatae(Object data,String info)
+    public static Result exist()
     {
-        return new Action(false,data,info);
+        return new Action(false,-5,null);
     }
+
+
+
 
 
 

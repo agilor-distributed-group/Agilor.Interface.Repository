@@ -3,12 +3,10 @@ package config;
 
 import agilor.distributed.relational.data.context.Config;
 import com.jfinal.config.*;
-import controller.TestController;
+import controller.DeviceController;
+import controller.DeviceTypeController;
+import controller.SensorController;
 import controller.UserController;
-
-import java.io.IOException;
-import java.io.InputStream;
-import java.util.Properties;
 
 /**
  * Created by LQ on 2015/12/24.
@@ -47,8 +45,9 @@ public class GlobalConfig extends JFinalConfig   {
     public void configRoute(Routes routes) {
 
         routes.add("/user", UserController.class);
-        routes.add("/test", TestController.class);
-        //routes.add("/user/ping", UserController.class);
+        routes.add("/device", DeviceController.class);
+        routes.add("/devicetype", DeviceTypeController.class);
+        routes.add("/sensor", SensorController.class);
     }
 
     @Override

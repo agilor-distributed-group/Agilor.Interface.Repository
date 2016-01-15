@@ -31,11 +31,15 @@ public class Config {
     private static String jdbcUserName=null;
     private static String jdbcPassword=null;
 
+    private static boolean zkInit=false;
 
 
     private static C3p0Plugin c3p0 =null;
     private static ActiveRecordPlugin arp = null;
     private static EhCachePlugin cache = null;
+
+
+
 
 
     private static boolean isInit=false;
@@ -59,6 +63,7 @@ public class Config {
                 jdbcUrl = pps.getProperty("jdbcUrl", null);
                 jdbcUserName = pps.getProperty("jdbcUserName", null);
                 jdbcPassword = pps.getProperty("jdbcPassword", null);
+                zkInit = Boolean.parseBoolean(pps.getProperty("zkInit","false"));
 
 
 
@@ -150,5 +155,10 @@ public class Config {
 
     public static int getZkTimeout() {
         return zkTimeout;
+    }
+
+
+    public static boolean isZkInit() {
+        return zkInit;
     }
 }

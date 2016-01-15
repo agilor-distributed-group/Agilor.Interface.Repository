@@ -9,6 +9,8 @@ public interface IConnection {
     void addResponseData(String key,Object value);
 
     String getHost();
+
+    @Deprecated
     int getPort();
 
     String attr(String key);

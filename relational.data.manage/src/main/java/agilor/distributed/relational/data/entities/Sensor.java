@@ -109,9 +109,6 @@ public class Sensor {
             case INT:val.setLvalue(Integer.parseInt(value));break;
             case STRING:val.setSvalue(value);break;
         }
-
-
         Agilor.instance().write(tagName,val);
-
     }
 }

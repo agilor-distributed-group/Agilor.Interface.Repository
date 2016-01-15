@@ -8,6 +8,8 @@ import agilor.distributed.relational.data.services.UserService;
 import com.jfinal.aop.Before;
 import com.jfinal.core.DistrController;
 import interceptor.LoginInterceptor;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import result.Action;
 
 
@@ -15,6 +17,10 @@ import result.Action;
  * Created by LQ on 2015/12/24.
  */
 public class UserController extends DistrController {
+
+    private final static Logger logger = LoggerFactory.getLogger(UserController.class);
+
+
 
     UserService service = null;
 
@@ -38,12 +44,14 @@ public class UserController extends DistrController {
                 getContext().setSession("user", model.getId());
                 renderResult(Action.success());
             }
-            else
+            else {
+
                 renderResult(Action.failed());
+            }
 
 
         } catch (NullParameterException e) {
-            e.printStackTrace();
+            renderResult(Action.validate(e.getName()));
         } catch (ValidateParameterException e) {
             e.printStackTrace();
         } catch (Exception e) {
@@ -69,13 +77,23 @@ public class UserController extends DistrController {
             User user = service.register(getPara("u"), getPara("p"));
             if (user != null)
                 login();
-            else
+            else {
+                logger.info("register failed");
+                logger.info("result {}",Action.failed().serialize());
                 renderResult(Action.failed());
+            }
 
         } catch (NullParameterException e) {
             renderResult(Action.validate(e.getName()));
         } catch (ValidateParameterException e) {
             renderResult(Action.validate(e.getName()));
+        } catch (SqlHandlerException e) {
+
+            switch (e.getType())
+            {
+                case SQL_ONLY_UNIQUE:renderResult(Action.exist());break;
+                default:renderResult(Action.failed());break;
+            }
         }
 //        catch (SqlHandlerException e) {
 //            e.printStackTrace();

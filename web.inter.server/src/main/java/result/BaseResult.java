@@ -2,11 +2,16 @@ package result;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.sun.javafx.binding.StringFormatter;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * Created by LQ on 2016/1/6.
  */
 public abstract class BaseResult implements Result {
+
+    private final static Logger logger = LoggerFactory.getLogger(Result.class);
+
 
     private static ObjectMapper mapper = new ObjectMapper();
 
@@ -15,11 +20,12 @@ public abstract class BaseResult implements Result {
 
         StringBuilder builder = new StringBuilder();
 
-        builder.append("{ok:"+isOk());
-        builder.append(",data:"+getData());
-        builder.append("info:"+getInfo());
+        builder.append("{\"ok\":"+isOk());
+        builder.append(",\"data\":"+getData());
+        builder.append(",\"info\":"+getInfo());
         builder.append("}");
-        return null;
+
+        return builder.toString();
     }
 
 

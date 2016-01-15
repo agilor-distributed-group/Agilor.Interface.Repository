@@ -24,17 +24,12 @@ public class RequestContext implements Context {
     public RequestContext(IConnection conn) throws Exception {
 
         this.connection = conn;
-
-
-
-
         ssCnxn = new ZkSessionCnxn(conn);
 
 
         //第一次请求 添加key
         if (!ssCnxn.isValid()) {
-
-            ssCnxn.create();
+            ssCnxn.create();;
         }
 
         else {

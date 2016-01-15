@@ -4,6 +4,7 @@ import agilor.distributed.relational.data.context.Config;
 import agilor.distributed.relational.data.context.IConnection;
 import agilor.distributed.relational.data.context.RequestContext;
 
+import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
@@ -27,12 +28,22 @@ public class HttpConnection implements IConnection {
 
     @Override
     public void addResponseData(String key, Object value) {
-        this.response.addHeader(key,value.toString());
+        //this.response.addHeader(key,value.toString());
+        this.response.addCookie(new Cookie(key,value.toString()));
     }
 
     @Override
     public String getHost() {
-        return this.request.getRemoteHost();
+
+        String ip = request.getHeader("x-forwarded-for");
+        if(ip == null || ip.length() == 0 || "unknown".equalsIgnoreCase(ip)) {
+            ip = request.getHeader("Proxy-Client-IP");
+        }
+        if(ip == null || ip.length() == 0 || "unknown".equalsIgnoreCase(ip)) {
+            ip = request.getRemoteAddr();
+        }
+        return ip;
+        //return this.request.getRemoteHost();
     }
 
     @Override

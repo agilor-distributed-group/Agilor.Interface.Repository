@@ -4,6 +4,8 @@ import org.apache.commons.lang3.StringUtils;
 import org.apache.zookeeper.*;
 import org.apache.zookeeper.data.Stat;
 import org.omg.CORBA.DATA_CONVERSION;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.io.IOException;
 import java.util.Map;
@@ -15,6 +17,9 @@ import java.util.concurrent.TimeUnit;
  * Created by LQ on 2015/12/25.
  */
 public class ZkSessionCnxn implements SessionCnxn {
+
+
+    private final static Logger logger = LoggerFactory.getLogger(ZkSessionCnxn.class);
 
 
     private final static String SESSION_ID="DISTRIBUTED_SESSION_FINAL";
@@ -45,8 +50,14 @@ public class ZkSessionCnxn implements SessionCnxn {
                 }
             });
 
+
+
             //创建session保存节点
             String path = Config.getSessionPath();
+
+
+            if(Config.isZkInit()&&zk.exists(path,false)!=null)
+                ZkUtils.delete(zk,path);
 
             String tmp = "";
 
@@ -118,9 +129,14 @@ public class ZkSessionCnxn implements SessionCnxn {
     @Override
     public String create() throws KeeperException, InterruptedException, IOException {
 
-        SessionMetaData root = new SessionMetaData(get_address_str(connection).getBytes());
+        SessionMetaData root = new SessionMetaData(connection.getHost().getBytes());
+
+
 
         SESSION_KEY = root.getKey();
+
+        logger.info("create sesion {}",SESSION_KEY);
+
         String path = zk.create(getSessionRoot(), root.serialize(), ZooDefs.Ids.OPEN_ACL_UNSAFE, CreateMode.PERSISTENT);
 
 
@@ -135,37 +151,66 @@ public class ZkSessionCnxn implements SessionCnxn {
     public boolean isValid() throws KeeperException, InterruptedException, IOException, ClassNotFoundException {
 
 
-        if (StringUtils.isEmpty(SESSION_KEY)) return false;
+        if (StringUtils.isEmpty(SESSION_KEY)) {
+            logger.info("SESSION is not valid,because the SESSION_KEY is empty");
+            return false;
+        }
 
         SessionMetaData root = null;
 
 
         if (!base.containsKey(SESSION_KEY) || !(root = base.get(SESSION_KEY)).isValid()) {
+            logger.info("the localhost session cache don't contain session of'{}',or the session is expire", SESSION_KEY);
             byte[] data = zk.getData(getSessionRoot(), false, null);
             if (data != null) {
                 root = SessionMetaData.deserialize(data);
+
                 if (root.isValid()) {
+                    logger.info("the session of {} is valid", SESSION_KEY);
                     update0(root);
                     base.put(root.getKey(), root);
                     return true;
                 } else {
+                    logger.info("the session of {} is NOT valid", SESSION_KEY);
                     delete0(root.getKey());
                     base.remove(root.getKey());
                     SESSION_KEY = null;
                     return false;
                 }
             }
+            else
+                logger.info("the session data of {} is null",SESSION_KEY);
         }
 
+        String host = new String((byte[])root.value);
 
-        Host host = new Host(new String((byte[]) root.value));
 
 
-        return (host.getAddress() == connection.getHost() && host.getPort() == connection.getPort());
+
+        logger.info("the cache host {}",host);
+        logger.info("the connection host {}",connection.getHost());
+
+
+        return (!StringUtils.isEmpty(host))&&host.equals(connection.getHost());
+
+        //Host host = new Host(new String((byte[]) root.value));
+
+
+        //logger.info("the cache host:{},port:{}",host.getAddress(),host.getPort());
+
+        //logger.info("the connection host:{},port:{}",connection.getHost(),connection.getPort());
+
+
+
+
+
+        //return (host.getAddress().equals(connection.getHost()) && host.getPort() == connection.getPort());
     }
 
     @Override
     public void setSession(String key, Object value) throws KeeperException, InterruptedException, IOException, ClassNotFoundException {
+
+        logger.info("setSession");
 
         if (!isValid())
             create();
