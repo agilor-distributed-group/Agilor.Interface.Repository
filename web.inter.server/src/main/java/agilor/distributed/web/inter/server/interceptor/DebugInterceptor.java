@@ -1,6 +1,7 @@
 package agilor.distributed.web.inter.server.interceptor;
 
 import agilor.distributed.web.inter.server.config.Global;
+import agilor.distributed.web.inter.server.result.Action;
 import com.jfinal.aop.Interceptor;
 import com.jfinal.aop.Invocation;
 
@@ -13,6 +14,6 @@ public class DebugInterceptor implements Interceptor {
         if(Global.isDebug())
             inv.invoke();
         else
-            inv.getController().renderText("error");
+            inv.getController().renderText(Action.disable().serialize());
     }
 }

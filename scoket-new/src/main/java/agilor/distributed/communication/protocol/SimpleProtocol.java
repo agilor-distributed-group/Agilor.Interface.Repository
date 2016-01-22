@@ -91,10 +91,12 @@ public final class SimpleProtocol extends ProtocolBase {
     //数据最大长度为 65531
     @Override
     public byte[] resolve(String data) throws Exception {
-        if (data.length() > MAX_LEN)
-            throw new Exception("字符串最大长度不能超过 " + MAX_LEN);
+        if (data!=null&& data.length() > MAX_LEN)
+            throw new Exception("the string length must between 0 and " + MAX_LEN);
 
 
+        if(data==null)
+            return new byte[]{ProtocolDataTypes.STRING.value(),1,0,0,0,0};
 
 
 

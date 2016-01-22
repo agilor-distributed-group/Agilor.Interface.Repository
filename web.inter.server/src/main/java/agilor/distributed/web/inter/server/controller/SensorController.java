@@ -7,16 +7,15 @@ import agilor.distributed.relational.data.entities.Sensor;
 import agilor.distributed.relational.data.entities.SensorOfType;
 import agilor.distributed.relational.data.exceptions.NullParameterException;
 import agilor.distributed.relational.data.exceptions.ValidateParameterException;
-import agilor.distributed.relational.data.services.DeviceService;
-import agilor.distributed.relational.data.services.DeviceTypeService;
 import agilor.distributed.relational.data.services.SensorOfTypeService;
 import agilor.distributed.relational.data.services.SensorService;
+import agilor.distributed.web.inter.server.interceptor.CreatorInterceptor;
 import agilor.distributed.web.inter.server.interceptor.DebugInterceptor;
+import agilor.distributed.web.inter.server.interceptor.LoginInterceptor;
+import agilor.distributed.web.inter.server.result.Action;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.jfinal.aop.Before;
 import com.jfinal.core.DistrController;
-import agilor.distributed.web.inter.server.interceptor.LoginInterceptor;
-import agilor.distributed.web.inter.server.result.Action;
 
 import java.util.Date;
 
@@ -29,175 +28,115 @@ public class SensorController extends DistrController {
     private SensorOfTypeService type_service = null;
 
 
-    public SensorController()  {
+    public SensorController() {
 
         service = new SensorService();
-        type_service= new SensorOfTypeService();
+        type_service = new SensorOfTypeService();
     }
 
 
-    @Before(LoginInterceptor.class)
+    @Before({LoginInterceptor.class, CreatorInterceptor.class})
+    @CreatorInterceptor.Param(model = Device.class, id = "di", context = "device")
     public void insert() {
 
-        int uid = userId();
-
-        int deviceId = getParaToInt("di");
-        DeviceService ds = new DeviceService();
         try {
-            Device device = ds.getById(deviceId);
-            if(device==null)
-                renderResult(Action.notFound());
-            else if(device.getCreatorId()!=userId())
-                renderResult(Action.error());
-            else {
-                Sensor sensor = new Sensor();
-                sensor.setName(getPara("n"));
-                sensor.setDeviceId(device.getId());
-                sensor.setType(Value.Types.valueOf(getPara("t")));
-                sensor.setCreatorId(device.getCreatorId());
-                sensor.setDateCreated(new Date());
+            Device device = getData("device");
 
-                service.insert(sensor);
+            Sensor sensor = new Sensor();
+            sensor.setName(getPara("n"));
+            sensor.setDeviceId(device.getId());
+            sensor.setType(Value.Types.valueOf(getPara("t")));
+            sensor.setCreatorId(device.getCreatorId());
+            sensor.setDateCreated(new Date());
 
-                renderResult(Action.success());
-            }
+            service.insert(sensor);
+
+            renderResult(Action.success());
+
         } catch (ValidateParameterException e) {
-            e.printStackTrace();
-        } catch (InstantiationException e) {
-            e.printStackTrace();
-        } catch (NullParameterException e) {
-            e.printStackTrace();
-        } catch (IllegalAccessException e) {
-            e.printStackTrace();
-        }
-    }
-
-
-    @Before(LoginInterceptor.class)
-    public void insertOfType()
-    {
-        int typeId = getParaToInt("i", 0);
-
-        DeviceTypeService dts = new DeviceTypeService();
-        try {
-            DeviceType dt = dts.getById(typeId);
-            if(dt==null)
-                renderResult(Action.notFound());
-            else if(dt.getCreatorId()!=userId())
-                renderResult(Action.error());
-            else {
-                SensorOfTypeService sts = new SensorOfTypeService();
-                SensorOfType data = new SensorOfType();
-                data.setType(Value.Types.valueOf(getPara("t")));
-                data.setTypeId(typeId);
-                sts.insert(data);
-                renderResult(Action.success());
-            }
-
-        } catch (InstantiationException e) {
-            e.printStackTrace();
-        } catch (IllegalAccessException e) {
-            e.printStackTrace();
+            renderResult(Action.validate(e.getMessage()));
         } catch (NullParameterException e) {
             renderResult(Action.validate(e.getMessage()));
         }
-//        catch (SqlHandlerException e) {
-//            e.printStackTrace();
-//        }
     }
 
 
-    @Before(LoginInterceptor.class)
+    @Before({LoginInterceptor.class, CreatorInterceptor.class})
+    @CreatorInterceptor.Param(model = DeviceType.class)
+    public void insertOfType() {
+
+        DeviceType dts = getData();
+        SensorOfTypeService sts = new SensorOfTypeService();
+        SensorOfType data = new SensorOfType();
+
+        try {
+            data.setType(Value.Types.valueOf(getPara("t")));
+            data.setTypeId(dts.getId());
+            sts.insert(data);
+            renderResult(Action.success());
+        } catch (NullParameterException e) {
+            renderResult(Action.validate(e.getMessage()));
+        } catch (IllegalArgumentException e) {
+            renderResult(Action.failed());
+        }
+
+
+    }
+
+
+    @Before({LoginInterceptor.class, CreatorInterceptor.class})
+    @CreatorInterceptor.Param(model = SensorOfType.class)
     public void deleteOfType() {
-        int id = getParaToInt("i", 0);
-        try {
-            SensorOfType s = type_service.findById(id);
-            if(s==null)
-                renderResult(Action.notFound());
-            else {
-                DeviceTypeService dt_service = new DeviceTypeService();
-                DeviceType dt = dt_service.getById(s.getTypeId());
-                if(dt==null|| dt.getCreatorId()!=userId())
-                    renderResult(Action.error());
-                else
-                {
-                    type_service.delete(s.getId());
-                    renderResult(Action.success());
-                }
-            }
-        } catch (InstantiationException e) {
-            e.printStackTrace();
-        } catch (IllegalAccessException e) {
-            e.printStackTrace();
-        }
+
+        SensorOfType sensor = getData();
+
+        if (type_service.delete(sensor.getId()))
+            renderResult(Action.success());
+        else
+            renderResult(Action.failed());
+
+
     }
 
-    @Before(LoginInterceptor.class)
+    @Before({LoginInterceptor.class, CreatorInterceptor.class})
+    @CreatorInterceptor.Param(model = Sensor.class)
     public void delete() {
+
+        Sensor sensor = getData();
+        if (service.delete(sensor.getId()))
+            renderResult(Action.success());
+        else
+            renderResult(Action.failed());
+    }
+
+    @Before({LoginInterceptor.class, CreatorInterceptor.class})
+    @CreatorInterceptor.Param(model = Sensor.class)
+    public void update() {
+
+        Sensor sensor = getData();
+        String n = getPara("n");
+        sensor.setName(n);
+        if (service.update(sensor))
+            renderResult(Action.success());
+        else
+            renderResult(Action.failed());
+    }
+
+    @Before({LoginInterceptor.class, CreatorInterceptor.class})
+    @CreatorInterceptor.Param(model = SensorOfType.class)
+    public void updateOfType() {
         int id = getParaToInt("i", 0);
-        try {
-            Sensor sensor = service.findById(id);
-            if (sensor == null)
-                renderResult(Action.notFound());
-            else if (sensor.getCreatorId() != userId())
-                renderResult(Action.error());
-            else {
-                service.delete(sensor.getId());
-                renderResult(Action.success());
-            }
-        } catch (InstantiationException e) {
-            e.printStackTrace();
-        } catch (IllegalAccessException e) {
-            e.printStackTrace();
-        }
+
+
+        SensorOfType sensor = getData();
+        sensor.setType(Value.Types.valueOf(getPara("t", sensor.getType().toString())));
+        type_service.update(sensor);
+        renderResult(Action.success());
     }
 
-    @Before(LoginInterceptor.class)
-    public void update() throws IllegalAccessException, InstantiationException {
-        int id = getParaToInt("i");
-        Sensor sensor = service.findById(id);
-        if(sensor==null)
-            renderResult(Action.notFound());
-        else if(sensor.getCreatorId()!=userId())
-            renderResult(Action.error());
-        else {
-            String n = getPara("n");
-            sensor.setName(n);
-            if (service.update(sensor))
-                renderResult(Action.success());
-            else
-                renderResult(Action.failed());
-        }
-    }
 
-    @Before(LoginInterceptor.class)
-    public void updateOfType()
-    {
-        int id = getParaToInt("i",0);
 
-        try {
-            SensorOfType s = type_service.findById(id);
-            if(s==null)
-                renderResult(Action.notFound());
-            else {
-                DeviceTypeService dt_service = new DeviceTypeService();
-                DeviceType dt = dt_service.getById(s.getTypeId());
-                if(dt==null||dt.getCreatorId()!=userId())
-                    renderResult(Action.error());
-                else
-                {
-                    s.setType(Value.Types.valueOf(getPara("t",s.getType().toString())));
-                    type_service.update(s);
-                    renderResult(Action.success());
-                }
-            }
 
-        } catch (InstantiationException e) {
-            e.printStackTrace();
-        } catch (IllegalAccessException e) {
-            e.printStackTrace();
-        }
-    }
 
 
     @Before({LoginInterceptor.class, DebugInterceptor.class})
@@ -222,45 +161,35 @@ public class SensorController extends DistrController {
 
 
 
-    @Before(LoginInterceptor.class)
+    @Before({LoginInterceptor.class,CreatorInterceptor.class})
+    @CreatorInterceptor.Param(model = Sensor.class)
     public void write()  {
-        int id = getParaToInt("i", 0);
         String v = getPara("v");
 
-        try {
-            Sensor sensor = service.findById(id);
-            if(sensor==null)
-                renderResult(Action.notFound());
-            else if(sensor.getCreatorId()!=userId())
-                renderResult(Action.error());
-            else {
+        Sensor sensor = getData();
 
-                Value val = new Value(sensor.getType());
 
-                switch (val.getValueType()) {
-                    case BOOL:
-                        val.setBvalue(Boolean.valueOf(v));
-                        break;
-                    case FLOAT:
-                        val.setFvalue(Float.valueOf(v));
-                        break;
-                    case INT:
-                        val.setLvalue(Integer.valueOf(v));
-                        break;
-                    case STRING:
-                        val.setSvalue(v);
-                        break;
-                    default:
-                }
+        Value val = new Value(sensor.getType());
 
-                sensor.write(val);
-
-            }
-        } catch (InstantiationException e) {
-            e.printStackTrace();
-        } catch (IllegalAccessException e) {
-            e.printStackTrace();
+        switch (val.getValueType()) {
+            case BOOL:
+                val.setBvalue(Boolean.valueOf(v));
+                break;
+            case FLOAT:
+                val.setFvalue(Float.valueOf(v));
+                break;
+            case INT:
+                val.setLvalue(Integer.valueOf(v));
+                break;
+            case STRING:
+                val.setSvalue(v);
+                break;
+            default:
         }
+
+        sensor.write(val);
+
+
 
 
     }

@@ -2,101 +2,42 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d94f0b16-1089-476c-aefc-685ba6cf701d" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/relational.data.manage/src/main/java/agilor/distributed/relational/data/entities/Creator.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web.inter.server/src/main/java/agilor/distributed/web/inter/server/interceptor/CreatorInterceptor.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web.inter.server/src/main/java/agilor/distributed/web/inter/server/interceptor/DebugInterceptor.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web.inter.server/src/main/java/agilor/distributed/web/inter/server/config/Global.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web.inter.server/src/main/java/agilor/distributed/web/inter/server/controller/SensorController.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web.inter.server/src/main/java/agilor/distributed/web/inter/server/listener/ServerInitListener.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web.inter.server/src/main/resources/web.properties" />
-      <change type="DELETED" beforePath="F:\agilor.distributed\relational.data.manage\src\main\java\agilor\distributed\relational\data\context\Host.java" afterPath="" />
-      <change type="DELETED" beforePath="F:\agilor.distributed\web.inter.server\src\main\java\controller\SensorController.java" afterPath="" />
-      <change type="DELETED" beforePath="F:\agilor.distributed\web.inter.server\src\main\java\interceptor\CreatorInterceptor.java" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web.inter.server/target/classes/result/Action.class" afterPath="$PROJECT_DIR$/web.inter.server/target/classes/result/Action.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web.inter.server/target/web.inter.server/WEB-INF/classes/result/Action.class" afterPath="$PROJECT_DIR$/web.inter.server/target/web.inter.server/WEB-INF/classes/result/Action.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/relational.data.manage/target/classes/agilor/distributed/relational/data/services/Agilor.class" afterPath="$PROJECT_DIR$/relational.data.manage/target/classes/agilor/distributed/relational/data/services/Agilor.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web.inter.server/target/classes/interceptor/CreatorInterceptor.class" afterPath="$PROJECT_DIR$/web.inter.server/target/classes/interceptor/CreatorInterceptor.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web.inter.server/target/web.inter.server/WEB-INF/classes/interceptor/CreatorInterceptor.class" afterPath="$PROJECT_DIR$/web.inter.server/target/web.inter.server/WEB-INF/classes/interceptor/CreatorInterceptor.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/relational.data.manage/target/classes/agilor/distributed/relational/data/entities/Device.class" afterPath="$PROJECT_DIR$/relational.data.manage/target/classes/agilor/distributed/relational/data/entities/Device.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web.inter.server/target/classes/controller/DeviceController.class" afterPath="$PROJECT_DIR$/web.inter.server/target/classes/controller/DeviceController.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web.inter.server/target/web.inter.server/WEB-INF/classes/controller/DeviceController.class" afterPath="$PROJECT_DIR$/web.inter.server/target/web.inter.server/WEB-INF/classes/controller/DeviceController.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web.inter.server/target/classes/agilor/distributed/web/inter/server/result/Action.class" afterPath="$PROJECT_DIR$/web.inter.server/target/classes/agilor/distributed/web/inter/server/result/Action.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web.inter.server/target/web.inter.server/WEB-INF/classes/agilor/distributed/web/inter/server/result/Action.class" afterPath="$PROJECT_DIR$/web.inter.server/target/web.inter.server/WEB-INF/classes/agilor/distributed/web/inter/server/result/Action.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web.inter.server/target/classes/agilor/distributed/web/inter/server/interceptor/DebugInterceptor.class" afterPath="$PROJECT_DIR$/web.inter.server/target/classes/agilor/distributed/web/inter/server/interceptor/DebugInterceptor.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web.inter.server/target/web.inter.server/WEB-INF/classes/agilor/distributed/web/inter/server/interceptor/DebugInterceptor.class" afterPath="$PROJECT_DIR$/web.inter.server/target/web.inter.server/WEB-INF/classes/agilor/distributed/web/inter/server/interceptor/DebugInterceptor.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web.inter.server/target/classes/agilor/distributed/web/inter/server/controller/DeviceController.class" afterPath="$PROJECT_DIR$/web.inter.server/target/classes/agilor/distributed/web/inter/server/controller/DeviceController.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web.inter.server/target/web.inter.server/WEB-INF/classes/agilor/distributed/web/inter/server/controller/DeviceController.class" afterPath="$PROJECT_DIR$/web.inter.server/target/web.inter.server/WEB-INF/classes/agilor/distributed/web/inter/server/controller/DeviceController.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/relational.data.manage/target/classes/agilor/distributed/relational/data/services/DeviceService$1.class" afterPath="$PROJECT_DIR$/relational.data.manage/target/classes/agilor/distributed/relational/data/services/DeviceService$1.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/relational.data.manage/target/classes/agilor/distributed/relational/data/services/DeviceService$2.class" afterPath="$PROJECT_DIR$/relational.data.manage/target/classes/agilor/distributed/relational/data/services/DeviceService$2.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/relational.data.manage/target/classes/agilor/distributed/relational/data/services/DeviceService.class" afterPath="$PROJECT_DIR$/relational.data.manage/target/classes/agilor/distributed/relational/data/services/DeviceService.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/relational.data.manage/target/classes/agilor/distributed/relational/data/entities/DeviceType$ScopeTypes.class" afterPath="$PROJECT_DIR$/relational.data.manage/target/classes/agilor/distributed/relational/data/entities/DeviceType$ScopeTypes.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/relational.data.manage/target/classes/agilor/distributed/relational/data/entities/DeviceType.class" afterPath="$PROJECT_DIR$/relational.data.manage/target/classes/agilor/distributed/relational/data/entities/DeviceType.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web.inter.server/target/classes/controller/DeviceTypeController.class" afterPath="$PROJECT_DIR$/web.inter.server/target/classes/controller/DeviceTypeController.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web.inter.server/target/web.inter.server/WEB-INF/classes/controller/DeviceTypeController.class" afterPath="$PROJECT_DIR$/web.inter.server/target/web.inter.server/WEB-INF/classes/controller/DeviceTypeController.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/relational.data.manage/target/classes/agilor/distributed/relational/data/services/DeviceTypeService$1.class" afterPath="$PROJECT_DIR$/relational.data.manage/target/classes/agilor/distributed/relational/data/services/DeviceTypeService$1.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/relational.data.manage/target/classes/agilor/distributed/relational/data/services/DeviceTypeService.class" afterPath="$PROJECT_DIR$/relational.data.manage/target/classes/agilor/distributed/relational/data/services/DeviceTypeService.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web.inter.server/target/classes/com/jfinal/core/DistrController$1.class" afterPath="$PROJECT_DIR$/web.inter.server/target/classes/com/jfinal/core/DistrController$1.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web.inter.server/target/web.inter.server/WEB-INF/classes/com/jfinal/core/DistrController$1.class" afterPath="$PROJECT_DIR$/web.inter.server/target/web.inter.server/WEB-INF/classes/com/jfinal/core/DistrController$1.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web.inter.server/target/classes/com/jfinal/core/DistrController.class" afterPath="$PROJECT_DIR$/web.inter.server/target/classes/com/jfinal/core/DistrController.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web.inter.server/target/web.inter.server/WEB-INF/classes/com/jfinal/core/DistrController.class" afterPath="$PROJECT_DIR$/web.inter.server/target/web.inter.server/WEB-INF/classes/com/jfinal/core/DistrController.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/relational.data.manage/target/classes/agilor/distributed/relational/data/db/ExtendModel.class" afterPath="$PROJECT_DIR$/relational.data.manage/target/classes/agilor/distributed/relational/data/db/ExtendModel.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web.inter.server/target/classes/config/GlobalConfig.class" afterPath="$PROJECT_DIR$/web.inter.server/target/classes/config/GlobalConfig.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web.inter.server/target/web.inter.server/WEB-INF/classes/config/GlobalConfig.class" afterPath="$PROJECT_DIR$/web.inter.server/target/web.inter.server/WEB-INF/classes/config/GlobalConfig.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web.inter.server/target/test-classes/GlobalConfigTest.class" afterPath="$PROJECT_DIR$/web.inter.server/target/test-classes/GlobalConfigTest.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web.inter.server/target/classes/com/jfinal/core/HttpConnection.class" afterPath="$PROJECT_DIR$/web.inter.server/target/classes/com/jfinal/core/HttpConnection.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web.inter.server/target/web.inter.server/WEB-INF/classes/com/jfinal/core/HttpConnection.class" afterPath="$PROJECT_DIR$/web.inter.server/target/web.inter.server/WEB-INF/classes/com/jfinal/core/HttpConnection.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web.inter.server/target/classes/interceptor/LoginInterceptor.class" afterPath="$PROJECT_DIR$/web.inter.server/target/classes/interceptor/LoginInterceptor.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web.inter.server/target/web.inter.server/WEB-INF/classes/interceptor/LoginInterceptor.class" afterPath="$PROJECT_DIR$/web.inter.server/target/web.inter.server/WEB-INF/classes/interceptor/LoginInterceptor.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/relational.data.manage/target/classes/agilor/distributed/relational/data/context/RequestContext.class" afterPath="$PROJECT_DIR$/relational.data.manage/target/classes/agilor/distributed/relational/data/context/RequestContext.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/relational.data.manage/target/classes/agilor/distributed/relational/data/entities/Sensor$1.class" afterPath="$PROJECT_DIR$/relational.data.manage/target/classes/agilor/distributed/relational/data/entities/Sensor$1.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/relational.data.manage/target/classes/agilor/distributed/relational/data/entities/Sensor.class" afterPath="$PROJECT_DIR$/relational.data.manage/target/classes/agilor/distributed/relational/data/entities/Sensor.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web.inter.server/target/classes/controller/SensorController$1.class" afterPath="$PROJECT_DIR$/web.inter.server/target/classes/controller/SensorController$1.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web.inter.server/target/web.inter.server/WEB-INF/classes/controller/SensorController$1.class" afterPath="$PROJECT_DIR$/web.inter.server/target/web.inter.server/WEB-INF/classes/controller/SensorController$1.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web.inter.server/target/classes/controller/SensorController.class" afterPath="$PROJECT_DIR$/web.inter.server/target/classes/controller/SensorController.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web.inter.server/target/web.inter.server/WEB-INF/classes/controller/SensorController.class" afterPath="$PROJECT_DIR$/web.inter.server/target/web.inter.server/WEB-INF/classes/controller/SensorController.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/relational.data.manage/target/classes/agilor/distributed/relational/data/entities/SensorOfType.class" afterPath="$PROJECT_DIR$/relational.data.manage/target/classes/agilor/distributed/relational/data/entities/SensorOfType.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/relational.data.manage/target/classes/agilor/distributed/relational/data/services/SensorOfTypeService.class" afterPath="$PROJECT_DIR$/relational.data.manage/target/classes/agilor/distributed/relational/data/services/SensorOfTypeService.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/relational.data.manage/target/classes/agilor/distributed/relational/data/services/SensorService.class" afterPath="$PROJECT_DIR$/relational.data.manage/target/classes/agilor/distributed/relational/data/services/SensorService.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/relational.data.manage/target/classes/agilor/distributed/relational/data/entities/User.class" afterPath="$PROJECT_DIR$/relational.data.manage/target/classes/agilor/distributed/relational/data/entities/User.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web.inter.server/target/classes/controller/UserController$1.class" afterPath="$PROJECT_DIR$/web.inter.server/target/classes/controller/UserController$1.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web.inter.server/target/web.inter.server/WEB-INF/classes/controller/UserController$1.class" afterPath="$PROJECT_DIR$/web.inter.server/target/web.inter.server/WEB-INF/classes/controller/UserController$1.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web.inter.server/target/classes/controller/UserController.class" afterPath="$PROJECT_DIR$/web.inter.server/target/classes/controller/UserController.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web.inter.server/target/web.inter.server/WEB-INF/classes/controller/UserController.class" afterPath="$PROJECT_DIR$/web.inter.server/target/web.inter.server/WEB-INF/classes/controller/UserController.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/relational.data.manage/target/classes/agilor/distributed/relational/data/context/ZkSessionCnxn$2.class" afterPath="$PROJECT_DIR$/relational.data.manage/target/classes/agilor/distributed/relational/data/context/ZkSessionCnxn$2.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/relational.data.manage/target/classes/agilor/distributed/relational/data/context/ZkSessionCnxn.class" afterPath="$PROJECT_DIR$/relational.data.manage/target/classes/agilor/distributed/relational/data/context/ZkSessionCnxn.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web.inter.server/target/classes/agilor/distributed/web/inter/server/controller/SensorController$1.class" afterPath="$PROJECT_DIR$/web.inter.server/target/classes/agilor/distributed/web/inter/server/controller/SensorController$1.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web.inter.server/target/web.inter.server/WEB-INF/classes/agilor/distributed/web/inter/server/controller/SensorController$1.class" afterPath="$PROJECT_DIR$/web.inter.server/target/web.inter.server/WEB-INF/classes/agilor/distributed/web/inter/server/controller/SensorController$1.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web.inter.server/target/classes/agilor/distributed/web/inter/server/controller/SensorController.class" afterPath="$PROJECT_DIR$/web.inter.server/target/classes/agilor/distributed/web/inter/server/controller/SensorController.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web.inter.server/target/web.inter.server/WEB-INF/classes/agilor/distributed/web/inter/server/controller/SensorController.class" afterPath="$PROJECT_DIR$/web.inter.server/target/web.inter.server/WEB-INF/classes/agilor/distributed/web/inter/server/controller/SensorController.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/scoket-new/target/classes/agilor/distributed/communication/protocol/SimpleProtocol.class" afterPath="$PROJECT_DIR$/scoket-new/target/classes/agilor/distributed/communication/protocol/SimpleProtocol.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/relational.data.manage/target/relational.data.manage-1.0-SNAPSHOT-sources.jar" afterPath="$PROJECT_DIR$/relational.data.manage/target/relational.data.manage-1.0-SNAPSHOT-sources.jar" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/relational.data.manage/target/relational.data.manage-1.0-SNAPSHOT.jar" afterPath="$PROJECT_DIR$/relational.data.manage/target/relational.data.manage-1.0-SNAPSHOT.jar" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web.inter.server/target/web.inter.server/WEB-INF/lib/relational.data.manage-1.0-SNAPSHOT.jar" afterPath="$PROJECT_DIR$/web.inter.server/target/web.inter.server/WEB-INF/lib/relational.data.manage-1.0-SNAPSHOT.jar" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/scoket-new/target/socket.new-1.0-SNAPSHOT-sources.jar" afterPath="$PROJECT_DIR$/scoket-new/target/socket.new-1.0-SNAPSHOT-sources.jar" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/scoket-new/target/socket.new-1.0-SNAPSHOT.jar" afterPath="$PROJECT_DIR$/scoket-new/target/socket.new-1.0-SNAPSHOT.jar" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web.inter.server/target/web.inter.server/WEB-INF/lib/socket.new-1.0-SNAPSHOT.jar" afterPath="$PROJECT_DIR$/web.inter.server/target/web.inter.server/WEB-INF/lib/socket.new-1.0-SNAPSHOT.jar" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/storage-interface-convert/target/storage.iconvert-1.0-SNAPSHOT-jar-with-dependencies.jar" afterPath="$PROJECT_DIR$/storage-interface-convert/target/storage.iconvert-1.0-SNAPSHOT-jar-with-dependencies.jar" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web.inter.server/target/web.inter.server-sources.jar" afterPath="$PROJECT_DIR$/web.inter.server/target/web.inter.server-sources.jar" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web.inter.server/target/web.inter.server.war" afterPath="$PROJECT_DIR$/web.inter.server/target/web.inter.server.war" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/relational.data.manage/src/main/java/agilor/distributed/relational/data/services/Agilor.java" afterPath="$PROJECT_DIR$/relational.data.manage/src/main/java/agilor/distributed/relational/data/services/Agilor.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/relational.data.manage/src/main/java/agilor/distributed/relational/data/entities/Device.java" afterPath="$PROJECT_DIR$/relational.data.manage/src/main/java/agilor/distributed/relational/data/entities/Device.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cache/%0044evice%0054ype.data" afterPath="$PROJECT_DIR$/cache/%0044evice%0054ype.data" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web.inter.server/src/main/java/agilor/distributed/web/inter/server/result/Action.java" afterPath="$PROJECT_DIR$/web.inter.server/src/main/java/agilor/distributed/web/inter/server/result/Action.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web.inter.server/src/main/java/agilor/distributed/web/inter/server/interceptor/DebugInterceptor.java" afterPath="$PROJECT_DIR$/web.inter.server/src/main/java/agilor/distributed/web/inter/server/interceptor/DebugInterceptor.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web.inter.server/src/main/java/agilor/distributed/web/inter/server/controller/DeviceController.java" afterPath="$PROJECT_DIR$/web.inter.server/src/main/java/agilor/distributed/web/inter/server/controller/DeviceController.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/relational.data.manage/src/main/java/agilor/distributed/relational/data/services/DeviceService.java" afterPath="$PROJECT_DIR$/relational.data.manage/src/main/java/agilor/distributed/relational/data/services/DeviceService.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/relational.data.manage/src/main/java/agilor/distributed/relational/data/entities/DeviceType.java" afterPath="$PROJECT_DIR$/relational.data.manage/src/main/java/agilor/distributed/relational/data/entities/DeviceType.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/relational.data.manage/src/main/java/agilor/distributed/relational/data/services/DeviceTypeService.java" afterPath="$PROJECT_DIR$/relational.data.manage/src/main/java/agilor/distributed/relational/data/services/DeviceTypeService.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web.inter.server/src/main/java/com/jfinal/core/DistrController.java" afterPath="$PROJECT_DIR$/web.inter.server/src/main/java/com/jfinal/core/DistrController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/relational.data.manage/src/main/java/agilor/distributed/relational/data/db/ExtendModel.java" afterPath="$PROJECT_DIR$/relational.data.manage/src/main/java/agilor/distributed/relational/data/db/ExtendModel.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web.inter.server/src/test/java/GlobalConfigTest.java" afterPath="$PROJECT_DIR$/web.inter.server/src/test/java/GlobalConfigTest.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web.inter.server/src/main/java/com/jfinal/core/HttpConnection.java" afterPath="$PROJECT_DIR$/web.inter.server/src/main/java/com/jfinal/core/HttpConnection.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/relational.data.manage/src/main/java/agilor/distributed/relational/data/context/RequestContext.java" afterPath="$PROJECT_DIR$/relational.data.manage/src/main/java/agilor/distributed/relational/data/context/RequestContext.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/relational.data.manage/src/main/java/agilor/distributed/relational/data/entities/Sensor.java" afterPath="$PROJECT_DIR$/relational.data.manage/src/main/java/agilor/distributed/relational/data/entities/Sensor.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/relational.data.manage/src/main/java/agilor/distributed/relational/data/entities/SensorOfType.java" afterPath="$PROJECT_DIR$/relational.data.manage/src/main/java/agilor/distributed/relational/data/entities/SensorOfType.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/relational.data.manage/src/main/java/agilor/distributed/relational/data/services/SensorOfTypeService.java" afterPath="$PROJECT_DIR$/relational.data.manage/src/main/java/agilor/distributed/relational/data/services/SensorOfTypeService.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/relational.data.manage/src/main/java/agilor/distributed/relational/data/services/SensorService.java" afterPath="$PROJECT_DIR$/relational.data.manage/src/main/java/agilor/distributed/relational/data/services/SensorService.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/relational.data.manage/src/main/java/agilor/distributed/relational/data/entities/User.java" afterPath="$PROJECT_DIR$/relational.data.manage/src/main/java/agilor/distributed/relational/data/entities/User.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/relational.data.manage/src/main/java/agilor/distributed/relational/data/context/ZkSessionCnxn.java" afterPath="$PROJECT_DIR$/relational.data.manage/src/main/java/agilor/distributed/relational/data/context/ZkSessionCnxn.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web.inter.server/src/main/webapp/index.jsp" afterPath="$PROJECT_DIR$/web.inter.server/src/main/webapp/index.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web.inter.server/target/web.inter.server/index.jsp" afterPath="$PROJECT_DIR$/web.inter.server/target/web.inter.server/index.jsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web.inter.server/src/main/java/agilor/distributed/web/inter/server/controller/SensorController.java" afterPath="$PROJECT_DIR$/web.inter.server/src/main/java/agilor/distributed/web/inter/server/controller/SensorController.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/scoket-new/src/main/java/agilor/distributed/communication/protocol/SimpleProtocol.java" afterPath="$PROJECT_DIR$/scoket-new/src/main/java/agilor/distributed/communication/protocol/SimpleProtocol.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web.inter.server/target/maven-archiver/pom.properties" afterPath="$PROJECT_DIR$/web.inter.server/target/maven-archiver/pom.properties" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web.inter.server/pom.xml" afterPath="$PROJECT_DIR$/web.inter.server/pom.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/readme.txt" afterPath="$PROJECT_DIR$/readme.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web.inter.server/src/main/webapp/WEB-INF/web.xml" afterPath="$PROJECT_DIR$/web.inter.server/src/main/webapp/WEB-INF/web.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web.inter.server/target/web.inter.server/WEB-INF/web.xml" afterPath="$PROJECT_DIR$/web.inter.server/target/web.inter.server/WEB-INF/web.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MOVED" beforePath="F:\agilor.distributed\web.inter.server\src\main\java\config\GlobalConfig.java" afterPath="$PROJECT_DIR$/web.inter.server/src/main/java/agilor/distributed/web/inter/server/config/GlobalConfig.java" />
-      <change type="MOVED" beforePath="F:\agilor.distributed\web.inter.server\src\main\java\controller\DeviceController.java" afterPath="$PROJECT_DIR$/web.inter.server/src/main/java/agilor/distributed/web/inter/server/controller/DeviceController.java" />
-      <change type="MOVED" beforePath="F:\agilor.distributed\web.inter.server\src\main\java\controller\DeviceTypeController.java" afterPath="$PROJECT_DIR$/web.inter.server/src/main/java/agilor/distributed/web/inter/server/controller/DeviceTypeController.java" />
-      <change type="MOVED" beforePath="F:\agilor.distributed\web.inter.server\src\main\java\controller\UserController.java" afterPath="$PROJECT_DIR$/web.inter.server/src/main/java/agilor/distributed/web/inter/server/controller/UserController.java" />
-      <change type="MOVED" beforePath="F:\agilor.distributed\web.inter.server\src\main\java\interceptor\LoginInterceptor.java" afterPath="$PROJECT_DIR$/web.inter.server/src/main/java/agilor/distributed/web/inter/server/interceptor/LoginInterceptor.java" />
-      <change type="MOVED" beforePath="F:\agilor.distributed\web.inter.server\src\main\java\result\Action.java" afterPath="$PROJECT_DIR$/web.inter.server/src/main/java/agilor/distributed/web/inter/server/result/Action.java" />
-      <change type="MOVED" beforePath="F:\agilor.distributed\web.inter.server\src\main\java\result\BaseResult.java" afterPath="$PROJECT_DIR$/web.inter.server/src/main/java/agilor/distributed/web/inter/server/result/BaseResult.java" />
-      <change type="MOVED" beforePath="F:\agilor.distributed\web.inter.server\src\main\java\result\Result.java" afterPath="$PROJECT_DIR$/web.inter.server/src/main/java/agilor/distributed/web/inter/server/result/Result.java" />
     </list>
     <ignored path="agilor-distributed-storage.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -219,66 +160,83 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="GlobalConfig.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/web.inter.server/src/main/java/agilor/distributed/web/inter/server/config/GlobalConfig.java">
+      <file leaf-file-name="SensorController.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/web.inter.server/src/main/java/agilor/distributed/web/inter/server/controller/SensorController.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="29" column="40" selection-start-line="29" selection-start-column="40" selection-end-line="29" selection-end-column="40" />
+              <caret line="7" column="59" selection-start-line="7" selection-start-column="59" selection-end-line="7" selection-end-column="59" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="CreatorInterceptor.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/web.inter.server/src/main/java/agilor/distributed/web/inter/server/interceptor/CreatorInterceptor.java">
+      <file leaf-file-name="SensorService.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/relational.data.manage/src/main/java/agilor/distributed/relational/data/services/SensorService.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="15" column="31" selection-start-line="15" selection-start-column="13" selection-end-line="15" selection-end-column="31" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="DebugInterceptor.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/web.inter.server/src/main/java/agilor/distributed/web/inter/server/interceptor/DebugInterceptor.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.26902175">
-              <caret line="9" column="29" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="29" />
+              <caret line="75" column="19" selection-start-line="75" selection-start-column="19" selection-end-line="75" selection-end-column="19" />
               <folding>
-                <element signature="imports" expanded="true" />
+                <element signature="method#all#0;class#SensorService#0" expanded="false" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="BaseResult.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/web.inter.server/src/main/java/agilor/distributed/web/inter/server/result/BaseResult.java">
+      <file leaf-file-name="SimpleProtocol.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/scoket-new/src/main/java/agilor/distributed/communication/protocol/SimpleProtocol.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="9" column="22" selection-start-line="9" selection-start-column="22" selection-end-line="9" selection-end-column="22" />
+              <caret line="0" column="48" selection-start-line="0" selection-start-column="48" selection-end-line="0" selection-end-column="48" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Action.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/web.inter.server/src/main/java/agilor/distributed/web/inter/server/result/Action.java">
+      <file leaf-file-name="DeviceService.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/relational.data.manage/src/main/java/agilor/distributed/relational/data/services/DeviceService.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="62" column="28" selection-start-line="62" selection-start-column="28" selection-end-line="62" selection-end-column="28" />
-              <folding>
-                <element signature="e#1132#1133#0" expanded="true" />
-                <element signature="e#1180#1181#0" expanded="true" />
-              </folding>
+              <caret line="117" column="0" selection-start-line="117" selection-start-column="0" selection-end-line="117" selection-end-column="0" />
+              <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="DeviceTypeController.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/web.inter.server/src/main/java/agilor/distributed/web/inter/server/controller/DeviceTypeController.java">
+      <file leaf-file-name="pom.xml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/web.inter.server/pom.xml">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="22" column="46" selection-start-line="22" selection-start-column="46" selection-end-line="22" selection-end-column="46" />
+              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="web.xml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/web.inter.server/src/main/webapp/WEB-INF/web.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="16" column="41" selection-start-line="16" selection-start-column="41" selection-end-line="16" selection-end-column="41" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Client.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/scoket-new/src/main/java/agilor/distributed/communication/client/Client.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="69" column="0" selection-start-line="69" selection-start-column="0" selection-end-line="69" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Value.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/scoket-new/src/main/java/agilor/distributed/communication/client/Value.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="28" column="36" selection-start-line="28" selection-start-column="36" selection-end-line="28" selection-end-column="36" />
               <folding />
             </state>
           </provider>
@@ -288,42 +246,19 @@
         <entry file="file://$PROJECT_DIR$/web.inter.server/src/main/java/agilor/distributed/web/inter/server/controller/DeviceController.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="103" column="0" selection-start-line="103" selection-start-column="0" selection-end-line="103" selection-end-column="0" />
+              <caret line="83" column="28" selection-start-line="83" selection-start-column="28" selection-end-line="83" selection-end-column="28" />
               <folding>
                 <element signature="method#DeviceController#0;class#DeviceController#0" expanded="false" />
-                <element signature="method#insert#0;class#DeviceController#0" expanded="false" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="DeviceService.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/relational.data.manage/src/main/java/agilor/distributed/relational/data/services/DeviceService.java">
+      <file leaf-file-name="SimpleAssemble.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/scoket-new/src/main/java/agilor/distributed/communication/protocol/SimpleAssemble.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="158" column="0" selection-start-line="158" selection-start-column="0" selection-end-line="158" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Device.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/relational.data.manage/src/main/java/agilor/distributed/relational/data/entities/Device.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="32" column="0" selection-start-line="32" selection-start-column="0" selection-end-line="32" selection-end-column="0" />
-              <folding>
-                <element signature="e#641#642#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Creator.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/relational.data.manage/src/main/java/agilor/distributed/relational/data/entities/Creator.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="6" column="23" selection-start-line="6" selection-start-column="23" selection-end-line="6" selection-end-column="23" />
+              <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
               <folding />
             </state>
           </provider>
@@ -355,9 +290,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/relational.data.manage/pom.xml" />
-        <option value="$PROJECT_DIR$/pom.xml" />
-        <option value="$PROJECT_DIR$/relational.data.manage/src/main/java/agilor/distributed/relational/data/services/UserService.java" />
         <option value="$PROJECT_DIR$/relational.data.manage/src/main/java/agilor/distributed/relational/data/context/Config.java" />
         <option value="$PROJECT_DIR$/web.inter.server/src/main/resources/config.properties" />
         <option value="$PROJECT_DIR$/relational.data.manage/src/main/java/agilor/distributed/relational/data/context/ZkUtils.java" />
@@ -384,14 +316,11 @@
         <option value="$PROJECT_DIR$/relational.data.manage/src/main/java/agilor/distributed/relational/data/services/SensorOfTypeService.java" />
         <option value="$PROJECT_DIR$/web.inter.server/src/main/java/controller/DeviceController.java" />
         <option value="$PROJECT_DIR$/relational.data.manage/src/main/java/agilor/distributed/relational/data/services/Agilor.java" />
-        <option value="$PROJECT_DIR$/relational.data.manage/src/main/java/agilor/distributed/relational/data/services/DeviceService.java" />
         <option value="$PROJECT_DIR$/relational.data.manage/src/main/java/agilor/distributed/relational/data/services/SensorService.java" />
         <option value="$PROJECT_DIR$/web.inter.server/src/main/java/controller/SensorController.java" />
         <option value="$PROJECT_DIR$/relational.data.manage/src/main/java/agilor/distributed/relational/data/db/ExtendModel.java" />
         <option value="$PROJECT_DIR$/web.inter.server/src/main/java/agilor/distributed/web/inter/server/config/ServerConfig.java" />
         <option value="$PROJECT_DIR$/web.inter.server/src/main/java/agilor/distributed/web/inter/server/listener/ServerInitListener.java" />
-        <option value="$PROJECT_DIR$/web.inter.server/src/main/java/agilor/distributed/web/inter/server/interceptor/DebugInterceptor.java" />
-        <option value="$PROJECT_DIR$/web.inter.server/src/main/java/agilor/distributed/web/inter/server/controller/SensorController.java" />
         <option value="$PROJECT_DIR$/relational.data.manage/src/main/java/agilor/distributed/relational/data/entities/Creator.java" />
         <option value="$PROJECT_DIR$/relational.data.manage/src/main/java/agilor/distributed/relational/data/entities/Device.java" />
         <option value="$PROJECT_DIR$/relational.data.manage/src/main/java/agilor/distributed/relational/data/entities/DeviceType.java" />
@@ -402,10 +331,16 @@
         <option value="$PROJECT_DIR$/web.inter.server/src/main/webapp/WEB-INF/web.xml" />
         <option value="$PROJECT_DIR$/relational.data.manage/src/main/resources/web.properties" />
         <option value="$PROJECT_DIR$/web.inter.server/src/main/java/agilor/distributed/web/inter/server/config/Global.java" />
-        <option value="$PROJECT_DIR$/web.inter.server/src/main/java/com/jfinal/core/DistrController.java" />
-        <option value="$PROJECT_DIR$/web.inter.server/src/main/java/agilor/distributed/web/inter/server/controller/DeviceController.java" />
         <option value="$PROJECT_DIR$/web.inter.server/src/main/java/agilor/distributed/web/inter/server/interceptor/CreatorInterceptor.java" />
         <option value="$PROJECT_DIR$/web.inter.server/src/main/java/agilor/distributed/web/inter/server/controller/DeviceTypeController.java" />
+        <option value="$PROJECT_DIR$/web.inter.server/src/main/java/com/jfinal/core/DistrController.java" />
+        <option value="$PROJECT_DIR$/web.inter.server/src/main/java/agilor/distributed/web/inter/server/result/Action.java" />
+        <option value="$PROJECT_DIR$/web.inter.server/src/main/java/agilor/distributed/web/inter/server/interceptor/DebugInterceptor.java" />
+        <option value="$PROJECT_DIR$/web.inter.server/src/main/java/agilor/distributed/web/inter/server/controller/DeviceController.java" />
+        <option value="$PROJECT_DIR$/web.inter.server/src/main/resources/web.properties" />
+        <option value="$PROJECT_DIR$/scoket-new/src/main/java/agilor/distributed/communication/protocol/SimpleProtocol.java" />
+        <option value="$PROJECT_DIR$/web.inter.server/src/main/java/agilor/distributed/web/inter/server/controller/SensorController.java" />
+        <option value="$PROJECT_DIR$/relational.data.manage/src/main/java/agilor/distributed/relational/data/services/DeviceService.java" />
       </list>
     </option>
   </component>
@@ -494,9 +429,6 @@
       <sortByType />
     </navigator>
     <panes>
-      <pane id="Scratches" />
-      <pane id="Scope" />
-      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -628,6 +560,10 @@
               <option name="myItemId" value="main" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="resources" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
           </PATH>
           <PATH>
             <PATH_ELEMENT>
@@ -725,7 +661,87 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="web.inter.server" />
+              <option name="myItemId" value="scoket-new" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="agilor-distributed-storage" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="agilor.distributed" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="scoket-new" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="agilor-distributed-storage" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="agilor.distributed" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="scoket-new" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="agilor-distributed-storage" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="agilor.distributed" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="scoket-new" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="agilor-distributed-storage" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="agilor.distributed" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="scoket-new" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
@@ -741,92 +757,15 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="config" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="agilor-distributed-storage" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="agilor.distributed" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="relational.data.manage" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="agilor-distributed-storage" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="agilor.distributed" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="relational.data.manage" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="agilor-distributed-storage" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="agilor.distributed" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="relational.data.manage" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="agilor-distributed-storage" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="agilor.distributed" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="relational.data.manage" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
+              <option name="myItemId" value="protocol" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
+      <pane id="Scope" />
+      <pane id="PackagesPane" />
+      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -1327,7 +1266,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1176" extended-state="6" />
+    <frame x="-8" y="-8" width="1936" height="1176" extended-state="7" />
     <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -1337,7 +1276,6 @@
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32959402" sideWeight="0.49475065" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2617902" sideWeight="0.40758547" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="IvyIDEA" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3298077" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
@@ -1346,13 +1284,14 @@
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.2820019" sideWeight="0.5331197" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="3" side_tool="false" content_ui="combo" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.2848893" sideWeight="0.5331197" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3205005" sideWeight="0.4113248" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.2617902" sideWeight="0.40758547" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Coverage" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32959402" sideWeight="0.5052493" order="6" side_tool="true" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.29451397" sideWeight="0.4636752" order="1" side_tool="false" content_ui="tabs" />
     </layout>
@@ -1397,7 +1336,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/scoket-new/src/main/java/agilor/distributed/communication/protocol/SimpleProtocol.java</url>
-          <line>203</line>
+          <line>205</line>
           <properties />
           <option name="timeStamp" value="137" />
         </line-breakpoint>
@@ -1455,14 +1394,8 @@
           <properties />
           <option name="timeStamp" value="256" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/web.inter.server/src/main/java/agilor/distributed/web/inter/server/controller/SensorController.java</url>
-          <line>138</line>
-          <properties />
-          <option name="timeStamp" value="316" />
-        </line-breakpoint>
       </breakpoints>
-      <option name="time" value="320" />
+      <option name="time" value="325" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -1471,65 +1404,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="jar://$MAVEN_REPOSITORY$/com/jfinal/jfinal/2.0/jfinal-2.0-sources.jar!/com/jfinal/aop/Interceptor.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="22" column="9" selection-start-line="22" selection-start-column="9" selection-end-line="22" selection-end-column="9" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/com/jfinal/jfinal/2.0/jfinal-2.0-sources.jar!/com/jfinal/core/Action.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="60" column="25" selection-start-line="60" selection-start-column="25" selection-end-line="60" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0_45/src.zip!/java/lang/reflect/Method.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="482" column="18" selection-start-line="482" selection-start-column="18" selection-end-line="482" selection-end-column="18" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/com/jfinal/jfinal/2.0/jfinal-2.0-sources.jar!/com/jfinal/handler/Handler.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.63076925">
-          <caret line="39" column="25" selection-start-line="39" selection-start-column="25" selection-end-line="39" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/com/jfinal/jfinal/2.0/jfinal-2.0-sources.jar!/com/jfinal/aop/Before.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="31" column="4" selection-start-line="31" selection-start-column="4" selection-end-line="31" selection-end-column="34" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/com/jfinal/jfinal/2.0/jfinal-2.0-sources.jar!/com/jfinal/core/JFinal.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="103" column="35" selection-start-line="103" selection-start-column="35" selection-end-line="103" selection-end-column="35" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/com/jfinal/jfinal/2.0/jfinal-2.0-sources.jar!/com/jfinal/core/ActionInterceptorBuilder.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="58" column="18" selection-start-line="58" selection-start-column="18" selection-end-line="58" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/com/jfinal/jfinal/2.0/jfinal-2.0-sources.jar!/com/jfinal/core/ActionMapping.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="62" column="62" selection-start-line="62" selection-start-column="62" selection-end-line="62" selection-end-column="62" />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$MAVEN_REPOSITORY$/com/jfinal/jfinal/2.0/jfinal-2.0-sources.jar!/com/jfinal/config/JFinalConfig.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -1541,7 +1415,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1549,7 +1422,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="127" column="0" selection-start-line="127" selection-start-column="0" selection-end-line="127" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1557,7 +1429,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="82" column="0" selection-start-line="82" selection-start-column="0" selection-end-line="82" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1565,7 +1436,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.6576087">
           <caret line="25" column="25" selection-start-line="25" selection-start-column="21" selection-end-line="25" selection-end-column="25" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1580,7 +1450,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.35326087">
           <caret line="126" column="12" selection-start-line="126" selection-start-column="12" selection-end-line="126" selection-end-column="12" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1595,56 +1464,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="374" column="36" selection-start-line="374" selection-start-column="36" selection-end-line="374" selection-end-column="36" />
-          <folding>
-            <element signature="n#!!doc" expanded="false" />
-            <element signature="imports" expanded="false" />
-            <element signature="e#2852#2853#0" expanded="false" />
-            <element signature="e#2910#2911#0" expanded="false" />
-            <element signature="e#4139#4140#0" expanded="false" />
-            <element signature="e#4188#4189#0" expanded="false" />
-            <element signature="e#4269#4270#0" expanded="false" />
-            <element signature="e#4303#4304#0" expanded="false" />
-            <element signature="e#4673#4674#0" expanded="false" />
-            <element signature="e#4710#4711#0" expanded="false" />
-            <element signature="e#4845#4846#0" expanded="false" />
-            <element signature="e#4883#4884#0" expanded="false" />
-            <element signature="e#4983#4984#0" expanded="false" />
-            <element signature="e#5018#5019#0" expanded="false" />
-            <element signature="e#5137#5138#0" expanded="false" />
-            <element signature="e#5188#5189#0" expanded="false" />
-            <element signature="e#5290#5291#0" expanded="false" />
-            <element signature="e#5335#5336#0" expanded="false" />
-            <element signature="e#5430#5431#0" expanded="false" />
-            <element signature="e#5474#5475#0" expanded="false" />
-            <element signature="e#5594#5595#0" expanded="false" />
-            <element signature="e#5643#5644#0" expanded="false" />
-            <element signature="e#5741#5742#0" expanded="false" />
-            <element signature="e#5778#5779#0" expanded="false" />
-            <element signature="e#5867#5868#0" expanded="false" />
-            <element signature="e#5903#5904#0" expanded="false" />
-            <element signature="e#6006#6007#0" expanded="false" />
-            <element signature="e#6044#6045#0" expanded="false" />
-            <element signature="e#6164#6165#0" expanded="false" />
-            <element signature="e#6215#6216#0" expanded="false" />
-            <element signature="e#6355#6356#0" expanded="false" />
-            <element signature="e#6392#6393#0" expanded="false" />
-            <element signature="e#6499#6500#0" expanded="false" />
-            <element signature="e#6536#6537#0" expanded="false" />
-            <element signature="e#9126#9127#0" expanded="false" />
-            <element signature="e#9145#9146#0" expanded="false" />
-            <element signature="e#9239#9240#0" expanded="false" />
-            <element signature="e#9269#9270#0" expanded="false" />
-            <element signature="e#14980#14981#0" expanded="false" />
-            <element signature="e#15020#15021#0" expanded="false" />
-            <element signature="e#15791#15792#0" expanded="false" />
-            <element signature="e#15852#15853#0" expanded="false" />
-            <element signature="e#16080#16081#0" expanded="false" />
-            <element signature="e#16128#16129#0" expanded="false" />
-            <element signature="e#17372#17373#0" expanded="false" />
-            <element signature="e#17415#17416#0" expanded="false" />
-            <element signature="e#23910#23911#0" expanded="false" />
-            <element signature="e#23963#23964#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1659,27 +1478,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="43" column="24" selection-start-line="43" selection-start-column="24" selection-end-line="43" selection-end-column="24" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/relational.data.manage/src/main/java/agilor/distributed/relational/data/services/Agilor.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="22" column="0" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/relational.data.manage/src/main/java/agilor/distributed/relational/data/services/SensorService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="67" column="9" selection-start-line="67" selection-start-column="9" selection-end-line="67" selection-end-column="9" />
-          <folding>
-            <element signature="method#all#0;class#SensorService#0" expanded="false" />
-            <element signature="e#3149#3150#0" expanded="false" />
-            <element signature="e#3207#3208#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1690,18 +1488,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/iscas/distributed/NodeBase/1.0/NodeBase-1.0.jar!/com/agilor/distribute/client/nameManage/AgilorDistributeClient.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-7.6">
-          <caret line="58" column="15" selection-start-line="58" selection-start-column="15" selection-end-line="58" selection-end-column="15" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/relational.data.manage/src/main/java/agilor/distributed/relational/data/context/Config.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="51" column="12" selection-start-line="51" selection-start-column="12" selection-end-line="51" selection-end-column="46" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1734,7 +1524,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="4" column="0" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1742,10 +1531,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="58" column="18" selection-start-line="58" selection-start-column="18" selection-end-line="58" selection-end-column="18" />
-          <folding>
-            <element signature="e#1053#1054#0" expanded="false" />
-            <element signature="e#1078#1079#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1753,20 +1538,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="50" column="5" selection-start-line="50" selection-start-column="5" selection-end-line="50" selection-end-column="5" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/relational.data.manage/src/main/java/agilor/distributed/relational/data/entities/Sensor.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="11" column="38" selection-start-line="11" selection-start-column="38" selection-end-line="11" selection-end-column="38" />
-          <folding>
-            <element signature="e#1739#1740#0" expanded="false" />
-            <element signature="e#1805#1806#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1774,7 +1545,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="62" column="16" selection-start-line="62" selection-start-column="16" selection-end-line="62" selection-end-column="16" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1782,25 +1552,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="22" column="75" selection-start-line="22" selection-start-column="75" selection-end-line="22" selection-end-column="75" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web.inter.server/src/main/webapp/WEB-INF/web.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="16" column="41" selection-start-line="16" selection-start-column="41" selection-end-line="16" selection-end-column="41" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web.inter.server/src/main/resources/web.properties">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="12" selection-start-line="0" selection-start-column="12" selection-end-line="0" selection-end-column="12" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1808,7 +1559,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1816,7 +1566,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1824,11 +1573,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="20" column="15" selection-start-line="20" selection-start-column="15" selection-end-line="20" selection-end-column="15" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#578#579#0" expanded="true" />
-            <element signature="e#608#609#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1836,34 +1580,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="108" column="18" selection-start-line="108" selection-start-column="18" selection-end-line="108" selection-end-column="18" />
-          <folding>
-            <element signature="e#3559#3560#0" expanded="true" />
-            <element signature="e#3599#3600#0" expanded="true" />
-            <element signature="e#6941#6942#0" expanded="true" />
-            <element signature="e#6984#6985#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web.inter.server/src/main/java/com/jfinal/core/DistrController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="86" column="5" selection-start-line="86" selection-start-column="5" selection-end-line="86" selection-end-column="5" />
-          <folding>
-            <element signature="e#2352#2353#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web.inter.server/src/main/java/agilor/distributed/web/inter/server/controller/SensorController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="211" column="58" selection-start-line="211" selection-start-column="58" selection-end-line="211" selection-end-column="58" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="method#deleteOfType#0;class#SensorController#0" expanded="false" />
-            <element signature="method#update#0;class#SensorController#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1871,7 +1587,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="29" column="40" selection-start-line="29" selection-start-column="40" selection-end-line="29" selection-end-column="40" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1879,7 +1594,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="6" column="23" selection-start-line="6" selection-start-column="23" selection-end-line="6" selection-end-column="23" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1887,18 +1601,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="9" column="22" selection-start-line="9" selection-start-column="22" selection-end-line="9" selection-end-column="22" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web.inter.server/src/main/java/agilor/distributed/web/inter/server/result/Action.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="62" column="28" selection-start-line="62" selection-start-column="28" selection-end-line="62" selection-end-column="28" />
-          <folding>
-            <element signature="e#1132#1133#0" expanded="true" />
-            <element signature="e#1180#1181#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1906,28 +1608,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="32" column="0" selection-start-line="32" selection-start-column="0" selection-end-line="32" selection-end-column="0" />
-          <folding>
-            <element signature="e#641#642#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/relational.data.manage/src/main/java/agilor/distributed/relational/data/services/DeviceService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="158" column="0" selection-start-line="158" selection-start-column="0" selection-end-line="158" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web.inter.server/src/main/java/agilor/distributed/web/inter/server/controller/DeviceController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="103" column="0" selection-start-line="103" selection-start-column="0" selection-end-line="103" selection-end-column="0" />
-          <folding>
-            <element signature="method#DeviceController#0;class#DeviceController#0" expanded="false" />
-            <element signature="method#insert#0;class#DeviceController#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1947,13 +1627,162 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/web.inter.server/src/main/java/agilor/distributed/web/inter/server/result/Action.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="77" column="44" selection-start-line="77" selection-start-column="44" selection-end-line="77" selection-end-column="44" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/web.inter.server/src/main/java/agilor/distributed/web/inter/server/interceptor/DebugInterceptor.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.26902175">
-          <caret line="9" column="29" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="29" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="16" column="71" selection-start-line="16" selection-start-column="71" selection-end-line="16" selection-end-column="71" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web.inter.server/src/main/resources/web.properties">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="12" selection-start-line="0" selection-start-column="12" selection-end-line="0" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web.inter.server/src/main/java/com/jfinal/core/DistrController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="87" column="31" selection-start-line="87" selection-start-column="31" selection-end-line="87" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/relational.data.manage/src/main/java/agilor/distributed/relational/data/services/Agilor.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="23" column="0" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/iscas/distributed/NodeBase/1.0/NodeBase-1.0.jar!/com/agilor/distribute/client/nameManage/AgilorDistributeClient.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="3.042522">
+          <caret line="129" column="0" selection-start-line="129" selection-start-column="0" selection-end-line="129" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scoket-new/src/main/java/agilor/distributed/communication/protocol/Protocol.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="24" column="15" selection-start-line="24" selection-start-column="15" selection-end-line="24" selection-end-column="15" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/iscas/distributed/NodeBase/1.0/NodeBase-1.0.jar!/com/agilor/distribute/common/ComFuncs.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-11.566667">
+          <caret line="49" column="37" selection-start-line="49" selection-start-column="37" selection-end-line="49" selection-end-column="37" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/relational.data.manage/src/main/java/agilor/distributed/relational/data/entities/Sensor.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="80" column="0" selection-start-line="80" selection-start-column="0" selection-end-line="80" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scoket-new/src/main/java/agilor/distributed/communication/socket/Connection.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="211" column="0" selection-start-line="211" selection-start-column="0" selection-end-line="211" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scoket-new/src/main/java/agilor/distributed/communication/protocol/SimpleAssemble.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scoket-new/src/main/java/agilor/distributed/communication/client/Client.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="69" column="0" selection-start-line="69" selection-start-column="0" selection-end-line="69" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scoket-new/src/main/java/agilor/distributed/communication/client/Value.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="28" column="36" selection-start-line="28" selection-start-column="36" selection-end-line="28" selection-end-column="36" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/relational.data.manage/src/main/java/agilor/distributed/relational/data/services/SensorService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="75" column="19" selection-start-line="75" selection-start-column="19" selection-end-line="75" selection-end-column="19" />
+          <folding>
+            <element signature="method#all#0;class#SensorService#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web.inter.server/src/main/java/agilor/distributed/web/inter/server/controller/SensorController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="7" column="59" selection-start-line="7" selection-start-column="59" selection-end-line="7" selection-end-column="59" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web.inter.server/src/main/java/agilor/distributed/web/inter/server/controller/DeviceController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="83" column="28" selection-start-line="83" selection-start-column="28" selection-end-line="83" selection-end-column="28" />
+          <folding>
+            <element signature="method#DeviceController#0;class#DeviceController#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/relational.data.manage/src/main/java/agilor/distributed/relational/data/services/DeviceService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="117" column="0" selection-start-line="117" selection-start-column="0" selection-end-line="117" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web.inter.server/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web.inter.server/src/main/webapp/WEB-INF/web.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="16" column="41" selection-start-line="16" selection-start-column="41" selection-end-line="16" selection-end-column="41" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scoket-new/src/main/java/agilor/distributed/communication/protocol/SimpleProtocol.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="48" selection-start-line="0" selection-start-column="48" selection-end-line="0" selection-end-column="48" />
+          <folding />
         </state>
       </provider>
     </entry>

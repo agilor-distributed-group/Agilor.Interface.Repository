@@ -85,7 +85,12 @@ public class DistrController extends Controller {
 
     public <T> T getData()
     {
-        return getAttr("data");
+        return getData("data");
+    }
+
+    public <T> T getData(String key)
+    {
+        return getAttr(key);
     }
 
 }

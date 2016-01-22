@@ -74,6 +74,10 @@ public class Action extends BaseResult {
         return new Action(false,-5,null);
     }
 
+    public static Result disable(){
+        return new Action(false,-1000,null);
+    }
+
 
 
 

@@ -9,6 +9,7 @@ import agilor.distributed.relational.data.exceptions.SqlHandlerException;
 import agilor.distributed.relational.data.services.DeviceService;
 import agilor.distributed.relational.data.services.DeviceTypeService;
 import agilor.distributed.web.inter.server.interceptor.CreatorInterceptor;
+import agilor.distributed.web.inter.server.interceptor.DebugInterceptor;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.jfinal.aop.Before;
 import com.jfinal.core.DistrController;
@@ -31,6 +32,7 @@ public class DeviceController extends DistrController {
 
 
     @Before(LoginInterceptor.class)
+
     public void insert() {
 
         /**
@@ -65,7 +67,6 @@ public class DeviceController extends DistrController {
 
             try {
                 device = new Device();
-
                 device.addSensors(toList(getPara("s"), Sensor.class));
             } catch (IOException e) {
                 e.printStackTrace();
@@ -86,7 +87,6 @@ public class DeviceController extends DistrController {
                 renderResult(Action.validate(e.getMessage()));
             } catch (SqlHandlerException e) {
                 renderResult(Action.failed(null, e.getMessage()));
-                e.printStackTrace();
             }
         } else
             renderResult(Action.error());
@@ -97,70 +97,31 @@ public class DeviceController extends DistrController {
     @CreatorInterceptor.Param(model = Device.class)
     public void delete()
     {
-        //int id = getParaToInt("i", 0);
-
 
         Device device = getData();
         if(service.delete(device.getId()))
             renderResult(Action.success());
         else
            renderResult(Action.failed());
-
-
-
-
-
-//        try {
-//            Device device = service.getById(id);
-//            if(device==null)
-//                renderResult(Action.notFound());
-//            else if(device.getCreatorId()!=userId())
-//                renderResult(Action.error());
-//            else {
-//                if (service.delete(id))
-//                    renderResult(Action.success());
-//                else renderResult(Action.failed());
-//            }
-//
-//
-//        } catch (InstantiationException e) {
-//            e.printStackTrace();
-//        } catch (IllegalAccessException e) {
-//            e.printStackTrace();
-//        }
     }
 
-    @Before(LoginInterceptor.class)
+
+    @Before({LoginInterceptor.class,CreatorInterceptor.class})
+    @CreatorInterceptor.Param(model = Device.class)
     public void update() {
         String name = getPara("n");
-        int id = getParaToInt("i", 0);
-
-
-        try {
-            Device device = service.getById(id);
-            if (device == null)
-                renderResult(Action.notFound());
-            else if (device.getCreatorId() != userId())
-                renderResult(Action.error());
-            else {
-                service.update(device.getId(), name);
-                renderResult(Action.success());
-            }
-
-        } catch (InstantiationException e) {
-            e.printStackTrace();
-        } catch (IllegalAccessException e) {
-            e.printStackTrace();
-        }
+        Device device = getData();
+        service.update(device.getId(), name);
+        renderResult(Action.success());
     }
 
 
 
-    @Before(LoginInterceptor.class)
+    @Before({LoginInterceptor.class, DebugInterceptor.class})
     public void last() throws InstantiationException, IllegalAccessException, JsonProcessingException {
         DB.Device device = DB.Device.instance().findFirst("SELECT * FROM DEVICES ORDER BY ID DESC");
 
-        if(device!=null)
+        if (device != null)
             renderResult(Action.success(toJson(device.build(Device.class))));
         else
             renderResult(Action.failed());
