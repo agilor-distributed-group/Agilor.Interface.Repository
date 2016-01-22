@@ -1,4 +1,10 @@
-2016-1-15 更新内容(2)
+
+2016-1-22 更新内容(3)
+
+增加了用于测试的html也没,agilor-test.html
+
+
+2016-1-22 更新内容(2)
 
 CreatorInterceptor 插入完成
 完成所有接口的功能性测试
@@ -6,7 +12,7 @@ CreatorInterceptor 插入完成
 修复字符串为null的数据报文解析错误
 
 
-2016-1-15 更新内容
+2016-1-22 更新内容
 
 完成所有接口的功能性测试
 agilor.distributed.relational.data.entites继承creator接口

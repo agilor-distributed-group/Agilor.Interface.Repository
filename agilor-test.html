@@ -1,0 +1,403 @@
+<html>
+<head>
+    <title>agilor-test</title>
+
+
+    <style type="text/css">
+
+        .interval {
+
+        display:block;
+        margin-top:30px;
+        }
+
+        .header {
+            font-size:25px;
+            font-weight:bolder;
+            border-bottom:1px solid black;
+            padding-left:10px;
+            line-height:50px;
+        }
+
+        
+
+    </style>
+
+</head>
+<body>
+
+<p  style="color:red;font-size:30px">handle result:<span id="print"></span> </p>
+
+
+    <div class="header">
+        USER_CONTROLLER TEST
+    </div>
+
+<div class="interval">
+    <label for="u">username:</label> <input type="text" name="u" id="u" value="admin" />
+    <label for="p">password:</label> <input type="text" name="p" id="p" value="123456" />
+    <button onclick="commit()">register</button>
+</div>
+
+
+    <div class="interval">
+        <label for="lu">username:</label> <input type="text" name="lu" id="lu" value="admin" />
+        <label for="lp">password:</label> <input type="text" name="lp" id="lp" value="123456" />
+        <button onclick="login()">login</button>
+        <button onclick="logout()">logout</button>
+        <button onclick="islogin()">is login</button>
+    </div>
+
+<div class="interval">
+    <button type="button" id="cookie" onclick="getCookie()">get cookie</button>
+</div>
+
+
+    <div class="header">
+        DEVICETYPE_CONTROLLER TEST
+    </div>
+
+    <div class="interval">
+        <label for="dtn">device type name:</label> <input type="text" name="dtn" id="dtn" value="DEVICE_TYPE_NAME" />
+        <button onclick="device_type_insert()">insert</button>
+    </div>
+
+    <div class="interval">
+        <label for="dtui">device type id:</label> <input type="text" name="dtui" id="dtui"  style="width:30px" />
+        
+        <div style="margin-top:10px">
+            <label for="dtun">device type name:</label> <input type="text" name="dtun" id="dtun" value="DEVICE_TYPE_NAME_UPDATE" />
+            <button onclick="device_type_update()">update</button>
+        </div>
+    </div>
+
+    <div class="interval">
+        <label for="dtni">device type id:</label> <input type="text" name="dtni" id="dtni" style="width:30px" />
+        <button onclick="device_type_single()">get single</button>
+        <button onclick="device_type_all()">all</button>
+        <button onclick="device_type_delete()">delete</button>
+    </div>
+
+
+    <div class="header">
+        DEVICE_CONTROLLER TEST
+    </div>
+
+
+    <div class="interval">
+        <label for="dn">device name:</label> <input type="text" name="dn" id="dn" value="DEVICE_NAME" />
+        <div style="margin-top:10px">
+            <label for="dti">device type id:</label> <input type="text" name="dti" id="dti" style="width:30px" />
+            <button onclick="device_insert()">insert</button>
+        </div>
+    </div>
+
+    <div class="interval">
+        <label for="di">device id:</label> <input type="text" name="di" id="di" style="width:30px" />
+        <button onclick="device_last()">last(test)</button>
+        <button onclick="device_update()">update</button>
+        <button onclick="device_delete()">delete</button>
+    </div>
+
+    <div class="header">
+        SENSOR_CONTROLLER TEST
+    </div>
+
+    <div class="interval">
+        <label for="s_di">device id:</label> <input type="text" name="s_di" id="s_di" style="width:30px" />
+        <label for="sn">sensor name:</label> <input type="text" name="sn" id="sn" value="INSETR_TEST" style="width:60px" />
+        <label for="datad">sensor type:</label>
+        <select name="datad" id="datad">
+            <option value="FLOAT">FLOAT</option>
+            <option value="STRING">STRING</option>
+            <option value="BOOL">BOOL</option>
+            <option value="INT">LONG</option>
+        </select>
+        <button onclick="sensor_insert_to_device()">insert to device</button>
+    </div>
+
+    <div class="interval">
+        <label for="s_dti">device type id:</label> <input type="text" name="s_dti" id="s_dti" style="width:30px" />
+        <label for="datadt">sensor type:</label>
+        <select name="datadt" id="datadt">
+            <option value="FLOAT">FLOAT</option>
+            <option value="STRING">STRING</option>
+            <option value="BOOL">BOOL</option>
+            <option value="INT">LONG</option>
+        </select>
+        <button onclick="sensor_insert_to_device_type()">insert to device type</button>
+    </div>
+
+    <div class="interval">
+        <label for="si">sensor id:</label> <input type="text" name="si" id="si" style="width:30px" />
+        <button onclick="sensor_single()">single</button>
+        <button onclick="sensor_update()">update</button>
+        <button onclick="sensor_delete()">delete</button>
+
+    </div>
+
+    <div class="interval">
+        <label for="tsi">sensor of device type id:</label> <input type="text" name="tsi" id="tsi" style="width:30px" />
+        <button onclick="sensor_devicetype_single()">single</button>
+        <button onclick="sensor_devicetype_update()">update</button>
+        <button onclick="sensor_devicetype_delete()">delete</button>
+    </div>
+
+
+    <div class="header">
+        WRITE_VALUE_CONTROLLER TEST
+    </div>
+    <div class="interval">
+        <label for="w_si">sensor id:</label><input type="text" name="w_si" id="w_si" style="width:30px" />
+        <button onclick="write_start()">start</button>
+        <button onclick="write_stop()">stop</button>
+    </div>
+</body>
+</html>
+
+<script type="text/javascript">
+
+    var u = document.getElementById("u");
+    var p = document.getElementById("p");
+
+
+    var lu = document.getElementById("lu");
+    var lp = document.getElementById("lp")
+
+
+    var dtn = document.getElementById("dtn");
+
+    var dtni = document.getElementById("dtni");
+
+    var dtui = document.getElementById("dtui");
+    var dtun = document.getElementById("dtun");
+
+
+    var dn = document.getElementById("dn");
+    var dti = document.getElementById("dti");
+
+    var di = document.getElementById("di");
+
+
+    var s_di = document.getElementById("s_di");
+    var sn = document.getElementById("sn");
+    var datad = document.getElementById("datad");
+
+    var s_dti = document.getElementById("s_dti");
+    var datadt = document.getElementById("datadt");
+
+
+    var si = document.getElementById("si");
+    var tsi = document.getElementById("tsi");
+
+
+    var w_si = document.getElementById("w_si");
+
+
+    var print = document.getElementById("print");
+
+    var _cookie = document.getElementById("cookie");
+
+
+    var build = function (key, val, fn) {
+
+        var type = Object.prototype.toString.call(val);
+
+        if (type == "[object Array]" || type == "[object Object]") {
+
+            for (i in val)
+                build(key + "[" + i + "]", val[i], fn);
+        }
+
+        else fn(key, val);
+
+    }
+
+
+    var request = function (type,url,async,data) {
+        var http = new XMLHttpRequest();
+
+
+        http.onreadystatechange = function () {
+            if (http.readyState == 4 && http.status == 200)
+                print.innerHTML = http.responseText;
+            else if(http.readyState==4 && http.status!=200)
+                print.innerHTML=http.status;
+        }
+
+
+        http.open(type, url+"?_#%t" + Math.random(), async);
+        
+        http.withCredentials = true;
+
+        if (type == "POST") 
+            http.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+        
+
+        var _data = [], content = null;
+
+
+        var add = function (key, val) {
+       
+
+            //_data.push((key) + "=" + (val));
+
+            _data.push(encodeURIComponent(key) + "=" + encodeURIComponent(val));
+        }
+
+
+        if (data) {
+            for (var i in data)
+                build(i, data[i], add);
+            content = _data.join("&");
+        }
+
+        //console.log(content);
+        
+        http.send(content);
+        
+
+    }
+
+
+    var commit = function () {
+        request("POST", "http://localhost:8081/test/user/register", true, { u:u.value, p: p.value });
+    }
+
+
+    var getCookie = function () {
+        print.innerHTML = "cookie:"+document.cookie;
+    }
+
+    var login = function () {
+        request("POST", "http://localhost:8081/test/user/login", true, { u: lu.value, p: lp.value });
+
+    }
+
+
+    var logout = function () {
+        request("GET", "http://localhost:8081/test/user/logout", true, null);
+    }
+
+
+    var islogin = function () {
+        request("GET", "http://localhost:8081/test/user/isLogin", true, null)
+    }
+
+
+    
+
+    var device_type_insert = function () {
+        request("POST", "http://localhost:8081/test/devicetype/insert", true, {
+            n: dtn.value,
+            s:JSON.stringify( [
+                { type: "FLOAT" },
+                { type: "FLOAT" },
+                { type: "BOOL" },
+                { type: "STRING" }]),
+            sc:0
+        });
+    }
+
+
+    var device_type_single = function () {
+        request("POST", "http://localhost:8081/test/devicetype/single", true, { i: dtni.value });
+    }
+
+    var device_type_all = function () {
+        request("POST", "http://localhost:8081/test/devicetype/all", true, null);
+    }
+
+
+    var device_type_update = function () {
+        request("POST", "http://localhost:8081/test/devicetype/update", true, { i: dtui.value, n: dtun.value });
+    }
+
+    var device_type_delete = function () {
+        request("POST", "http://localhost:8081/test/devicetype/delete", true, { i: dtni.value });
+    }
+
+    var device_insert = function () {
+
+        var data = { n: dn.value,t:false };
+        if (dti.value.length) {
+            data.t = true;
+            data.ti = dti.value;
+        }
+        else {
+            data.s = JSON.stringify([
+                { name: "sensor1", type: "FLOAT" },
+                { name: "sensor2", type: "BOOL" }
+            ]);
+        }
+
+        request("POST", "http://localhost:8081/test/device/insert", true, data);
+    }
+
+
+    var device_last = function () {
+        request("POST", "http://localhost:8081/test/device/last", true, null);
+    }
+
+    var device_update = function () {
+        request("POST", "http://localhost:8081/test/device/update", true, { i: di.value, n: "DEVICE_UPDATE" });
+
+    }
+
+
+    var device_delete = function () {
+        request("POST", "http://localhost:8081/test/device/delete", true, { i: di.value });
+    }
+
+
+    var sensor_insert_to_device = function () {
+        request("POST", "http://localhost:8081/test/sensor/insert", true, { di: s_di.value, n: sn.value, t: datad.value });
+    }
+
+    var sensor_insert_to_device_type = function () {
+        request("POST", "http://localhost:8081/test/sensor/insertOfType", true, {i:s_dti.value,t:datadt.value});
+    }
+
+
+    var sensor_single = function () {
+        request("POST", "http://localhost:8081/test/sensor/single", true, {i:si.value});
+    }
+    var sensor_update = function () {
+        request("POST", "http://localhost:8081/test/sensor/update", true, { i: si.value,n:"DEVICE_SENSOR_UPDATE" });
+    }
+    var sensor_delete = function () {
+        request("POST", "http://localhost:8081/test/sensor/delete", true, { i: si.value });
+    }
+
+    var sensor_devicetype_single = function () {
+        request("POST", "http://localhost:8081/test/sensor/singleOfType", true, { i: tsi.value });
+    }
+    var sensor_devicetype_update = function () {
+        request("POST", "http://localhost:8081/test/sensor/updateOfType", true, { i: tsi.value, t: "BOOL" });
+    }
+    var sensor_devicetype_delete = function () {
+        request("POST", "http://localhost:8081/test/sensor/deleteOfType", true, { i: tsi.value });
+    }
+
+
+    var write_timmer;
+
+    var write_start = function () {
+
+
+
+        write_timmer = setInterval(function () {
+            var val = Math.random() * 1000;
+            print.innerHTML = "write value:" + val;
+            request("POST", "http://localhost:8081/test/sensor/write",true, { i: w_si.value, v: val });
+        }, 1000);
+    }
+
+    var write_stop = function () {
+        clearInterval(write_timmer);
+        print.innerHTML = "";
+    }
+
+
+
+</script>
