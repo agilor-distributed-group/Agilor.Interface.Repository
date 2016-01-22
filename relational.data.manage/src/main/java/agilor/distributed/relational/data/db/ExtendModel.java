@@ -3,6 +3,9 @@ package agilor.distributed.relational.data.db;
 import com.jfinal.plugin.activerecord.ActiveRecordException;
 import com.jfinal.plugin.activerecord.Model;
 import com.jfinal.plugin.ehcache.CacheKit;
+import org.omg.CORBA.PRIVATE_MEMBER;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.lang.reflect.Field;
 import java.lang.reflect.Method;
@@ -12,6 +15,10 @@ import java.util.Map;
  * Created by LQ on 2015/12/23.
  */
 public class ExtendModel<M extends Model> extends Model<M> {
+
+
+    private final static Logger logger = LoggerFactory.getLogger(ExtendModel.class);
+
 
     private static String buildMethodName(String prefix, String name) {
         byte[] items = name.getBytes();
@@ -102,6 +109,8 @@ public class ExtendModel<M extends Model> extends Model<M> {
             if (model != null)
                 CacheKit.put(getCacheName(this), idValue, model);
         }
+        else
+        logger.info("hit the cache {}",idValue);
         return model;
     }
 
@@ -127,7 +136,6 @@ public class ExtendModel<M extends Model> extends Model<M> {
         if (result)
             CacheKit.put(getCacheName(this), getInt("id"), this);
         return result;
-
     }
 
 

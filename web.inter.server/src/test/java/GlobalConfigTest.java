@@ -1,6 +1,4 @@
-import config.GlobalConfig;
-import org.apache.log4j.Logger;
-import org.apache.log4j.spi.LoggerFactory;
+import agilor.distributed.web.inter.server.config.GlobalConfig;
 import org.junit.Test;
 
 

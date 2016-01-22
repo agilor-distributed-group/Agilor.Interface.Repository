@@ -86,10 +86,12 @@ public class ZkSessionCnxn implements SessionCnxn {
                             if (data == null)
                                 continue;
 
+
                             if (data.getAction() == ZkExcData.UPDATE)
-                                zk.setData(data.getPath(), data.getData().serialize(), 0);
+                                zk.setData(data.getPath(), data.getData().serialize(), -1);
                             else if (data.getAction() == ZkExcData.DELETE)
-                                zk.delete(data.getPath(), 0);
+                                ZkUtils.delete(zk,data.getPath());
+
 
                         } catch (InterruptedException e) {
                             e.printStackTrace();
@@ -144,11 +146,14 @@ public class ZkSessionCnxn implements SessionCnxn {
             base.put(root.getKey(), root);
         }
 
+
+        connection.addResponseData(SESSION_ID,SESSION_KEY);
+
         return SESSION_KEY;
     }
 
     @Override
-    public boolean isValid() throws KeeperException, InterruptedException, IOException, ClassNotFoundException {
+    public boolean isValid() throws InterruptedException, IOException, ClassNotFoundException, KeeperException {
 
 
         if (StringUtils.isEmpty(SESSION_KEY)) {
@@ -160,8 +165,13 @@ public class ZkSessionCnxn implements SessionCnxn {
 
 
         if (!base.containsKey(SESSION_KEY) || !(root = base.get(SESSION_KEY)).isValid()) {
+
+            if(zk.exists(getSessionRoot(),false)==null)
+                return false;
+
             logger.info("the localhost session cache don't contain session of'{}',or the session is expire", SESSION_KEY);
-            byte[] data = zk.getData(getSessionRoot(), false, null);
+            byte[] data =  zk.getData(getSessionRoot(), false, null);
+
             if (data != null) {
                 root = SessionMetaData.deserialize(data);
 
@@ -184,27 +194,8 @@ public class ZkSessionCnxn implements SessionCnxn {
 
         String host = new String((byte[])root.value);
 
-
-
-
-        logger.info("the cache host {}",host);
-        logger.info("the connection host {}",connection.getHost());
-
-
         return (!StringUtils.isEmpty(host))&&host.equals(connection.getHost());
 
-        //Host host = new Host(new String((byte[]) root.value));
-
-
-        //logger.info("the cache host:{},port:{}",host.getAddress(),host.getPort());
-
-        //logger.info("the connection host:{},port:{}",connection.getHost(),connection.getPort());
-
-
-
-
-
-        //return (host.getAddress().equals(connection.getHost()) && host.getPort() == connection.getPort());
     }
 
     @Override
@@ -227,10 +218,19 @@ public class ZkSessionCnxn implements SessionCnxn {
     @Override
     public Object getSession(String key) throws KeeperException, InterruptedException, IOException, ClassNotFoundException {
         String path = getSessionRoot() + "/" + key;
-        byte[] data = zk.getData(path, false, null);
-        if(data!=null)
-            return SessionMetaData.deserialize(data).value;
 
+        if(zk.exists(path,false)==null)
+            return null;
+
+        byte[] data = zk.getData(path, false, null);
+        if(data!=null) {
+
+            SessionMetaData s = SessionMetaData.deserialize(data);
+            if (s.isValid())
+                return s.value;
+            else
+                delete0(s.getKey());
+        }
         return null;
     }
 
@@ -275,6 +275,8 @@ public class ZkSessionCnxn implements SessionCnxn {
 
     public void update() throws InterruptedException, ClassNotFoundException, KeeperException, IOException {
         if(isValid()) {
+
+            logger.info("update SESSION OF {}",SESSION_KEY);
             SessionMetaData data = base.get(SESSION_KEY);
             update0(data);
         }

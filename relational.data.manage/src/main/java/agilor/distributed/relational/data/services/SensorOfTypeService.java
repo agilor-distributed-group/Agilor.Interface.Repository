@@ -1,6 +1,7 @@
 package agilor.distributed.relational.data.services;
 
 import agilor.distributed.relational.data.db.DB;
+import agilor.distributed.relational.data.entities.Sensor;
 import agilor.distributed.relational.data.entities.SensorOfType;
 import agilor.distributed.relational.data.exceptions.NullParameterException;
 import agilor.distributed.relational.data.exceptions.SqlHandlerException;
@@ -34,6 +35,13 @@ public class SensorOfTypeService {
             }
         }
         return result;
+    }
+    public SensorOfType findById(int id) throws InstantiationException, IllegalAccessException {
+        DB.SensorOfType model = DB.SensorOfType.instance().findById(id);
+        if(model!=null)
+            return model.build(SensorOfType.class);
+        else
+            return null;
     }
 
 

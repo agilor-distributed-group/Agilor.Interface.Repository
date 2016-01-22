@@ -11,10 +11,10 @@ import java.util.List;
 /**
  * Created by LQ on 2015/12/23.
  */
-public class Device {
+public class Device implements Creator {
     private  int id;
     private String name;
-    private int typeId;
+    private Integer typeId;
     private Date dateCreated;
     private int creatorId;
 
@@ -45,11 +45,11 @@ public Device()
         this.name = name;
     }
 
-    public int getTypeId() {
+    public Integer getTypeId() {
         return typeId;
     }
 
-    public void setTypeId(int typeId) {
+    public void setTypeId(Integer typeId) {
         this.typeId = typeId;
     }
 
@@ -85,8 +85,8 @@ public Device()
 
     public void addSensors(List<Sensor> sensors) {
         if (getSensors() == null)
-            sensors = new ArrayList<>();
-        sensors.addAll(sensors);
+            this.sensors = new ArrayList<>();
+        this.sensors.addAll(sensors);
     }
 
 

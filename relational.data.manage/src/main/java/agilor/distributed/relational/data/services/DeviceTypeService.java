@@ -94,7 +94,7 @@ public class DeviceTypeService {
      * @throws ValidateParameterException
      * @throws SqlHandlerException
      */
-    public DeviceType insert(DeviceType data) throws ValidateParameterException {
+    public DeviceType insert(DeviceType data) throws ValidateParameterException, SqlHandlerException {
 
         if (data.getSensorCount() <= 0)
             throw new ValidateParameterException("sensor", ExceptionTypes.MODELRROR);
@@ -107,7 +107,7 @@ public class DeviceTypeService {
 
 
         Model<DB.DeviceType> model = new DB.DeviceType();
-        //try {
+        try {
         boolean tx = Db.tx(new IAtom() {
             @Override
             public boolean run() throws SQLException {
@@ -116,7 +116,8 @@ public class DeviceTypeService {
                         .set("creatorId", data.getCreatorId())
                         .save();
 
-                int id = model.getInt("id");
+                int id = model.getInt("id").intValue();
+
                 for (SensorOfType it : data.getSensors()) {
                     if (it.getId() == 0) {
                         Model<DB.SensorOfType> s = (new DB.SensorOfType()
@@ -131,10 +132,10 @@ public class DeviceTypeService {
                 return true;
             }
         });
-//        }catch (ActiveRecordException e)
-//        {
-//            throw new SqlHandlerException(e.getCause());
-//        }
+        }catch (ActiveRecordException e)
+        {
+            throw new SqlHandlerException(e.getCause());
+        }
 
 
         data.setId(model.getInt("id"));
@@ -153,7 +154,7 @@ public class DeviceTypeService {
         Model<DB.DeviceType> model = DB.DeviceType.instance().findById(data.getId());
         if (model != null) {
             return model.set("name", data.getName())
-                    .set("scope", data.getScope())
+                    .set("scope", data.getScope().value())
                     .update();
         }
         return false;

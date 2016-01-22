@@ -2,9 +2,7 @@ package agilor.distributed.relational.data.entities;
 
 import agilor.distributed.communication.client.Value;
 import agilor.distributed.relational.data.db.DB;
-import com.jfinal.plugin.activerecord.Model;
 
-import java.lang.reflect.InvocationTargetException;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -14,7 +12,7 @@ import java.util.UUID;
 /**
  * Created by LQ on 2015/12/23.
  */
-public class DeviceType {
+public class DeviceType implements Creator {
     public static enum ScopeTypes  {
 
         PRIVATE((byte) 0),
@@ -123,8 +121,8 @@ public class DeviceType {
 
     public void addSensor(List<SensorOfType> sensors) {
         if (getSensors() == null)
-            sensors = new ArrayList<>();
-        sensors.addAll(sensors);
+            this.sensors = new ArrayList<>();
+        this.sensors.addAll(sensors);
     }
 
 
@@ -140,9 +138,9 @@ public class DeviceType {
             for(DB.SensorOfType it:list) {
                 Sensor s = new Sensor();
                 s.setBaseName(UUID.randomUUID().toString());
-                s.setDataType(Value.Types.value((it.getInt("type").byteValue())));
+                s.setType(Value.Types.value((it.getInt("type").byteValue())));
                 s.setDateCreated(new Date());
-                s.setDateLastWrite(null);
+                s.setDateFinalWrite(null);
                 s.setName(s.getBaseName());
                 device.addSensor(s);
 

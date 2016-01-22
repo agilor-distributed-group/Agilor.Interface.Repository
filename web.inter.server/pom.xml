@@ -84,6 +84,7 @@
                     <scanIntervalSeconds>5</scanIntervalSeconds>
                     <webApp>
                         <contextPath>/test</contextPath>
+
                     </webApp>
                     <stopPort>9999</stopPort>
                     <stopKey>foo</stopKey>

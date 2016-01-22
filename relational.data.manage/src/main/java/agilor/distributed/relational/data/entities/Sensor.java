@@ -4,19 +4,20 @@ import agilor.distributed.communication.client.Value;
 import agilor.distributed.relational.data.services.Agilor;
 
 import java.util.Date;
+import java.util.UUID;
 
 /**
  * Created by LQ on 2015/12/23.
  */
-public class Sensor {
+public class Sensor implements Creator {
 
     private int id;
     private String name;
     private Date dateCreated;
     private int deviceId;
-    private Date dateLastWrite;
+    private Date dateFinalWrite;
     private String baseName;
-    private Value.Types dataType;
+    private Value.Types type;
     private int creatorId;
 
 
@@ -58,15 +59,17 @@ public class Sensor {
         this.deviceId = deviceId;
     }
 
-    public Date getDateLastWrite() {
-        return dateLastWrite;
+    public Date getDateFinalWrite() {
+        return dateFinalWrite;
     }
 
-    public void setDateLastWrite(Date dateLastWrite) {
-        this.dateLastWrite = dateLastWrite;
+    public void setDateFinalWrite(Date dateFinalWrite) {
+        this.dateFinalWrite = dateFinalWrite;
     }
 
     public String getBaseName() {
+        if(baseName==null)
+            baseName = UUID.randomUUID().toString();
         return baseName;
     }
 
@@ -74,17 +77,17 @@ public class Sensor {
         this.baseName = baseName;
     }
 
-    public Value.Types getDataType() {
-        return dataType;
+    public Value.Types getType() {
+        return type;
     }
 
-    public void setDataType(Value.Types dataType) {
-        this.dataType = dataType;
+    public void setType(Value.Types type) {
+        this.type = type;
     }
 
 
     public void write(Value value) {
-        Agilor.instance().write(this.getName(), value);
+        Agilor.instance().write(this.getBaseName(), value);
     }
 
 
@@ -101,8 +104,8 @@ public class Sensor {
 
     public void write(String tagName, String value)
     {
-        Value val = new Value(dataType);
-        switch (dataType)
+        Value val = new Value(type);
+        switch (type)
         {
             case FLOAT:val.setFvalue(Float.parseFloat(value));break;
             case BOOL:val.setBvalue(Boolean.parseBoolean(value));break;

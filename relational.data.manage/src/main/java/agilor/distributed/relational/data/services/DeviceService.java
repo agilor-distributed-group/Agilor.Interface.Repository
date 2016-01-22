@@ -1,33 +1,29 @@
 package agilor.distributed.relational.data.services;
 
 import agilor.distributed.communication.client.Value;
-import agilor.distributed.relational.data.context.RequestContext;
 import agilor.distributed.relational.data.db.DB;
 import agilor.distributed.relational.data.entities.Device;
-import agilor.distributed.relational.data.entities.DeviceType;
 import agilor.distributed.relational.data.entities.Sensor;
-import agilor.distributed.relational.data.entities.SensorOfType;
-import agilor.distributed.relational.data.exceptions.DataNotExistException;
 import agilor.distributed.relational.data.exceptions.NullParameterException;
-import com.agilor.distribute.client.nameManage.AgilorDistributeClient;
+import agilor.distributed.relational.data.exceptions.SqlHandlerException;
+import com.jfinal.plugin.activerecord.ActiveRecordException;
 import com.jfinal.plugin.activerecord.Db;
 import com.jfinal.plugin.activerecord.IAtom;
 import com.jfinal.plugin.activerecord.Model;
-import jdk.nashorn.internal.ir.RuntimeNode;
-import jdk.nashorn.internal.objects.NativeUint16Array;
 import org.apache.commons.lang3.StringUtils;
-import org.omg.CORBA.PUBLIC_MEMBER;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
-import java.lang.reflect.InvocationTargetException;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
+
 
 /**
  * Created by LQ on 2015/12/23.
  */
 public class DeviceService {
-
+    private final static Logger logger = LoggerFactory.getLogger(DeviceService.class);
 
 
 
@@ -89,51 +85,63 @@ public class DeviceService {
     }
 
 
-    public void insert(Device device) throws NullParameterException {
+    public void insert(Device device) throws NullParameterException, SqlHandlerException {
 
         if (StringUtils.isEmpty(device.getName()))
             throw new NullParameterException("name");
 
 
-        boolean db_result = Db.tx(new IAtom() {
-            @Override
-            public boolean run() throws SQLException {
+
+        try {
 
 
-                Model<DB.Device> model = new DB.Device();
-                model.set("name", device.getName())
-                        .set("typeId", device.getTypeId())
-                        .set("creatorId", device.getCreatorId())
-                        .set("dateCreated", device.getDateCreated());
-
-                if (model.save()) {
-
-                    int id = model.get("id");
-
-                    List<Sensor> sensors = device.getSensors();
-
-                    if (sensors != null && sensors.size() > 0) {
-                        for (Sensor it : sensors) {
-
-                            DB.Sensor sensor = new DB.Sensor();
-                            sensor.set("deviceId", id)
-                                    .set("baseName", it.getBaseName())
-                                    .set("name", it.getName())
-                                    .set("dateCreated",it.getDateCreated());
-
-                            if (sensor.save())
-                                it.setId(sensor.getInt("id"));
+            boolean db_result = Db.tx(new IAtom() {
+                @Override
+                public boolean run() throws SQLException {
 
 
-//                            if (Agilor.instance().createTagNode(it.getBaseName(), new Value(it.getDataType())) != 0)
-//                                return false;
+                    Model<DB.Device> model = new DB.Device();
+                    model.set("name", device.getName())
+                            .set("typeId", device.getTypeId())
+                            .set("creatorId", device.getCreatorId())
+                            .set("dateCreated", device.getDateCreated());
 
+
+                    if (model.save()) {
+
+                        int id = model.get("id");
+
+                        List<Sensor> sensors = device.getSensors();
+
+                        if (sensors != null && sensors.size() > 0) {
+                            for (Sensor it : sensors) {
+
+                                DB.Sensor sensor = new DB.Sensor();
+                                sensor.set("deviceId", id)
+                                        .set("baseName", it.getBaseName())
+                                        .set("name", it.getName())
+                                        .set("dateCreated", it.getDateCreated());
+
+                                if (sensor.save())
+                                    it.setId(sensor.getInt("id"));
+
+
+                                int re =0;
+                                if ((re= Agilor.instance().createTagNode(it.getBaseName(), new Value(it.getType()))) != 0) {
+                                    logger.info("write agilor target error !!!!!!!!!");
+                                    return false;
+                                }
+
+                            }
                         }
                     }
+                    return true;
                 }
-                return true;
-            }
-        });
+            });
+        }catch (ActiveRecordException e)
+        {
+            throw new SqlHandlerException(e.getCause());
+        }
 
     }
 

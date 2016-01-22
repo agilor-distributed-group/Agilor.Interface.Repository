@@ -8,7 +8,7 @@ import java.util.Date;
 /**
  * Created by LQ on 2015/12/21.
  */
-public class User implements Serializable {
+public class User implements Serializable,Creator {
 
     private int id;
     private String userName;
@@ -52,5 +52,10 @@ public class User implements Serializable {
 
     public void setDateCreated(Date dateCreated) {
         this.dateCreated = dateCreated;
+    }
+
+    @Override
+    public int getCreatorId() {
+        return id;
     }
 }

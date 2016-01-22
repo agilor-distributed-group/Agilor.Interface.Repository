@@ -1,5 +1,14 @@
 2016-1-15 更新内容
 
+完成所有接口的功能性测试
+agilor.distributed.relational.data.entites继承creator接口
+
+优化代码，创建CreatorInterceptor，用于通用类型检查(未完全测试)
+DebugInterceptor拦截器,用于拦截debug接口（限制此接口只能用于测试版）
+
+
+2016-1-15 更新内容
+
 修复部分bug，完善部分细节
 
 

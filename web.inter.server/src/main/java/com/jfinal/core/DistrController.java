@@ -1,15 +1,18 @@
 package com.jfinal.core;
 
 import agilor.distributed.relational.data.context.RequestContext;
-import com.fasterxml.jackson.core.type.TypeReference;
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.JavaType;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import org.apache.commons.lang3.StringUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import result.Result;
+import agilor.distributed.web.inter.server.result.Result;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -44,15 +47,22 @@ public class DistrController extends Controller {
 
 
     public <T> List<T> toList(String connect,Class<T> cls) throws IOException {
-        return mapper.readValue(connect, new TypeReference<List<T>>() {
-        });
+        if(StringUtils.isEmpty(connect))
+            return null;
+
+        JavaType type = mapper.getTypeFactory().constructCollectionType(ArrayList.class,cls);
+        return (List<T>)mapper.readValue(connect,type);
     }
 
 
-    public int userId()
-    {
-        Integer id = getSessionAttr("userId");
-        return id==null?0:id.intValue();
+    public String toJson(Object data) throws JsonProcessingException {
+        return mapper.writeValueAsString(data);
+    }
+
+
+    public int userId() {
+        Integer id = getAttr("userId");
+        return id == null ? 0 : id.intValue();
     }
 
 
@@ -62,13 +72,20 @@ public class DistrController extends Controller {
     }
 
     void init(HttpServletRequest request, HttpServletResponse response, String urlPara) {
-        logger.info("the distrcontroller is init");
 
         super.init(request, response, urlPara);
         try {
+
             context = new RequestContext(new HttpConnection(getRequest(), getResponse()));
         } catch (Exception e) {
             e.printStackTrace();
         }
     }
+
+
+    public <T> T getData()
+    {
+        return getAttr("data");
+    }
+
 }

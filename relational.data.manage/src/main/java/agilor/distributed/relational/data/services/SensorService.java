@@ -1,8 +1,15 @@
 package agilor.distributed.relational.data.services;
 
+import agilor.distributed.communication.client.Value;
 import agilor.distributed.relational.data.context.RequestContext;
 import agilor.distributed.relational.data.db.DB;
 import agilor.distributed.relational.data.entities.Sensor;
+import agilor.distributed.relational.data.exceptions.ExceptionTypes;
+import agilor.distributed.relational.data.exceptions.NullParameterException;
+import agilor.distributed.relational.data.exceptions.ValidateParameterException;
+import org.apache.commons.lang3.StringUtils;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.lang.reflect.InvocationTargetException;
 import java.util.ArrayList;
@@ -13,7 +20,7 @@ import java.util.List;
  */
 public class SensorService {
 
-
+    private final static Logger logger = LoggerFactory.getLogger(SensorService.class);
 
 
 
@@ -31,16 +38,37 @@ public class SensorService {
     }
 
 
-    public Sensor insert(Sensor sensor) throws InvocationTargetException, NoSuchMethodException, InstantiationException, IllegalAccessException {
+    public boolean insert(Sensor sensor) throws NullParameterException, ValidateParameterException {
+
+        if (StringUtils.isEmpty(sensor.getName()))
+            throw new NullParameterException("name");
+
+        if (sensor.getDeviceId() <= 0)
+            throw new ValidateParameterException("deiveId", ExceptionTypes.FILED_IS_NULL);
+
+        if(sensor.getCreatorId()<=0)
+            throw new ValidateParameterException("creatorId",ExceptionTypes.FILED_IS_NULL);
+
         DB.Sensor model = new DB.Sensor();
         model.set("name", sensor.getName())
                 .set("deviceId", sensor.getDeviceId())
+                .set("baseName",sensor.getBaseName())
                 .set("dateCreated", sensor.getDateCreated())
-                .set("dateLastWrite", sensor.getDateLastWrite())
-                .set("dataType", sensor.getDataType().value())
-                .set("creatorId",sensor)
-                .save();
-        return model.build(Sensor.class);
+                .set("dateFinalWrite", sensor.getDateFinalWrite())
+                .set("type", sensor.getType().value())
+                .set("creatorId", sensor.getCreatorId());
+        if (model.save()) {
+            sensor.setId(model.getInt("id"));
+            int re =0;
+            if ((re= Agilor.instance().createTagNode(sensor.getBaseName(), new Value(sensor.getType()))) != 0) {
+                logger.info("write agilor target error !!!!!!!!!");
+                return false;
+            }
+            else logger.info("write agilor target success:{}",re);
+        }
+        else
+            return false;
+        return true;
     }
 
 
@@ -50,8 +78,8 @@ public class SensorService {
         DB.Sensor model = new DB.Sensor();
         return model.set("name", sensor.getName())
                 .set("id",sensor.getId())
-                .set("deviceId", sensor.getDeviceId())
-                .set("dateCreated", sensor.getDateCreated())
+//                .set("deviceId", sensor.getDeviceId())
+//                .set("dateCreated", sensor.getDateCreated())
                 .update();
     }
 
@@ -62,7 +90,7 @@ public class SensorService {
     }
 
 
-    public Sensor findById(int id) throws InvocationTargetException, NoSuchMethodException, InstantiationException, IllegalAccessException {
+    public Sensor findById(int id) throws InstantiationException, IllegalAccessException {
         DB.Sensor model = DB.Sensor.instance().findById(id);
         return model != null? model.build(Sensor.class):null;
 

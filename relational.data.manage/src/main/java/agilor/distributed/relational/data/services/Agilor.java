@@ -20,6 +20,7 @@ public class Agilor {
     {
         if(client==null)
             client = new AgilorDistributeClient();
+
         return client;
     }
 
