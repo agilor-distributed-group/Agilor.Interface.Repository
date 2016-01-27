@@ -201,8 +201,6 @@ public class ZkSessionCnxn implements SessionCnxn {
     @Override
     public void setSession(String key, Object value) throws KeeperException, InterruptedException, IOException, ClassNotFoundException {
 
-        logger.info("setSession");
-
         if (!isValid())
             create();
 
@@ -212,7 +210,7 @@ public class ZkSessionCnxn implements SessionCnxn {
         if (zk.exists(path, false) == null)
             zk.create(path, new SessionMetaData(key,value).serialize(), ZooDefs.Ids.OPEN_ACL_UNSAFE, CreateMode.PERSISTENT);
         else
-            zk.setData(path, new SessionMetaData(key,value).serialize(), 0);
+            zk.setData(path, new SessionMetaData(key,value).serialize(), -1);
     }
 
     @Override

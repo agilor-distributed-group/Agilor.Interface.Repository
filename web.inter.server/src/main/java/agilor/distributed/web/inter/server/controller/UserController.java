@@ -121,7 +121,8 @@ public class UserController extends DistrController {
 
     public void ping()
     {
-        renderText(getRequest().getContextPath());
+        renderNull();
+        //renderText(getRequest().getContextPath());
 
 
     }

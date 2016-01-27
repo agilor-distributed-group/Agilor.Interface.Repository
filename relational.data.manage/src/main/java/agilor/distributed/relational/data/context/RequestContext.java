@@ -29,12 +29,10 @@ public class RequestContext implements Context {
 
         //第一次请求 添加key
         if (!ssCnxn.isValid()) {
-            logger.info("session not valid");
             ssCnxn.create();;
         }
 
         else {
-            logger.info("session is valid");
             ssCnxn.update();
         }
     }

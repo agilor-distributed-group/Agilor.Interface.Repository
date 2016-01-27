@@ -121,6 +121,7 @@ public class DeviceService {
                                         .set("baseName", it.getBaseName())
                                         .set("name", it.getName())
                                         .set("creatorId",it.getCreatorId())
+                                        .set("type",it.getType().value())
                                         .set("dateCreated", it.getDateCreated());
 
                                 if (sensor.save())

@@ -71,6 +71,7 @@ public class HttpConnection implements IConnection {
 
         if(StringUtils.isEmpty(val)) {
             Cookie[] cookies = request.getCookies();
+            if(cookies==null) return null;
             for (Cookie it : cookies) {
                 if (key.equals(it.getName()))
                     val = it.getValue();

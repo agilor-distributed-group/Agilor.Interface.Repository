@@ -4,40 +4,35 @@
 
 
     <style type="text/css">
-
         .interval {
-
-        display:block;
-        margin-top:30px;
+            display: block;
+            margin-top: 20px;
         }
 
         .header {
-            font-size:25px;
-            font-weight:bolder;
-            border-bottom:1px solid black;
-            padding-left:10px;
-            line-height:50px;
+            font-size: 25px;
+            font-weight: bolder;
+            border-bottom: 1px solid black;
+            padding-left: 10px;
+            line-height: 50px;
         }
-
-        
-
     </style>
 
 </head>
 <body>
 
-<p  style="color:red;font-size:30px">handle result:<span id="print"></span> </p>
+    <p style="color:red;font-size:30px">handle result:<span id="print"></span> </p>
 
 
     <div class="header">
         USER_CONTROLLER TEST
     </div>
 
-<div class="interval">
-    <label for="u">username:</label> <input type="text" name="u" id="u" value="admin" />
-    <label for="p">password:</label> <input type="text" name="p" id="p" value="123456" />
-    <button onclick="commit()">register</button>
-</div>
+    <div class="interval">
+        <label for="u">username:</label> <input type="text" name="u" id="u" value="admin" />
+        <label for="p">password:</label> <input type="text" name="p" id="p" value="123456" />
+        <button onclick="commit()">register</button>
+    </div>
 
 
     <div class="interval">
@@ -48,9 +43,9 @@
         <button onclick="islogin()">is login</button>
     </div>
 
-<div class="interval">
-    <button type="button" id="cookie" onclick="getCookie()">get cookie</button>
-</div>
+    <div class="interval">
+        <button type="button" id="cookie" onclick="getCookie()">get cookie</button>
+    </div>
 
 
     <div class="header">
@@ -63,8 +58,8 @@
     </div>
 
     <div class="interval">
-        <label for="dtui">device type id:</label> <input type="text" name="dtui" id="dtui"  style="width:30px" />
-        
+        <label for="dtui">device type id:</label> <input type="text" name="dtui" id="dtui" style="width:30px" />
+
         <div style="margin-top:10px">
             <label for="dtun">device type name:</label> <input type="text" name="dtun" id="dtun" value="DEVICE_TYPE_NAME_UPDATE" />
             <button onclick="device_type_update()">update</button>
@@ -152,6 +147,18 @@
         <button onclick="write_start()">start</button>
         <button onclick="write_stop()">stop</button>
     </div>
+
+
+    <div class="header">
+        DISTRIBUTED CACHE&SESSION TEST
+    </div>
+    <div class="interval">
+        <label for="cs_s_i">sensor id:</label><input type="text" name="cs_s_i" id="cs_s_i" style="width:30px" />
+        <button onclick="cs_write_value()">write value</button>
+        <button onclick="check_cache()">check cache </button>
+        <button onclick="delete_cache()">delete cache</button>
+    </div>
+
 </body>
 </html>
 
@@ -194,6 +201,9 @@
     var w_si = document.getElementById("w_si");
 
 
+    var cs_s_i = document.getElementById("cs_s_i");
+
+
     var print = document.getElementById("print");
 
     var _cookie = document.getElementById("cookie");
@@ -214,31 +224,31 @@
     }
 
 
-    var request = function (type,url,async,data) {
+    var request = function (type, url, async, data) {
         var http = new XMLHttpRequest();
 
 
         http.onreadystatechange = function () {
             if (http.readyState == 4 && http.status == 200)
                 print.innerHTML = http.responseText;
-            else if(http.readyState==4 && http.status!=200)
-                print.innerHTML=http.status;
+            else if (http.readyState == 4 && http.status != 200)
+                print.innerHTML = http.status;
         }
 
 
-        http.open(type, url+"?_#%t" + Math.random(), async);
-        
+        http.open(type, url, async);
+
         http.withCredentials = true;
 
-        if (type == "POST") 
+        if (type == "POST")
             http.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-        
+
 
         var _data = [], content = null;
 
 
         var add = function (key, val) {
-       
+
 
             //_data.push((key) + "=" + (val));
 
@@ -249,77 +259,78 @@
         if (data) {
             for (var i in data)
                 build(i, data[i], add);
-            content = _data.join("&");
+            content = "&" + _data.join("&");
         }
 
         //console.log(content);
-        
+
         http.send(content);
-        
+
 
     }
 
+    var href = "http://123.57.155.139:8011/web.inter.server";
+
 
     var commit = function () {
-        request("POST", "http://localhost:8081/test/user/register", true, { u:u.value, p: p.value });
+        request("POST", href + "/user/register", true, { u: u.value, p: p.value });
     }
 
 
     var getCookie = function () {
-        print.innerHTML = "cookie:"+document.cookie;
+        print.innerHTML = "cookie:" + document.cookie;
     }
 
     var login = function () {
-        request("POST", "http://localhost:8081/test/user/login", true, { u: lu.value, p: lp.value });
-
+        request("POST", href + "/user/login", true, { u: lu.value, p: lp.value });
     }
 
 
     var logout = function () {
-        request("GET", "http://localhost:8081/test/user/logout", true, null);
+        request("GET", href + "/user/logout", true, null);
     }
 
 
     var islogin = function () {
-        request("GET", "http://localhost:8081/test/user/isLogin", true, null)
+        request("GET", href + "/user/isLogin", true, null)
     }
 
 
-    
+
 
     var device_type_insert = function () {
-        request("POST", "http://localhost:8081/test/devicetype/insert", true, {
+        request("POST", href + "/devicetype/insert", true, {
             n: dtn.value,
-            s:JSON.stringify( [
+            s: JSON.stringify([
                 { type: "FLOAT" },
                 { type: "FLOAT" },
                 { type: "BOOL" },
                 { type: "STRING" }]),
-            sc:0
+            sc: 0
         });
     }
 
 
     var device_type_single = function () {
-        request("POST", "http://localhost:8081/test/devicetype/single", true, { i: dtni.value });
+        request("POST", href + "/devicetype/single", true, { i: dtni.value });
     }
 
     var device_type_all = function () {
-        request("POST", "http://localhost:8081/test/devicetype/all", true, null);
+        request("POST", href + "/devicetype/all", true, null);
     }
 
 
     var device_type_update = function () {
-        request("POST", "http://localhost:8081/test/devicetype/update", true, { i: dtui.value, n: dtun.value });
+        request("POST", href + "/devicetype/update", true, { i: dtui.value, n: dtun.value });
     }
 
     var device_type_delete = function () {
-        request("POST", "http://localhost:8081/test/devicetype/delete", true, { i: dtni.value });
+        request("POST", href + "/devicetype/delete", true, { i: dtni.value });
     }
 
     var device_insert = function () {
 
-        var data = { n: dn.value,t:false };
+        var data = { n: dn.value, t: false };
         if (dti.value.length) {
             data.t = true;
             data.ti = dti.value;
@@ -331,52 +342,52 @@
             ]);
         }
 
-        request("POST", "http://localhost:8081/test/device/insert", true, data);
+        request("POST", href + "/device/insert", true, data);
     }
 
 
     var device_last = function () {
-        request("POST", "http://localhost:8081/test/device/last", true, null);
+        request("POST", href + "/device/last", true, null);
     }
 
     var device_update = function () {
-        request("POST", "http://localhost:8081/test/device/update", true, { i: di.value, n: "DEVICE_UPDATE" });
+        request("POST", href + "/device/update", true, { i: di.value, n: "DEVICE_UPDATE" });
 
     }
 
 
     var device_delete = function () {
-        request("POST", "http://localhost:8081/test/device/delete", true, { i: di.value });
+        request("POST", href + "/device/delete", true, { i: di.value });
     }
 
 
     var sensor_insert_to_device = function () {
-        request("POST", "http://localhost:8081/test/sensor/insert", true, { di: s_di.value, n: sn.value, t: datad.value });
+        request("POST", href + "/sensor/insert", true, { di: s_di.value, n: sn.value, t: datad.value });
     }
 
     var sensor_insert_to_device_type = function () {
-        request("POST", "http://localhost:8081/test/sensor/insertOfType", true, {i:s_dti.value,t:datadt.value});
+        request("POST", href + "/sensor/insertOfType", true, { i: s_dti.value, t: datadt.value });
     }
 
 
     var sensor_single = function () {
-        request("POST", "http://localhost:8081/test/sensor/single", true, {i:si.value});
+        request("POST", href + "/sensor/single", true, { i: si.value });
     }
     var sensor_update = function () {
-        request("POST", "http://localhost:8081/test/sensor/update", true, { i: si.value,n:"DEVICE_SENSOR_UPDATE" });
+        request("POST", href + "/sensor/update", true, { i: si.value, n: "DEVICE_SENSOR_UPDATE" });
     }
     var sensor_delete = function () {
-        request("POST", "http://localhost:8081/test/sensor/delete", true, { i: si.value });
+        request("POST", href + "/sensor/delete", true, { i: si.value });
     }
 
     var sensor_devicetype_single = function () {
-        request("POST", "http://localhost:8081/test/sensor/singleOfType", true, { i: tsi.value });
+        request("POST", href + "/sensor/singleOfType", true, { i: tsi.value });
     }
     var sensor_devicetype_update = function () {
-        request("POST", "http://localhost:8081/test/sensor/updateOfType", true, { i: tsi.value, t: "BOOL" });
+        request("POST", href + "/sensor/updateOfType", true, { i: tsi.value, t: "BOOL" });
     }
     var sensor_devicetype_delete = function () {
-        request("POST", "http://localhost:8081/test/sensor/deleteOfType", true, { i: tsi.value });
+        request("POST", href + "/sensor/deleteOfType", true, { i: tsi.value });
     }
 
 
@@ -389,7 +400,7 @@
         write_timmer = setInterval(function () {
             var val = Math.random() * 1000;
             print.innerHTML = "write value:" + val;
-            request("POST", "http://localhost:8081/test/sensor/write",true, { i: w_si.value, v: val });
+            request("POST", href + "/sensor/write", true, { i: w_si.value, v: val });
         }, 1000);
     }
 
@@ -398,6 +409,21 @@
         print.innerHTML = "";
     }
 
+
+
+
+    var cs_write_value = function () {
+        request("POST", href + "/sensor/write", true, { i: cs_s_i.value, v: "23.5" });
+    }
+
+
+    var check_cache = function () {
+        request("POST", href + "/sensor/checkCache", true, { i: cs_s_i.value });
+    }
+
+    var delete_cache = function () {
+        request("POST", href + "/sensor/deleteCache", true, { i: cs_s_i.value });
+    }
 
 
 </script>

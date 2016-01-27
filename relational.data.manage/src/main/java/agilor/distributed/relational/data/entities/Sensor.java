@@ -86,7 +86,7 @@ public class Sensor implements Creator {
     }
 
 
-    public void write(Value value) {
+    public void write(Value value) throws Exception {
         Agilor.instance().write(this.getBaseName(), value);
     }
 

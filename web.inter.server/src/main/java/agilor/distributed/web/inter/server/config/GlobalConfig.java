@@ -2,6 +2,7 @@ package agilor.distributed.web.inter.server.config;
 
 
 import agilor.distributed.relational.data.context.Config;
+import agilor.distributed.relational.data.db.DB;
 import com.jfinal.config.*;
 import com.jfinal.render.ViewType;
 import agilor.distributed.web.inter.server.controller.DeviceController;
@@ -45,6 +46,7 @@ public class GlobalConfig extends JFinalConfig   {
     @Override
     public void configRoute(Routes routes) {
 
+        routes.add("/", UserController.class);
         routes.add("/user", UserController.class);
         routes.add("/device", DeviceController.class);
         routes.add("/devicetype", DeviceTypeController.class);

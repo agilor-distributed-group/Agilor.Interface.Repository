@@ -1,6 +1,7 @@
 package agilor.distributed.web.inter.server.controller;
 
 import agilor.distributed.communication.client.Value;
+import agilor.distributed.relational.data.db.DB;
 import agilor.distributed.relational.data.entities.Device;
 import agilor.distributed.relational.data.entities.DeviceType;
 import agilor.distributed.relational.data.entities.Sensor;
@@ -16,7 +17,10 @@ import agilor.distributed.web.inter.server.result.Action;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.jfinal.aop.Before;
 import com.jfinal.core.DistrController;
+import com.jfinal.plugin.ehcache.CacheKit;
 
+import java.net.InetAddress;
+import java.net.UnknownHostException;
 import java.util.Date;
 
 /**
@@ -165,10 +169,7 @@ public class SensorController extends DistrController {
     @CreatorInterceptor.Param(model = Sensor.class)
     public void write()  {
         String v = getPara("v");
-
         Sensor sensor = getData();
-
-
         Value val = new Value(sensor.getType());
 
         switch (val.getValueType()) {
@@ -187,10 +188,31 @@ public class SensorController extends DistrController {
             default:
         }
 
-        sensor.write(val);
-
-
-
-
+        try {
+            sensor.write(val);
+            renderNull();
+        } catch (Exception e) {
+            renderResult(Action.failed());
+        }
     }
+
+    @Before(DebugInterceptor.class)
+    public void checkCache() throws UnknownHostException {
+
+        DB.Sensor sensor = CacheKit.get("Sensor", getParaToInt("i"));
+        if(sensor!=null)
+            renderResult(Action.success(InetAddress.getLocalHost().getHostAddress()));
+        else
+            renderResult(Action.failed(InetAddress.getLocalHost().getHostAddress(),null));
+    }
+
+
+    @Before(DebugInterceptor.class)
+    public void deleteCache()
+    {
+        CacheKit.remove("Sensor",getParaToInt("i"));
+        renderNull();
+    }
+
+
 }
