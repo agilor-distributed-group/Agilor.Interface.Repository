@@ -9,25 +9,26 @@ import java.net.Socket;
 /**
  * Created by LQ on 2015/10/19.
  */
-public class SocketPoolObjectFactory implements KeyedPooledObjectFactory<String,Socket> {
+public class SocketPoolObjectFactory implements KeyedPooledObjectFactory<String,BaseSocket> {
     @Override
-    public PooledObject<Socket> makeObject(String key) throws Exception {
+    public PooledObject<BaseSocket> makeObject(String key) throws Exception {
 
          String[] address = key.split(":");
-
-        return new DefaultPooledObject<>(new Socket(address[0],Integer.parseInt(address[1])));
+        BaseSocket socket=new BaseSocket(address[0],Integer.parseInt(address[1]));
+        socket.startRecv();
+        return new DefaultPooledObject<>(socket);
     }
 
     @Override
-    public void destroyObject(String key, PooledObject<Socket> p) throws Exception {
-        Socket socket = p.getObject();
+    public void destroyObject(String key, PooledObject<BaseSocket> p) throws Exception {
+        BaseSocket socket = p.getObject();
         if(!socket.isClosed()) {
-            socket.close();
+            socket.close(-1);
         }
     }
 
     @Override
-    public boolean validateObject(String key, PooledObject<Socket> p) {
+    public boolean validateObject(String key, PooledObject<BaseSocket> p) {
 
         if(p.getObject().isConnected())
             return true;
@@ -38,13 +39,13 @@ public class SocketPoolObjectFactory implements KeyedPooledObjectFactory<String,
     }
 
     @Override
-    public void activateObject(String key, PooledObject<Socket> p) throws Exception {
+    public void activateObject(String key, PooledObject<BaseSocket> p) throws Exception {
 
 
     }
 
     @Override
-    public void passivateObject(String key, PooledObject<Socket> p) throws Exception {
+    public void passivateObject(String key, PooledObject<BaseSocket> p) throws Exception {
 
     }
 }

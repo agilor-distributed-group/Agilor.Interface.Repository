@@ -7,6 +7,7 @@ import java.net.Socket;
  */
 public interface SocketProvider {
 
-    Socket getSocket(String ip,int port) throws Exception;
-    void returnSocket(Socket socket) throws Exception;
+    BaseSocket getSocket(String ip,int port) throws Exception;
+    void returnSocket(BaseSocket socket) throws Exception;
+    void destorySocket(BaseSocket socket) throws Exception;
 }

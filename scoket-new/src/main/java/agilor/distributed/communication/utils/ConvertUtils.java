@@ -10,6 +10,10 @@ public class ConvertUtils {
         return toInt(data[0], data[1], data[2], data[3]);
     }
 
+    public static int toInt(byte[] data,int st) {
+        return toInt(data[st], data[st+1], data[st+2], data[st+3]);
+    }
+
     public static int toInt(byte l1,byte l2,byte h1, byte h2)
     {
         int result = 0;

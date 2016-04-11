@@ -4,6 +4,7 @@ import java.lang.reflect.Field;
 import java.lang.reflect.Method;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
 /**
  * Created by LQ on 2015/10/20.
@@ -13,12 +14,14 @@ public final class SimpleProtocol extends ProtocolBase {
 
     private final static int MAX_LEN = (Integer.MAX_VALUE - 5);
 
-
-
-
-    public synchronized static SimpleProtocol getInstance() {
+    private static Object lock=new Object();
+    public static SimpleProtocol getInstance() {
         if (_instance == null)
-            _instance = new SimpleProtocol();
+            synchronized (lock){
+                if(_instance ==null ){
+                    _instance=new SimpleProtocol();
+                }
+            }
         return _instance;
     }
 

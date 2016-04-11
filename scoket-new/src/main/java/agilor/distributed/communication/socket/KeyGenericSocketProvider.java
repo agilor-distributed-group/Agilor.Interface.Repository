@@ -11,7 +11,7 @@ import java.net.Socket;
  */
 public class KeyGenericSocketProvider implements SocketProvider {
 
-    private KeyedObjectPool<String,Socket> pool = null;
+    private KeyedObjectPool<String,BaseSocket> pool = null;
 
 
     public KeyGenericSocketProvider()
@@ -21,14 +21,14 @@ public class KeyGenericSocketProvider implements SocketProvider {
         config.setMaxTotal(GenericKeyedObjectPoolConfig.DEFAULT_MAX_TOTAL);
         config.setTestOnBorrow(true);
 
-        pool = new GenericKeyedObjectPool<String,Socket>(new SocketPoolObjectFactory(),config);
+        pool = new GenericKeyedObjectPool<String,BaseSocket>(new SocketPoolObjectFactory(),config);
 
     }
 
 
 
     @Override
-    public Socket getSocket(String address, int port) throws Exception {
+    public BaseSocket getSocket(String address, int port) throws Exception {
 
         String key = address + ":" + port;
 
@@ -38,15 +38,19 @@ public class KeyGenericSocketProvider implements SocketProvider {
     }
 
     @Override
-    public void returnSocket(Socket socket) throws Exception {
-        String address = socket.getInetAddress().getHostAddress();
+    public void returnSocket(BaseSocket socket) throws Exception {
+        String address = socket.getHostAddress();
         int port = socket.getPort();
-
         String key = address+":"+port;
-
         pool.returnObject(key,socket);
 
+    }
 
-
+    @Override
+    public void destorySocket(BaseSocket socket)throws Exception{
+        String address = socket.getHostAddress();
+        int port = socket.getPort();
+        String key = address+":"+port;
+        pool.invalidateObject(key,socket);
     }
 }
