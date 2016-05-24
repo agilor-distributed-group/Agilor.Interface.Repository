@@ -8,7 +8,15 @@ import java.util.ArrayList;
  * Created by xinlongli on 16/5/13.
  */
 public class GetAllTagResultFuture extends ResultFuture<java.util.List<TagInfoRes>> {
-    public int errorCode=0;
+
+    public GetAllTagResultFuture(){
+
+    }
+    public GetAllTagResultFuture(int error){
+        this.errorCode=error;
+    }
+
+
     /***
      * @param in necessary, data content res(1byte)+'A'(1byte)+len(4byte)+T-N_pair
      * @param st optional, first index in data

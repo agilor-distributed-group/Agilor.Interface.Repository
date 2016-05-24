@@ -16,6 +16,10 @@ public class AddValueResultFuture extends ResultFuture<Byte>{
         this.deviceName=deviceName;
         this.val=val;
     }
+    public AddValueResultFuture(int error){
+        this.errorCode=error;
+    }
+
     @Override
     public int getPackageSize(){
         return 1;

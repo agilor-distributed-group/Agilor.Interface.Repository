@@ -1,5 +1,6 @@
 package agilor.distributed.communication.result;
 
+import agilor.distributed.communication.client.Value;
 import agilor.distributed.communication.utils.ConvertUtils;
 
 /**
@@ -7,13 +8,14 @@ import agilor.distributed.communication.utils.ConvertUtils;
  */
 public class TagInfoRes implements Comparable<TagInfoRes>{
     public String tagName;
-    public byte type;
+
+    public Value.Types type;
     public int len;
     public static final int TYPE_LEN=1+5;//type 1 char;string prefix 1+4 char;
     public TagInfoRes(byte[] buf,int st){
         tagName= ConvertUtils.toString(buf, st);
         len=tagName.length()+TYPE_LEN;
-        type=buf[st+len-1];
+        type=Value.Types.value(buf[st+len-1]);
     }
 
     public TagInfoRes(String tagName){

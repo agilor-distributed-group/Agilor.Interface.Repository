@@ -17,7 +17,7 @@ public class TestClient {
 
     public static DQBuffer queue1;
     public static void main(String[] args){
-        Connection connection = new Connection("11.0.0.16",10001, SimpleProtocol.getInstance());
+        Connection connection = new Connection("192.168.1.100",10001, SimpleProtocol.getInstance());
 
         queue1=new DQBuffer(1024,100);
         Thread parseThread=new Thread(()->{
@@ -52,11 +52,11 @@ public class TestClient {
         try{
             client.open();
 //            parseThread.start();
-//            for(int j=0;j<100;j++){
+//            for(int j=0;j<1000;j++){
 //                for(int i=1;i<=1000;i++){
-//                    Value val = new Value(Value.Types.FLOAT);
-//                    val.setFvalue((float)10.123+j);
-//                    ResultFuture res=client.addValue("Simu11_" + i, "Simu11", val, false);
+//                    Value val = new Value(Value.Types.STRING);
+//                    val.setSvalue("lxllxllxllxllxllxllxllxllxllxllxllxllxllxllxllxllxllxllxllxllxllxllxllxllxllxllxllxllxllxllxllxl"+j);
+//                    ResultFuture res=client.addValue("Simu16_" + i, "Simu16", val, false);
 //                    while(!queue1.putData(res))
 //                        Thread.sleep(1);
 //                    //Thread.sleep(10);
@@ -69,10 +69,10 @@ public class TestClient {
             Calendar st=Calendar.getInstance();
             st.set(2016,4,18,18,48,40);
             Calendar ed= Calendar.getInstance();
-            ed.set(2016,4,18,18,50,0);
-            ResultFuture res=client.getValue(st, ed, "Simu11_1");
+            ed.set(2016,4,23,18,50,0);
+            ResultFuture res=client.getValue(st, ed, "Simu16_151");
             List<ValueRes> valRes=((List<ValueRes>)res.get(-1, null));
-            System.out.println("tag 0 , time: "+valRes.get(0).timeStamp+" value: "+(Float)valRes.get(0).value+" total len :"+valRes.size());
+            System.out.println("tag 0 , time: "+valRes.get(0).timeStamp+" value: "+valRes.get(0).value.getSvalue()+" total len :"+valRes.size());
             client.close();
         }catch(Exception e){
             e.printStackTrace();

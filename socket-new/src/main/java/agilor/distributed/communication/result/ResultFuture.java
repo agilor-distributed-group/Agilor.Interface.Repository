@@ -21,13 +21,13 @@ public class ResultFuture<T> implements Future<T> {
 
     protected boolean isDone=false;
     public T result=null;
+    public int errorCode=0;
 
-
-    protected  boolean  myParseData(byte[] in,int st,int len){
+    protected  boolean  myParseData(byte[] in,int st,int len) {
         return false;
     }
 
-    public boolean parseData(byte[] in,int st,int len) throws IOException{
+    public boolean parseData(byte[] in,int st,int len) {
         synchronized(this){
             myParseData(in, st, len);
             isDone=true;
@@ -62,6 +62,10 @@ public class ResultFuture<T> implements Future<T> {
 
     @Override
     public T get(long timeout, TimeUnit unit) throws InterruptedException, ExecutionException, TimeoutException {
+        if(errorCode!=0){
+            return null;
+        }
+
         if(result!=null){
             return result;
         }

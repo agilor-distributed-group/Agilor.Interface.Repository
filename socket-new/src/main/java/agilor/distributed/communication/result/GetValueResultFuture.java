@@ -12,11 +12,15 @@ import java.util.List;
 public class GetValueResultFuture extends ResultFuture<List<ValueRes>>{
 
 
-    public int errorCode=0;
+
     public String tagName;
     public GetValueResultFuture(String tagname){
 
         tagName=tagname;
+    }
+
+    public GetValueResultFuture(int error){
+        this.errorCode=error;
     }
 
     @Override
